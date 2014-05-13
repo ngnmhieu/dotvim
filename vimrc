@@ -29,6 +29,7 @@ inoremap <c-s> <Esc>:Update<CR>
 
 " pathogen - plugin manager
 execute pathogen#infect()
+Helptags
 syntax on
 filetype plugin indent on
 
@@ -45,11 +46,15 @@ nnoremap <S-TAB> :tabp<CR>
 nnoremap <S-q> :tabn<cr>
 map <C-n> :tabnew<cr>
 
+" Ctrl-P
+map <leader>c :CtrlPClearAllCaches
+
 " change leader key to ,
 let mapleader=','
 
 " Command-T
 let g:CommandTCancelMap=['<C-[>', '<ESC>']
+
 
 " open current file in sublime text
 map <F4> :!subl %<cr> 
@@ -60,6 +65,7 @@ inoremap <C-z> <C-y><ESC>
 
 " NerdTree
 map <C-]> :NERDTreeToggle<CR>
+map <F7> :NERDTreeToggle<CR>
 
 " Easy motion plugin
 let g:EasyMotion_leader_key = '`' 
