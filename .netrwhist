@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/hieusun/Dropbox/Config/vim/.vim/bundle'
 let g:netrw_dirhist_2='/Users/hieusun/.vim'
 let g:netrw_dirhist_3='/Users/hieusun/.vim/bundle'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/hieusun/.vim/bundle/tcomment'
 let g:netrw_dirhist_6='/Users/hieusun/.vim/bundle/vim-autoclose'
 let g:netrw_dirhist_7='/Users/hieusun/.vim/bundle/vim-racket'
 let g:netrw_dirhist_8='/Users/hieusun/.vim/bundle/ctrlp/doc'
+let g:netrw_dirhist_9='/Users/hieusun/Work/programming/codeforHH/feuer/pdf-table-extract/example'
