@@ -67,8 +67,8 @@ inoremap <C-z> <C-y><ESC>
 map <C-]> :NERDTreeToggle<CR>
 map <F7> :NERDTreeToggle<CR>
 
-" Easy motion plugin
-let g:EasyMotion_leader_key = '`' 
+" Emmet trigger
+let g:user_emmet_expandabbr_key = '<c-e>'
 
 " indent level to specific filetypes
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
@@ -80,3 +80,6 @@ cmap w!! w !sudo tee > /dev/null %
 " vim-markdown
 let g:vim_markdown_folding_disabled=1 " disable folding in markdown files
 au BufRead,BufNewFile *.md set filetype=markdown
+
+" Tcomment - toggle comment
+map <c-[><c-[> <c-_><c-_>
