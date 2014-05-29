@@ -82,4 +82,4 @@ let g:vim_markdown_folding_disabled=1 " disable folding in markdown files
 au BufRead,BufNewFile *.md set filetype=markdown
 
 " Tcomment - toggle comment
-map <c-[><c-[> <c-_><c-_>
+map <c-c><c-c> <c-_><c-_>
