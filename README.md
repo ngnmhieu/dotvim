@@ -15,6 +15,6 @@ $ mv dotvim .vim
 
 Make symbolic link `~/.vimrc` point to `~/.vim/vimrc`
 ```
-$ ln -S ~/.vim/vimrc ~/.vimrc
+$ ln -s ~/.vim/vimrc ~/.vimrc
 ```
 
