@@ -42,6 +42,15 @@ colorscheme ron
 
 " mapping
 
+" remap go to first character of line
+nnoremap ! ^
+nnoremap ^ !
+vnoremap ! ^
+vnoremap ^ !
+onoremap ! ^
+onoremap ^ !
+" ## end ##
+
 " reformat whole file, need fix
 " nmap <c-f> gg=G<C-o><C-o>
 
