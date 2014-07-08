@@ -13,6 +13,7 @@ set shiftwidth=2
 set softtabstop=2
 set cursorline " underline current line
 set incsearch " highlight as you search
+set backspace=indent,eol,start " fix backspace key for vim 7.4
 
 " in MacOSX Terminal app, you must use MouseTerm plugin in SIMBL
 set mouse=a
