@@ -14,6 +14,10 @@ set softtabstop=2
 set cursorline " underline current line
 set incsearch " highlight as you search
 
+" in MacOSX Terminal app, you must use MouseTerm plugin in SIMBL
+set mouse=a
+
+filetype indent on
 filetype plugin on
 
 "" map Ctrl-S to save file
@@ -38,8 +42,8 @@ colorscheme ron
 
 " mapping
 
-" closing current tab
-map <c-f><c-f> :tabclose!<cr>
+" reformat whole file, need fix
+" nmap <c-f> gg=G<C-o><C-o>
 
 "---- next tab
 nnoremap <S-TAB> :tabp<CR>
