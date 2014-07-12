@@ -2,6 +2,7 @@
 " set mouse=a " use mouse in terminal
 set nu " line numbers
 set expandtab " turn tabs into spaces
+syntax on
 
 set autoindent
 set smartindent
@@ -35,7 +36,6 @@ inoremap <c-s> <Esc>:Update<CR>
 " pathogen - plugin manager
 execute pathogen#infect()
 Helptags
-syntax on
 filetype plugin indent on
 
 " appearance
