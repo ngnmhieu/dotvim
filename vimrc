@@ -16,6 +16,8 @@ set cursorline " underline current line
 set incsearch " highlight as you search
 set backspace=indent,eol,start " fix backspace key for vim 7.4
 
+set clipboard=unnamed
+
 " in MacOSX Terminal app, you must use MouseTerm plugin in SIMBL
 set mouse=a
 
@@ -36,7 +38,6 @@ inoremap <c-s> <Esc>:Update<CR>
 " pathogen - plugin manager
 execute pathogen#infect()
 Helptags
-filetype plugin indent on
 
 " appearance
 colorscheme ron
