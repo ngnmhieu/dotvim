@@ -12,6 +12,11 @@ $ cd ~
 $ git clone git@github.com:ngnmhieu/dotvim.git
 $ mv dotvim .vim
 ```
+Checkout all the submodule
+```
+$ cd .vim
+$ git submodule update --init
+```
 
 Make symbolic link `~/.vimrc` point to `~/.vim/vimrc`
 ```
