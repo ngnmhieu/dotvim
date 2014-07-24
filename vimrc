@@ -1,5 +1,4 @@
 " settings
-" set mouse=a " use mouse in terminal
 set nu " line numbers
 set expandtab " turn tabs into spaces
 syntax on
@@ -16,8 +15,8 @@ set cursorline " underline current line
 set incsearch " highlight as you search
 set backspace=indent,eol,start " fix backspace key for vim 7.4
 
+" copy between vim processes
 set clipboard=unnamed
-
 " in MacOSX Terminal app, you must use MouseTerm plugin in SIMBL
 set mouse=a
 
@@ -42,7 +41,9 @@ Helptags
 " appearance
 colorscheme ron
 
-" mapping
+"###############
+"### MAPPING ###
+"###############
 
 " remap go to first character of line
 nnoremap ! ^
@@ -61,11 +62,11 @@ nnoremap <S-TAB> :tabp<CR>
 nnoremap <S-q> :tabn<cr>
 map <C-n> :tabnew<cr>
 
-" Ctrl-P
-map <leader>c :CtrlPClearAllCaches
-
 " change leader key to ,
 let mapleader=','
+
+" close current windows
+nnoremap <leader>c :q<CR>
 
 " Command-T
 let g:CommandTCancelMap=['<C-[>', '<ESC>']
