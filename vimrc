@@ -15,6 +15,10 @@ set cursorline " underline current line
 set incsearch " highlight as you search
 set backspace=indent,eol,start " fix backspace key for vim 7.4
 
+" change window spliting behavior
+set splitbelow
+set splitright
+
 " copy between vim processes
 set clipboard=unnamed
 " in MacOSX Terminal app, you must use MouseTerm plugin in SIMBL
@@ -44,6 +48,12 @@ colorscheme ron
 "###############
 "### MAPPING ###
 "###############
+
+" remap switching split windows
+nnoremap <silent> <C-l> <c-w>l
+nnoremap <silent> <C-h> <c-w>h
+nnoremap <silent> <C-k> <c-w>k
+nnoremap <silent> <C-j> <c-w>j
 
 " remap go to first character of line
 nnoremap ! ^
