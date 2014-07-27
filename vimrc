@@ -99,3 +99,9 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 " Tcomment - toggle comment
 map <c-c><c-c> <c-_><c-_>
+
+" remove delay in exiting visual mode
+set timeoutlen=1000 ttimeoutlen=0
+
+" vim-airline appear all the time
+set laststatus=2
