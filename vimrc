@@ -49,6 +49,9 @@ colorscheme ron
 "### MAPPING ###
 "###############
 
+nnoremap j gj
+nnoremap k gk
+
 " remap switching split windows
 nnoremap <silent> <C-l> <c-w>l
 nnoremap <silent> <C-h> <c-w>h
