@@ -97,7 +97,7 @@ map <C-]> :NERDTreeToggle<CR>
 map <F7> :NERDTreeToggle<CR>
 
 " Emmet trigger
-let g:user_emmet_expandabbr_key = '<c-e>'
+let g:user_emmet_expandabbr_key = '<c-b>'
 
 " indent level to specific filetypes
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
