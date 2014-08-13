@@ -1,4 +1,4 @@
-" settings
+set nocompatible " less compatible wiht Vi, Vim behaves better
 set nu " line numbers
 set expandtab " turn tabs into spaces
 syntax on
@@ -24,8 +24,8 @@ set clipboard=unnamed
 " in MacOSX Terminal app, you must use MouseTerm plugin in SIMBL
 set mouse=a
 
-filetype indent on
-filetype plugin on
+filetype plugin indent on
+
 
 "" map Ctrl-S to save file
 command -nargs=0 -bar Update if &modified 
@@ -49,6 +49,15 @@ colorscheme ron
 "### MAPPING ###
 "###############
 
+  "@@@@@@@@@@@@@@@@@
+  " folding shortcut
+  "@@@@@@@@@@@@@@@@@
+  nnoremap <tab> za
+  " collapse / expand all folds
+  nnoremap _ zM 
+  nnoremap + zR
+
+" moving between lines
 nnoremap j gj
 nnoremap k gk
 
@@ -96,6 +105,9 @@ inoremap <C-z> <C-y><ESC>
 map <C-]> :NERDTreeToggle<CR>
 map <F7> :NERDTreeToggle<CR>
 
+" Tcomment - toggle comment
+map <c-c><c-c> <c-_><c-_>
+
 " Emmet trigger
 let g:user_emmet_expandabbr_key = '<c-b>'
 
@@ -110,11 +122,16 @@ cmap w!! w !sudo tee > /dev/null %
 let g:vim_markdown_folding_disabled=1 " disable folding in markdown files
 au BufRead,BufNewFile *.md set filetype=markdown
 
-" Tcomment - toggle comment
-map <c-c><c-c> <c-_><c-_>
-
 " remove delay in exiting visual mode
 set timeoutlen=1000 ttimeoutlen=0
 
 " vim-airline appear all the time
 set laststatus=2
+
+" all folds are open when a file is opened
+set foldlevelstart=99
+
+" settings for php
+let php_folding = 1
+let php_sql_query = 1
+let php_htmlInStrings = 1
