@@ -1,3 +1,6 @@
+" appearance
+colorscheme tomorrow-night
+
 set nocompatible " less compatible wiht Vi, Vim behaves better
 set nu " line numbers
 set expandtab " turn tabs into spaces
@@ -41,9 +44,6 @@ inoremap <c-s> <Esc>:Update<CR>
 " pathogen - plugin manager
 execute pathogen#infect()
 Helptags
-
-" appearance
-colorscheme ron
 
 "###############
 "### MAPPING ###
@@ -133,5 +133,4 @@ set foldlevelstart=99
 
 " settings for php
 let php_folding = 1
-let php_sql_query = 1
 let php_htmlInStrings = 1
