@@ -92,7 +92,10 @@ map <C-n> :tabnew<cr>
 let mapleader=','
 
 " close current windows
-nnoremap <leader>c :tabclose<CR>
+" auto remap close shortcut depends on whether 
+" the current tab is the last tab or not
+nnoremap <leader>c :q<CR>
+au TabEnter * let g:tabcount = tabpagenr('$') | if tabcount == 1 | nnoremap <leader>c :q<CR> | else | nnoremap <leader>c :tabc<CR> |endif
 
 " Command-T
 let g:CommandTCancelMap=['<C-[>', '<ESC>']
