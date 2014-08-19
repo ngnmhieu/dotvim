@@ -88,7 +88,7 @@ map <C-n> :tabnew<cr>
 let mapleader=','
 
 " close current windows
-nnoremap <leader>c :q<CR>
+nnoremap <leader>c :tabclose<CR>
 
 " Command-T
 let g:CommandTCancelMap=['<C-[>', '<ESC>']
@@ -134,3 +134,7 @@ set foldlevelstart=99
 " settings for php
 let php_folding = 1
 let php_htmlInStrings = 1
+
+
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
