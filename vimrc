@@ -1,9 +1,9 @@
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
-endf
+endif
 
 " appearance
-colorscheme tomorrow-night
+colorscheme tomorrow_night
 
 set nocompatible " less compatible wiht Vi, Vim behaves better
 set nu " line numbers
