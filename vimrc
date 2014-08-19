@@ -1,3 +1,7 @@
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endf
+
 " appearance
 colorscheme tomorrow-night
 
