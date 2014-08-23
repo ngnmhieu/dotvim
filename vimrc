@@ -115,6 +115,7 @@ map <F7> :NERDTreeToggle<CR>
 
 " Tcomment - toggle comment
 map <c-c><c-c> <c-_><c-_>
+map <c-c><c-b> <c-_>b
 
 " Emmet trigger
 let g:user_emmet_expandabbr_key = '<c-b>'
