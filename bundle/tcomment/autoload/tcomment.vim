@@ -71,7 +71,9 @@ if !exists("g:tcommentGuessFileType_php")
     " In php documents, the php part is usually marked as phpRegion. We 
     " thus assume that the buffers default comment style isn't php but 
     " html.
-    let g:tcommentGuessFileType_php = 'html'   "{{{2
+
+    " fix protected function ... commented as html
+    let g:tcommentGuessFileType_php = 'php'   "{{{2
 endif
 if !exists("g:tcommentGuessFileType_html")
     let g:tcommentGuessFileType_html = 1   "{{{2

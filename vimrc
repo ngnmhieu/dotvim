@@ -94,9 +94,9 @@ let mapleader=','
 " close current windows
 " auto remap close shortcut depends on whether 
 " the current tab is the last tab or not
-" nnoremap <leader>c :q<CR>
 " au TabEnter * let g:tabcount = tabpagenr('$') | if tabcount == 1 | nnoremap <leader>c :q<CR> | else | nnoremap <leader>c :tabc<CR> |endif
-nnoremap <expr> <leader>c tabpagenr('$') > 1 ? ':tabclose<CR>' : ':q<CR>' 
+nnoremap <expr> <leader>w tabpagenr('$') > 1 ? ':tabclose<CR>' : ':q<CR>' 
+nnoremap <leader>c :q<CR>
 
 " Command-T
 let g:CommandTCancelMap=['<C-[>', '<ESC>']
@@ -115,7 +115,6 @@ map <F7> :NERDTreeToggle<CR>
 
 " Tcomment - toggle comment
 map <c-c><c-c> <c-_><c-_>
-map <c-c><c-b> <c-_>b
 
 " Emmet trigger
 let g:user_emmet_expandabbr_key = '<c-b>'
@@ -137,13 +136,19 @@ set timeoutlen=1000 ttimeoutlen=0
 " vim-airline appear all the time
 set laststatus=2
 
+"@@@@@@@@@@@@@@@@@
+" Folding
+"@@@@@@@@@@@@@@@@@
+
 " all folds are open when a file is opened
 set foldlevelstart=99
 
-" settings for php
+"@@@@@@@@@@@@@@@@@
+" PHP
+"@@@@@@@@@@@@@@@@@
 let php_folding = 1
 let php_htmlInStrings = 1
 
-
+" autoclose preview windows when finish with omni complete
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
