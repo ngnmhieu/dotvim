@@ -88,14 +88,19 @@ nnoremap <S-TAB> :tabp<CR>
 nnoremap <S-q> :tabn<cr>
 map <C-n> :tabnew<cr>
 
+" convinient key to toggle hlsearch
+nnoremap <silent> <space> :set hlsearch!<CR>
+
+" search selected text
+vnoremap <space> "zyq/"zp<CR>
+vnoremap <M-space> "zyq?"zp<CR>
+
 " change leader key to ,
 let mapleader=','
 
-" close current windows
-" auto remap close shortcut depends on whether 
-" the current tab is the last tab or not
-" au TabEnter * let g:tabcount = tabpagenr('$') | if tabcount == 1 | nnoremap <leader>c :q<CR> | else | nnoremap <leader>c :tabc<CR> |endif
+" close current tab
 nnoremap <expr> <leader>w tabpagenr('$') > 1 ? ':tabclose<CR>' : ':q<CR>' 
+" close current buffer
 nnoremap <leader>c :q<CR>
 
 " Command-T
