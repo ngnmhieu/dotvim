@@ -154,6 +154,5 @@ set foldlevelstart=99
 let php_folding = 1
 let php_htmlInStrings = 1
 
-" autoclose preview windows when finish with omni complete
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" turn off preview window in omni auto complete
+set completeopt-=preview
