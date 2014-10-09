@@ -95,6 +95,9 @@ nnoremap <silent> <space> :set hlsearch!<CR>
 vnoremap <space> "zyq/"zp<CR>
 vnoremap <M-space> "zyq?"zp<CR>
 
+" search and replace selected text
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
 " change leader key to ,
 let mapleader=','
 
