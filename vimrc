@@ -49,9 +49,9 @@ inoremap <c-s> <Esc>:Update<CR>
 execute pathogen#infect()
 Helptags
 
-"###############
-"### MAPPING ###
-"###############
+"################
+"### MAPPINGS ###
+"################
 
   "@@@@@@@@@@@@@@@@@
   " folding shortcut
@@ -88,6 +88,10 @@ nnoremap <S-TAB> :tabp<CR>
 nnoremap <S-q> :tabn<cr>
 map <C-n> :tabnew<cr>
 
+" scrolling up down
+nnoremap { <C-E>
+nnoremap } <C-Y>
+
 " convinient key to toggle hlsearch
 nnoremap <silent> <space> :set hlsearch!<CR>
 
@@ -120,6 +124,7 @@ inoremap <C-z> <C-y><ESC>
 " NerdTree
 map <C-]> :NERDTreeToggle<CR>
 map <F7> :NERDTreeToggle<CR>
+" let NERDTreeShowLineNumbers=1
 
 " Tcomment - toggle comment
 map <c-c><c-c> <c-_><c-_>
@@ -159,3 +164,8 @@ let php_htmlInStrings = 1
 
 " turn off preview window in omni auto complete
 set completeopt-=preview
+
+"@@@@@@@@@@@@@@@@@
+" RUBY
+"@@@@@@@@@@@@@@@@@
+autocmd FileType eruby let b:surround_45 = "<%= \r %>"
