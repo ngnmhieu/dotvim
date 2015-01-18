@@ -33,6 +33,8 @@ set mouse=a
 
 filetype plugin indent on
 
+" tell vim where to find tags file
+set tags=./tags
 
 "" map Ctrl-S to save file
 command -nargs=0 -bar Update if &modified 
@@ -113,7 +115,6 @@ nnoremap <leader>c :q<CR>
 " Command-T
 let g:CommandTCancelMap=['<C-[>', '<ESC>']
 
-
 " open current file in sublime text
 map <F4> :!subl %<cr> 
 
@@ -122,8 +123,7 @@ map <F4> :!subl %<cr>
 inoremap <C-z> <C-y><ESC>
 
 " NerdTree
-map <C-]> :NERDTreeToggle<CR>
-map <F7> :NERDTreeToggle<CR>
+map <C-]> :NERDTreeTabsToggle<CR>
 " let NERDTreeShowLineNumbers=1
 
 " Tcomment - toggle comment
@@ -168,4 +168,8 @@ set completeopt-=preview
 "@@@@@@@@@@@@@@@@@
 " RUBY
 "@@@@@@@@@@@@@@@@@
+
+" snippet '=' => <%= %>
 autocmd FileType eruby let b:surround_45 = "<%= \r %>"
+autocmd FileType ruby set foldmethod=syntax
+
