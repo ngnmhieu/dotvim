@@ -127,8 +127,9 @@ map <C-]> :NERDTreeTabsToggle<CR>
 " let NERDTreeShowLineNumbers=1
 
 " Tcomment - toggle comment
-map <c-c><c-c> <c-_><c-_>
-map <c-c>b :TCommentBlock<CR>
+map <c-c> <c-_><c-_>
+vmap <c-b> :TCommentBlock<CR>
+
 " Emmet trigger
 let g:user_emmet_expandabbr_key = '<c-b>'
 
