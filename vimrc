@@ -115,6 +115,9 @@ nnoremap <leader>c :q<CR>
 " Command-T
 let g:CommandTCancelMap=['<C-[>', '<ESC>']
 
+" VCSCommand
+let g:VCSCommandMapPrefix='<Leader>v'
+
 " open current file in sublime text
 map <F4> :!subl %<cr> 
 
