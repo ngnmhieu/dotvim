@@ -85,6 +85,9 @@ onoremap ^ !
 " reformat whole file, need fix
 " nmap <c-f> gg=G<C-o><C-o>
 
+" Pasting text without overriding yanked text
+xnoremap p "_dP
+
 "---- next tab
 nnoremap <S-TAB> :tabp<CR>
 nnoremap <S-q> :tabn<cr>
