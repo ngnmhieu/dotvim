@@ -43,6 +43,12 @@
 [submodule "bundle/vim-pencil"]
 	path = bundle/vim-pencil
 	url = https://github.com/reedes/vim-pencil.git
+[submodule "bundle/html5"]
+	path = bundle/html5
+	url = https://github.com/othree/html5.vim.git
+[submodule "bundle/ack-vim"]
+	path = bundle/ack-vim
+	url = https://github.com/mileszs/ack.vim
 [submodule "bundle/vcscommand"]
 	path = bundle/vcscommand
-	url = git://repo.or.cz/vcscommand.git
+	url = http://repo.or.cz/vcscommand.git

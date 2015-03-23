@@ -130,7 +130,8 @@ inoremap <C-z> <C-y><ESC>
 
 " NerdTree
 map <C-]> :NERDTreeTabsToggle<CR>
-" let NERDTreeShowLineNumbers=1
+let g:nerdtree_tabs_autoclose = 1  
+" let NERDTreeShowLineNumbers = 1
 
 " Tcomment - toggle comment
 map <c-c> <c-_><c-_>
@@ -155,6 +156,25 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " vim-airline appear all the time
 set laststatus=2
+
+"@@@@@@@@@@@@@@@@
+" Searching with Ack
+"@@@@@@@@@@@@@@@@
+" search the for files containing selected text with Ack (ignore hidden files)
+" -o is to output only the matched pattern
+" -Q match literal string
+let g:ack_default_options = " -s -H --nocolor --nogroup --ignore-file=match:'^\\.' -o -Q"
+vnoremap <C-k> "ky:Ack '<C-R>k' <CR>/<C-R>k<CR>
+vnoremap <C-l> "ky:Ack '<C-R>k'
+"@@@@ END Searching with Ack @@@@
+
+"@@@@@@@@@@@@@@@@
+" Quickfix
+"@@@@@@@@@@@@@@@@
+"Jump to next file in Quickfix
+nnoremap <leader>n :cnf<CR>
+"Jump to previous file in Quickfix
+nnoremap <leader>p :cpf<CR>
 
 "@@@@@@@@@@@@@@@@@
 " Folding
