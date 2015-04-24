@@ -93,18 +93,6 @@ nnoremap <S-TAB> :tabp<CR>
 nnoremap <S-q> :tabn<cr>
 map <C-n> :tabnew<cr>
 
-" Go to tab number
-nnoremap <leader>1 1gt
-nnoremap <leader>2 2gt
-nnoremap <leader>3 3gt
-nnoremap <leader>4 4gt
-nnoremap <leader>5 5gt
-nnoremap <leader>6 6gt
-nnoremap <leader>7 7gt
-nnoremap <leader>8 8gt
-nnoremap <leader>9 9gt
-
-
 " scrolling up down
 nnoremap { <C-E>
 nnoremap } <C-Y>
@@ -212,3 +200,10 @@ set completeopt-=preview
 autocmd FileType eruby let b:surround_45 = "<%= \r %>"
 autocmd FileType ruby set foldmethod=syntax
 
+"@@@@@@@@@@@@@@@@   
+" VIM Airline
+"@@@@@@@@@@@@@@@@   
+" Show tab number
+let g:airline#extensions#tabline#enabled = 1 " enable vim-airline tabline
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
