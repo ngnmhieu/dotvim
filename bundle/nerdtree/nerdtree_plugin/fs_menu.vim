@@ -219,6 +219,13 @@ function! NERDTreeRevealInFinder()
     endif
 endfunction
 
+function! NERDTreeRevealInNautilus()
+    let treenode = g:NERDTreeFileNode.GetSelected()
+    if treenode != {}
+        let x = system("nautilus '" . treenode.path.str() . "'")
+    endif
+endfunction
+
 function! NERDTreeExecuteFile()
     let treenode = g:NERDTreeFileNode.GetSelected()
     if treenode != {}
