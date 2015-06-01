@@ -15,9 +15,9 @@ set smartindent
 set cindent
 set cinkeys=0{,0},0#,!^F
 
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set cursorline " underline current line
 set incsearch " highlight as you search
 set backspace=indent,eol,start " fix backspace key for vim 7.4
@@ -27,14 +27,12 @@ set splitbelow
 set splitright
 
 " copy between vim processes
-set clipboard=unnamed
+set clipboard=unnamedplus
 " in MacOSX Terminal app, you must use MouseTerm plugin in SIMBL
 set mouse=a
 
 filetype plugin indent on
 
-" tell vim where to find tags file
-set tags=./tags
 
 "" map Ctrl-S to save file
 command -nargs=0 -bar Update if &modified 
@@ -105,7 +103,7 @@ vnoremap <space> "zyq/"zp<CR>
 vnoremap <M-space> "zyq?"zp<CR>
 
 " search and replace selected text
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+vnoremap <C-r> "hy:%s/<C-R>h//gc<left><left><left>
 
 " change leader key to ,
 let mapleader=','
@@ -128,14 +126,11 @@ map <F4> :!subl %<cr>
 " Accept the current autocomplete and exit INSERT mode
 inoremap <C-z> <C-y><ESC>
 
-"#############
 " NerdTree
-"#############
 map <C-]> :NERDTreeTabsToggle<CR>
-" show current file in nerdtree
 map <C-f> :NERDTreeFind<CR>
-let g:nerdtree_tabs_autoclose = 1  
-" let NERDTreeShowLineNumbers = 1
+" let NERDTreeShowLineNumbers=1
+let g:nerdtree_tabs_autoclose = 1
 
 " Tcomment - toggle comment
 map <c-c> <c-_><c-_>
@@ -170,6 +165,7 @@ set laststatus=2
 let g:ack_default_options = " -s -H --nocolor --nogroup --ignore-file=match:'^\\.' -o -Q"
 vnoremap <C-k> "ky:Ack '<C-R>k' <CR>/<C-R>k<CR>
 vnoremap <C-l> "ky:Ack '<C-R>k'
+" let g:ack_autofold_results = 1
 "@@@@ END Searching with Ack @@@@
 
 "@@@@@@@@@@@@@@@@
@@ -179,6 +175,7 @@ vnoremap <C-l> "ky:Ack '<C-R>k'
 nnoremap <leader>n :cnf<CR>
 "Jump to previous file in Quickfix
 nnoremap <leader>p :cpf<CR>
+
 
 "@@@@@@@@@@@@@@@@@
 " Folding
@@ -196,13 +193,19 @@ let php_htmlInStrings = 1
 " turn off preview window in omni auto complete
 set completeopt-=preview
 
-"@@@@@@@@@@@@@@@@@
-" RUBY
-"@@@@@@@@@@@@@@@@@
+au BufNewFile,BufRead *.html,*.php :set fileencoding=iso-8859-15
 
-" snippet '=' => <%= %>
-autocmd FileType eruby let b:surround_45 = "<%= \r %>"
-autocmd FileType ruby set foldmethod=syntax
+au BufNewFile,BufRead *.css :set tabstop=2
+au BufNewFile,BufRead *.css :set shiftwidth=2
+au BufNewFile,BufRead *.css :set softtabstop=2
+
+au BufNewFile,BufRead *.php :set softtabstop=4
+au BufNewFile,BufRead *.php :set tabstop=4
+au BufNewFile,BufRead *.php :set shiftwidth=4
+
+au BufNewFile,BufRead *.js :set softtabstop=4
+au BufNewFile,BufRead *.js :set tabstop=4
+au BufNewFile,BufRead *.js :set shiftwidth=4
 
 "@@@@@@@@@@@@@@@@   
 " VIM Airline
