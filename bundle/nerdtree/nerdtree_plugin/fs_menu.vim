@@ -25,6 +25,11 @@ if has("gui_mac") || has("gui_macvim")
     call NERDTreeAddMenuItem({'text': '(q)uicklook the current node', 'shortcut': 'q', 'callback': 'NERDTreeQuickLook'})
 endif
 
+let s:nautilus = system("echo -n \"$(which nautilus)\"")
+if has("unix") && s:nautilus != ""
+    call NERDTreeAddMenuItem({'text': '(r)eveal in Nautilus the current node', 'shortcut': 'r', 'callback': 'NERDTreeRevealInNautilus'})
+endif
+
 if g:NERDTreePath.CopyingSupported()
     call NERDTreeAddMenuItem({'text': '(c)copy the current node', 'shortcut': 'c', 'callback': 'NERDTreeCopyNode'})
 endif
@@ -211,6 +216,13 @@ function! NERDTreeRevealInFinder()
     let treenode = g:NERDTreeFileNode.GetSelected()
     if treenode != {}
         let x = system("open -R '" . treenode.path.str() . "'")
+    endif
+endfunction
+
+function! NERDTreeRevealInNautilus()
+    let treenode = g:NERDTreeFileNode.GetSelected()
+    if treenode != {}
+        let x = system("nautilus '" . treenode.path.str() . "'")
     endif
 endfunction
 
