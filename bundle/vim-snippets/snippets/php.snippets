@@ -40,7 +40,26 @@ snippet i
 snippet t.
 	$this->
 snippet f
-	function ${1}(${3})
+	/**
+	 *
+	 */
+	${1:public} function ${2}()
+	{
+		${0}
+	}
+snippet pub
+	/**
+	 *
+	 */
+	public function ${1}()
+	{
+		${0}
+	}
+snippet pri
+	/**
+	 *
+	 */
+	private function ${1}()
 	{
 		${0}
 	}
@@ -120,7 +139,7 @@ snippet /*
 	 * ${0}
 	 */
 # Class - post doc
-snippet doc_cp
+snippet doccp
 	/**
 	 * ${1:undocumented class}
 	 *
@@ -129,22 +148,18 @@ snippet doc_cp
 	 * @author ${4:`g:snips_author`}
 	 */
 # Class Variable - post doc
-snippet doc_vp
+snippet docvp
 	/**
-	 * ${1:undocumented class variable}
-	 *
-	 * @var ${2:string}
+	 * @var ${1:string}
 	 */
 # Class Variable
-snippet doc_v
+snippet docv
 	/**
-	 * ${3:undocumented class variable}
-	 *
-	 * @var ${4:string}
+	 * @var ${3:string}
 	 */
 	${1:var} $${2};
 # Class
-snippet doc_c
+snippet docc
 	/**
 	 * ${3:undocumented class}
 	 *
@@ -157,18 +172,18 @@ snippet doc_c
 		${0}
 	} // END $1class $2
 # Constant Definition - post doc
-snippet doc_dp
+snippet docdp
 	/**
 	 * ${1:undocumented constant}
 	 */
 # Constant Definition
-snippet doc_d
+snippet docd
 	/**
 	 * ${3:undocumented constant}
 	 */
 	define(${1}, ${2});
 # Function - post doc
-snippet doc_fp
+snippet docfp
 	/**
 	 * ${1:undocumented function}
 	 *
@@ -176,7 +191,7 @@ snippet doc_fp
 	 * @author ${3:`g:snips_author`}
 	 */
 # Function signature
-snippet doc_s
+snippet docs
 	/**
 	 * ${4:undocumented function}
 	 *
@@ -185,7 +200,7 @@ snippet doc_s
 	 */
 	${1}function ${2}(${3});
 # Function
-snippet doc_f
+snippet docf
 	/**
 	 * ${4:undocumented function}
 	 *
@@ -193,10 +208,11 @@ snippet doc_f
 	 * @author ${6:`g:snips_author`}
 	 */
 	${1}function ${2}(${3})
-	{${0}
+	{
+		${0}
 	}
 # Header
-snippet doc_h
+snippet doch
 	/**
 	 * ${1}
 	 *
@@ -223,7 +239,8 @@ snippet class
 	/**
 	 * ${1}
 	 */
-	class ${2:`vim_snippets#Filename()`} {
+	class ${2:`vim_snippets#Filename()`} 
+	{
 		${3}
 		/**
 		 * ${4}
