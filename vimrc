@@ -137,6 +137,18 @@ map <C-f> :NERDTreeFind<CR>
 let g:nerdtree_tabs_autoclose = 1  
 " let NERDTreeShowLineNumbers = 1
 
+"#############
+" Tabular
+"#############
+if exists(":Tabularize")
+    vmap <leader>t= :Tabularize /=<CR>
+    nmap <leader>t= :Tabularize /=<CR>
+    vmap <leader>t: :Tabularize /:<CR>
+    nmap <leader>t: :Tabularize /:<CR>
+    vmap <leader>tt :Tabularize /
+    nmap <leader>tt :Tabularize /
+endif
+
 " Tcomment - toggle comment
 map <c-c> <c-_><c-_>
 vmap <c-b> :TCommentBlock<CR>

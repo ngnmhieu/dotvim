@@ -126,11 +126,25 @@ map <F4> :!subl %<cr>
 " Accept the current autocomplete and exit INSERT mode
 inoremap <C-z> <C-y><ESC>
 
+"#############
 " NerdTree
+"#############
 map <C-]> :NERDTreeTabsToggle<CR>
 map <C-f> :NERDTreeFind<CR>
 " let NERDTreeShowLineNumbers=1
 let g:nerdtree_tabs_autoclose = 1
+
+"#############
+" Tabular
+"#############
+" if exists(":Tabularize")
+    vmap <leader>t= :Tabularize /=<CR>
+    nmap <leader>t= :Tabularize /=<CR>
+    vmap <leader>t: :Tabularize /:<CR>
+    nmap <leader>t: :Tabularize /:<CR>
+    vmap <leader>tt :Tabularize /
+    nmap <leader>tt :Tabularize /
+" endif
 
 " Tcomment - toggle comment
 map <c-c> <c-_><c-_>
