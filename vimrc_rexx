@@ -137,14 +137,12 @@ let g:nerdtree_tabs_autoclose = 1
 "#############
 " Tabular
 "#############
-" if exists(":Tabularize")
-    vmap <leader>t= :Tabularize /=<CR>
-    nmap <leader>t= :Tabularize /=<CR>
-    vmap <leader>t: :Tabularize /:<CR>
-    nmap <leader>t: :Tabularize /:<CR>
-    vmap <leader>tt :Tabularize /
-    nmap <leader>tt :Tabularize /
-" endif
+vmap <leader>t= :Tabularize /=<CR>
+nmap <leader>t= :Tabularize /=<CR>
+vmap <leader>t: :Tabularize /:<CR>
+nmap <leader>t: :Tabularize /:<CR>
+vmap <leader>tt :Tabularize /
+nmap <leader>tt :Tabularize /
 
 " Tcomment - toggle comment
 map <c-c> <c-_><c-_>
