@@ -34,7 +34,7 @@ set mouse=a
 filetype plugin indent on
 
 " tell vim where to find tags file
-set tags=./tags
+" set tags=./tags
 
 "" map Ctrl-S to save file
 command -nargs=0 -bar Update if &modified 
