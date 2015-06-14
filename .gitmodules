@@ -49,9 +49,6 @@
 [submodule "bundle/ack-vim"]
 	path = bundle/ack-vim
 	url = https://github.com/mileszs/ack.vim
-[submodule "bundle/vcscommand"]
-	path = bundle/vcscommand
-	url = http://repo.or.cz/vcscommand.git
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
