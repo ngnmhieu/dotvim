@@ -220,7 +220,35 @@ au BufNewFile,BufRead *.js :set shiftwidth=4
 " let g:airline#extensions#tabline#enabled = 1 " enable vim-airline tabline
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#fnamemod = ':t:.'
 
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" Vim default tabline format
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+function! Tabline()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    let tab = i + 1
+    let winnr = tabpagewinnr(tab)
+    let buflist = tabpagebuflist(tab)
+    let bufnr = buflist[winnr - 1]
+    let bufname = bufname(bufnr)
+    let bufmodified = getbufvar(bufnr, "&mod")
+
+    let s .= '%' . tab . 'T'
+    let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+    let s .= ' ' . tab .':'
+    let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . '] ' : '[No Name] ')
+
+    if bufmodified
+      let s .= '[+] '
+    endif
+  endfor
+
+  let s .= '%#TabLineFill#'
+  return s
+endfunction
+set tabline=%!Tabline()
 "@@@@@@@@@@@@@@@@@@@@@@@@
 " map Ctrl-S to save file
 "@@@@@@@@@@@@@@@@@@@@@@@@
