@@ -26,6 +26,9 @@ set backspace=indent,eol,start " fix backspace key for vim 7.4
 set splitbelow
 set splitright
 
+" show command when they are typed
+set showcmd
+
 " copy between vim processes
 set clipboard=unnamed
 " in MacOSX Terminal app, you must use MouseTerm plugin in SIMBL
@@ -36,14 +39,6 @@ filetype plugin indent on
 " tell vim where to find tags file
 " set tags=./tags
 
-"" map Ctrl-S to save file
-command -nargs=0 -bar Update if &modified 
-                           \|    if empty(bufname('%'))
-                           \|        browse confirm write
-                           \|    else
-                           \|        confirm write
-                           \|    endif
-                           \|endif
 nnoremap <silent> <C-S> :<C-u>Update<CR>
 inoremap <c-s> <Esc>:Update<CR>
 
@@ -91,6 +86,8 @@ xnoremap p "_dP
 " Next/Prev tab
 nnoremap <S-TAB> :tabp<CR>
 nnoremap <S-q> :tabn<cr>
+nnoremap <C-h> :tabp<CR>
+nnoremap <C-l> :tabn<cr>
 map <C-n> :tabnew<cr>
 
 " scrolling up down
@@ -113,7 +110,9 @@ let mapleader=','
 " close current tab
 nnoremap <expr> <leader>w tabpagenr('$') > 1 ? ':tabclose<CR>' : ':q<CR>' 
 " close current buffer
-nnoremap <leader>c :q<CR>
+nnoremap <expr> <leader>c v:count > 0 ? ':<C-U>exe "tabclose " . v:count<CR>' : ':q<CR>' 
+" open tab | 1,. 2,. 3,.
+nnoremap <leader>. :<C-U>exe "tabnext " . v:count1<CR>
 
 " Command-T
 let g:CommandTCancelMap=['<C-[>', '<ESC>']
@@ -128,14 +127,13 @@ map <F4> :!subl %<cr>
 " Accept the current autocomplete and exit INSERT mode
 inoremap <C-z> <C-y><ESC>
 
-"#############
+"@@@@@@@@@@@@@@@@@@@
 " NerdTree
-"#############
-map <C-]> :NERDTreeTabsToggle<CR>
-" show current file in nerdtree
+"@@@@@@@@@@@@@@@@@@@
+map <C-]> :NERDTreeToggle<CR>
 map <C-f> :NERDTreeFind<CR>
 let g:nerdtree_tabs_autoclose = 1  
-" let NERDTreeShowLineNumbers = 1
+let NERDTreeIgnore = ['^CVS$']
 
 "#############
 " Tabular
@@ -218,6 +216,19 @@ autocmd FileType ruby set foldmethod=syntax
 " VIM Airline
 "@@@@@@@@@@@@@@@@   
 " Show tab number
-let g:airline#extensions#tabline#enabled = 1 " enable vim-airline tabline
+" let g:airline#extensions#tabline#enabled = 1 " enable vim-airline tabline
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#show_tab_nr = 1
+
+"@@@@@@@@@@@@@@@@@@@@@@@@
+" map Ctrl-S to save file
+"@@@@@@@@@@@@@@@@@@@@@@@@
+command -nargs=0 -bar Update if &modified 
+                           \|    if empty(bufname('%'))
+                           \|        browse confirm write
+                           \|    else
+                           \|        confirm write
+                           \|    endif
+                           \|endif
+nnoremap <silent> <C-S> :<C-u>Update<CR>
+inoremap <c-s> <Esc>:Update<CR>
