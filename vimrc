@@ -86,8 +86,6 @@ xnoremap p "_dP
 " Next/Prev tab
 nnoremap <S-TAB> :tabp<CR>
 nnoremap <S-q> :tabn<cr>
-nnoremap <C-h> :tabp<CR>
-nnoremap <C-l> :tabn<cr>
 map <C-n> :tabnew<cr>
 
 " scrolling up down
@@ -98,8 +96,7 @@ nnoremap } <C-Y>
 nnoremap <silent> <space> :set hlsearch!<CR>
 
 " search selected text
-vnoremap <space> "zyq/"zp<CR>
-vnoremap <M-space> "zyq?"zp<CR>
+vnoremap <space> "zyq/"zp<CR><C-o>:set hlsearch<CR>
 
 " search and replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
@@ -261,3 +258,9 @@ command -nargs=0 -bar Update if &modified
                            \|endif
 nnoremap <silent> <C-S> :<C-u>Update<CR>
 inoremap <c-s> <Esc>:Update<CR>
+
+"@@@@@@@@@@@@@@@@@@@@@@@@
+" vim-autoclose
+"@@@@@@@@@@@@@@@@@@@@@@@@
+" not doubling the whitespace
+let g:AutoCloseExpandSpace = 0
