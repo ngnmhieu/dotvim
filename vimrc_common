@@ -1,0 +1,242 @@
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
+" appearance
+colorscheme tomorrow_night
+
+set nocompatible " less compatible wiht Vi, Vim behaves better
+set nu " line numbers
+set expandtab " turn tabs into spaces
+syntax on
+
+set autoindent
+set smartindent
+set cindent
+set cinkeys=0{,0},0#,!^F
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set cursorline " underline current line
+set incsearch " highlight as you search
+set backspace=indent,eol,start " fix backspace key for vim 7.4
+
+" change window spliting behavior
+set splitbelow
+set splitright
+
+" show command when they are typed
+set showcmd
+
+" copy between vim processes
+set clipboard=unnamedplus
+" in MacOSX Terminal app, you must use MouseTerm plugin in SIMBL
+set mouse=a
+
+filetype plugin indent on
+
+" change leader key to ,
+let mapleader=','
+
+" turn off preview window in omni auto complete
+set completeopt-=preview
+
+" pathogen - plugin manager
+execute pathogen#infect()
+Helptags
+
+"################
+"### MAPPINGS ###
+"################
+
+" moving between lines
+nnoremap j gj
+nnoremap k gk
+
+" remap switching split windows
+nnoremap <silent> <C-l> <c-w>l
+nnoremap <silent> <C-h> <c-w>h
+nnoremap <silent> <C-k> <c-w>k
+nnoremap <silent> <C-j> <c-w>j
+
+" remap go to first character of line
+nnoremap ! ^
+nnoremap ^ !
+vnoremap ! ^
+vnoremap ^ !
+onoremap ! ^
+onoremap ^ !
+" ## end ##
+
+" Pasting text without overriding yanked text
+xnoremap p "_dP
+
+" Next/Prev tab
+nnoremap <S-TAB> :tabp<CR>
+nnoremap <S-q> :tabn<CR>
+map <C-n> :tabnew<CR>
+
+" scrolling up down
+nnoremap { <C-E>
+nnoremap } <C-Y>
+
+" convinient key to toggle hlsearch
+nnoremap <silent> <space> :set hlsearch!<CR>
+
+" search selected text
+vnoremap <space> "zyq/"zp<CR><C-o>:set hlsearch<CR>
+
+" search and replace selected text
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" close current tab
+nnoremap <expr> <leader>w tabpagenr('$') > 1 ? ':tabclose<CR>' : ':q<CR>' 
+" close current buffer
+nnoremap <expr> <leader>c v:count > 0 ? ':<C-U>exe "tabclose " . v:count<CR>' : ':q<CR>' 
+" open tab | 1,. 2,. 3,.
+nnoremap <leader>. :<C-U>exe "tabnext " . v:count1<CR>
+
+" Command-T
+let g:CommandTCancelMap=['<C-[>', '<ESC>']
+
+" VCSCommand
+let g:VCSCommandMapPrefix='<Leader>v'
+
+" Keyword AutoComplete (:help ins-completion)
+" Accept the current autocomplete and exit INSERT mode
+inoremap <C-z> <C-y><ESC>
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
+"##############
+" vim-markdown
+"##############
+let g:vim_markdown_folding_disabled=1 " disable folding in markdown files
+au BufRead,BufNewFile *.md set filetype=markdown
+
+" remove delay in exiting visual mode
+set timeoutlen=1000 ttimeoutlen=0
+
+"###########
+" Tcomment 
+"###########
+map <c-c> <c-_><c-_>
+vmap <c-b> :TCommentBlock<CR>
+
+"###########
+" Emmet
+"###########
+let g:user_emmet_expandabbr_key = '<c-b>'
+
+"@@@@@@@@@@@@@@@@@@@
+" NerdTree
+"@@@@@@@@@@@@@@@@@@@
+map <C-]> :NERDTreeToggle<CR>
+map <C-f> :NERDTreeFind<CR>
+let g:nerdtree_tabs_autoclose = 1  
+let NERDTreeIgnore = ['^CVS$']
+
+"#############
+" Tabular
+"#############
+vmap <leader>t= :Tabularize /=<CR>
+nmap <leader>t= :Tabularize /=<CR>
+vmap <leader>t: :Tabularize /:<CR>
+nmap <leader>t: :Tabularize /:<CR>
+vmap <leader>tt :Tabularize /
+nmap <leader>tt :Tabularize /
+
+"@@@@@@@@@@@@@@@@   
+" VIM Airline
+"@@@@@@@@@@@@@@@@   
+" Show tab number
+" let g:airline#extensions#tabline#enabled = 1 " enable vim-airline tabline
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#fnamemod = ':t:.'
+" vim-airline appear all the time
+set laststatus=2
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" Vim default tabline format
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+function! Tabline()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    let tab = i + 1
+    let winnr = tabpagewinnr(tab)
+    let buflist = tabpagebuflist(tab)
+    let bufnr = buflist[winnr - 1]
+    let bufname = bufname(bufnr)
+    let bufmodified = getbufvar(bufnr, "&mod")
+
+    let s .= '%' . tab . 'T'
+    let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+    let s .= ' ' . tab .':'
+    let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . '] ' : '[No Name] ')
+
+    if bufmodified
+      let s .= '[+] '
+    endif
+  endfor
+
+  let s .= '%#TabLineFill#'
+  return s
+endfunction
+set tabline=%!Tabline()
+
+"@@@@@@@@@@@@@@@@
+" Searching with Ack
+"@@@@@@@@@@@@@@@@
+" search the for files containing selected text with Ack (ignore hidden files)
+" -o is to output only the matched pattern
+" -Q match literal string
+let g:ack_default_options = " -s -H --nocolor --nogroup --ignore-file=match:'^\\.' -o -Q"
+vnoremap <C-k> "ky:Ack '<C-R>k' <CR>/<C-R>k<CR>
+vnoremap <C-l> "ky:Ack '<C-R>k'
+
+"@@@@@@@@@@@@@@@@
+" Quickfix
+"@@@@@@@@@@@@@@@@
+"Jump to next file in Quickfix
+nnoremap <leader>n :cnf<CR>
+"Jump to previous file in Quickfix
+nnoremap <leader>p :cpf<CR>
+
+"@@@@@@@@@@@@@@@@@
+" Folding
+"@@@@@@@@@@@@@@@@@
+nnoremap <tab> za
+" collapse / expand all folds
+nnoremap _ zM 
+nnoremap + zR
+
+" all folds are open when a file is opened
+set foldlevelstart=99
+
+"@@@@@@@@@@@@@@@@@
+" PHP
+"@@@@@@@@@@@@@@@@@
+let php_folding = 1
+let php_htmlInStrings = 1
+
+"@@@@@@@@@@@@@@@@@@@@@@@@
+" map Ctrl-S to save file
+"@@@@@@@@@@@@@@@@@@@@@@@@
+command -nargs=0 -bar Update if &modified 
+                           \|    if empty(bufname('%'))
+                           \|        browse confirm write
+                           \|    else
+                           \|        confirm write
+                           \|    endif
+                           \|endif
+nnoremap <silent> <C-S> :<C-u>Update<CR>
+inoremap <c-s> <Esc>:Update<CR>
+
+"@@@@@@@@@@@@@@@@@@@@@@@@
+" vim-autoclose
+"@@@@@@@@@@@@@@@@@@@@@@@@
+" not doubling the whitespace
+let g:AutoCloseExpandSpace = 0
