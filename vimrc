@@ -1,4 +1,4 @@
-source ~/.vim/vimrc_common
+source $HOME/.vim/vimrc_common
 
 "@@@@@@@@@@@@@@@@@
 " RUBY
