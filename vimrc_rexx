@@ -1,5 +1,7 @@
 source $HOME/.vim/vimrc_common
 
+set clipboard=unamedplus
+
 au BufNewFile,BufRead *.html,*.php :set fileencoding=iso-8859-15
 
 au BufNewFile,BufRead *.css :set tabstop=2
