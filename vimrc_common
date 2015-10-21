@@ -30,7 +30,7 @@ set splitright
 set showcmd
 
 " copy between vim processes
-set clipboard=unnamedplus
+set clipboard=unnamed
 " in MacOSX Terminal app, you must use MouseTerm plugin in SIMBL
 set mouse=a
 
