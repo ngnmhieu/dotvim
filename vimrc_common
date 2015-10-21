@@ -46,6 +46,11 @@ set completeopt-=preview
 execute pathogen#infect()
 Helptags
 
+" Paste mode toggle, aid in pasting text with Ctrl-Shift-v
+inoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
 "################
 "### MAPPINGS ###
 "################
