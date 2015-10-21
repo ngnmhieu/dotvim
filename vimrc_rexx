@@ -1,6 +1,6 @@
 source $HOME/.vim/vimrc_common
 
-set clipboard=unamedplus
+set clipboard=unnamedplus
 
 au BufNewFile,BufRead *.html,*.php :set fileencoding=iso-8859-15
 
