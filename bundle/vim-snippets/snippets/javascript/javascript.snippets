@@ -1,7 +1,6 @@
 # Prototype
 snippet proto
-	${1:class_name}.prototype.${2:method_name} =
-	function(${3:first_argument}) {
+	${1:class_name}.prototype.${2:method_name} = function (${3:first_argument}) {
 		${0:// body...}
 	};
 # Function
@@ -9,13 +8,23 @@ snippet fun
 	function ${1:function_name}(${2:argument}) {
 		${0:// body...}
 	}
+# Anonymous Function end with comma
+snippet f,
+	function (${1}) {
+		${0}
+	},
+# Anonymous Function end with semicolon
+snippet f;
+	function (${1}) {
+		${0}
+	};
 # Anonymous Function
 snippet f
 	function (${1}) {
 		${0}
 	}
 # Immediate function
-snippet (f
+snippet f)
 	(function (${1}) {
 		${0}
 	}(${2}));
@@ -203,4 +212,4 @@ snippet prop
 	);
 	
 snippet csl
-	console.log(${1})
+	console.log(${1});
