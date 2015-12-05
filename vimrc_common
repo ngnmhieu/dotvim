@@ -74,6 +74,12 @@ onoremap ! ^
 onoremap ^ !
 " ## end ##
 
+" indenting
+nnoremap > >>
+nnoremap < <<
+vnoremap < <gv
+vnoremap > >gv
+
 " Pasting text without overriding yanked text
 xnoremap p "_dP
 
