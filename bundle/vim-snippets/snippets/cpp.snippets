@@ -68,8 +68,7 @@ snippet mu
 ## Class
 # class
 snippet cl
-	class ${1:`vim_snippets#Filename('$1', 'name')`}
-	{
+	class ${1:`vim_snippets#Filename('$1', 'name')`} {
 	public:
 		$1(${2});
 		~$1();
@@ -128,4 +127,9 @@ snippet ld
 snippet lld
 	[${1}](${2}){
 		${3}
+	}
+snippet main
+	int main(int argc, char** argv) {
+		${1}
+		return 0;
 	}

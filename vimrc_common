@@ -3,7 +3,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 " appearance
-colorscheme tomorrow_night
+colorscheme jellybeans
 
 set nocompatible " less compatible wiht Vi, Vim behaves better
 set nu " line numbers
