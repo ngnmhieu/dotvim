@@ -47,7 +47,6 @@ execute pathogen#infect()
 Helptags
 
 " Paste mode toggle, aid in pasting text with Ctrl-Shift-v
-inoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
@@ -122,10 +121,12 @@ inoremap <C-z> <C-y><ESC>
 cmap w!! w !sudo tee > /dev/null %
 
 "##############
-" vim-markdown
+" vim-instant-markdown
 "##############
 let g:vim_markdown_folding_disabled=1 " disable folding in markdown files
+let g:instant_markdown_autostart=0 " to trigger use :InstantMarkdownPreview
 au BufRead,BufNewFile *.md set filetype=markdown
+
 
 " remove delay in exiting visual mode
 set timeoutlen=1000 ttimeoutlen=0
