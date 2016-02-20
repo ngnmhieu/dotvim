@@ -55,9 +55,6 @@
 [submodule "bundle/vim-tcomment"]
 	path = bundle/vim-tcomment
 	url = https://github.com/tomtom/tcomment_vim.git
-[submodule "bundle/vcscommand"]
-	path = bundle/vcscommand
-	url = https://github.com/vim-scripts/vcscommand.vim.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/ngnmhieu/nerdtree.git
