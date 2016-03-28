@@ -14,31 +14,36 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'mileszs/ack.vim'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'mattn/emmet-vim'
-Bundle 'othree/html5.vim'
-Bundle 'ngnmhieu/nerdtree'
-Bundle 'godlygeek/tabular'
-Bundle 'leafgarland/typescript-vim'
-Bundle 'joonty/vdebug'
-Bundle 'bling/vim-airline'
-Bundle 'Chiel92/vim-autoformat'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-fugitive'
-Bundle 'pangloss/vim-javascript'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'reedes/vim-pencil'
-Bundle 'tpope/vim-rails'
+Plugin 'mileszs/ack.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5.vim'
+Plugin 'ngnmhieu/nerdtree'
+Plugin 'godlygeek/tabular'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'joonty/vdebug'
+Plugin 'bling/vim-airline'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-fugitive'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'reedes/vim-pencil'
+Plugin 'tpope/vim-rails'
 
-Bundle 'garbas/vim-snipmate'
+" Code-Completion Engine for Vim
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'garbas/vim-snipmate'
 " vim-snipmate's dependency 
-Bundle 'tomtom/tlib_vim'             
-Bundle 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'             
+Plugin 'MarcWeber/vim-addon-mw-utils'
 " end vim-snipmate's dependency 
 
-Bundle 'tpope/vim-surround'
-Bundle 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-surround'
+
+" Shortcut for toggling comments
+Plugin 'tomtom/tcomment_vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()

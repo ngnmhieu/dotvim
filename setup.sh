@@ -5,4 +5,10 @@
 #                                    #
 ######################################
 
-git submodule update --init
+# git submodule update --init
+vim +PluginInstall +qall
+
+# compile YCM
+cd ~/.vim/bundle/YouCompleteMe
+python ./install.py
+cd -
