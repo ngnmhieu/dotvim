@@ -1,7 +1,7 @@
 dotvim
 ======
 Git and Github enables easy configuration files synchronisation and management across machines and OSes.
-This repository contains configuration files for my Vim Editor. Using git branch help separating different configs for different OSses, but still storing common files in one place.
+This repository contains configuration files for my Vim Editor.
 
 Installation
 ------------
@@ -12,14 +12,15 @@ $ cd ~
 $ git clone git@github.com:ngnmhieu/dotvim.git
 $ mv dotvim .vim
 ```
-Checkout all the submodule
+Run the setup script, which executes the followings:
+- Checkout all the submodule
 ```
 $ cd .vim
-$ git submodule update --init
+$ sh setup.sh
 ```
 
-Make symbolic link `~/.vimrc` point to `~/.vim/vimrc`
+Make symbolic link `~/.vimrc` point to `~/.vim/vimrc_*` file
 ```
-$ ln -s ~/.vim/vimrc ~/.vimrc
+$ ln -s ~/.vim/vimrc_[mac|linux] ~/.vimrc
 ```
 

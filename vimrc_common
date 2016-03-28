@@ -48,7 +48,9 @@ Helptags
 
 " Paste mode toggle, aid in pasting text with Ctrl-Shift-v
 set pastetoggle=<F2>
-set showmode
+
+" Toggle cursorline when switching between normal and insert mode
+:autocmd InsertEnter,InsertLeave * set cul!
 
 "################
 "### MAPPINGS ###
@@ -252,3 +254,14 @@ inoremap <c-s> <Esc>:Update<CR>
 "@@@@@@@@@@@@@@@@@@@@@@@@
 " not doubling the whitespace
 let g:AutoCloseExpandSpace = 0
+
+
+"@@@@@@@@@@@@@@@@@@@@@@@@
+" vim-autoformat
+"@@@@@@@@@@@@@@@@@@@@@@@@
+let g:formatterpath = [$HOME."/.vim/etc/formatters/"]
+noremap <c-l> :Autoformat<CR>
+" prevent fallback to vim's indent file
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
