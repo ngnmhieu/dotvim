@@ -34,6 +34,9 @@ Plugin 'tpope/vim-rails'
 " Code-Completion Engine for Vim
 Plugin 'Valloric/YouCompleteMe'
 
+" Syntax checker
+Plugin 'scrooloose/syntastic'
+
 Plugin 'garbas/vim-snipmate'
 " vim-snipmate's dependency 
 Plugin 'tomtom/tlib_vim'             
@@ -317,3 +320,27 @@ noremap <c-m> :Autoformat<CR>
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
+
+"@@@@@@@@@@@@@@@@@@@@@@@
+" SnipMate
+"@@@@@@@@@@@@@@@@@@@@@@@
+" different keymap to trigger snipMate as YCM used tab
+imap <C-L> <Plug>snipMateNextOrTrigger
+smap <C-L> <Plug>snipMateNextOrTrigger
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" YouCompleteMe Code-Completion
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+let g:ycm_auto_trigger = 1
+let g:ycm_python_binary_path = '/usr/local/bin/python3'
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" Syntastic Syntax Checking
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

@@ -24,3 +24,19 @@ Make symbolic link `~/.vimrc` point to `~/.vim/vimrc_*` file
 $ ln -s ~/.vim/vimrc_[mac|linux] ~/.vimrc
 ```
 
+Requirements for plugins
+------------------------
+
+## vim-autoformat
+In order to use vim-autoformat for a specific language, the corresponding external formatters must be installed
+globally or in 
+```
+~/.vim/etc/formatters/
+```
+More information see: [vim-autoformat][0]
+
+## syntastic
+Similarly, syntax checkers for a language in question must be installed in order for syntastic to function correctly. More information see: [syntastic][1]
+
+[0]: https://github.com/Chiel92/vim-autoformat
+[1]: https://github.com/scrooloose/syntastic
