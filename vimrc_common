@@ -28,8 +28,8 @@ Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'reedes/vim-pencil'
 Plugin 'tpope/vim-rails'
+Plugin 'gabrielelana/vim-markdown'
 
 " Code-Completion Engine for Vim
 Plugin 'Valloric/YouCompleteMe'
@@ -188,11 +188,11 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " remove delay in exiting visual mode
 set timeoutlen=1000 ttimeoutlen=0
 
-"###########
+"@@@@@@@@@@@@@@@@@@@@
 " Tcomment 
-"###########
-map <c-c> <c-_><c-_>
-vmap <c-b> :TCommentBlock<CR>
+"@@@@@@@@@@@@@@@@@@@@
+map <C-c> :TComment<CR>
+vmap <C-b> :TCommentBlock<CR>
 
 "###########
 " Emmet
@@ -344,3 +344,18 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" vim-markdown
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+let g:markdown_enable_spell_checking = 0
+let g:markdown_mapping_switch_status = '<leader>s'
+
+" List pattern are `1.` `*` `-` `+`
+" au FileType markdown setlocal formatoptions-=o formatoptions-=r 
+            " \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*[+-\\*]\\s\\+
+            " \ comments-=b:- comments-=b:* comments-=b:+
+
+" text formatting to BOLD in vim italic mode
+set t_ZH=[1m
+set t_ZR=
