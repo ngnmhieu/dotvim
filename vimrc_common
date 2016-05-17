@@ -30,12 +30,14 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-rails'
 Plugin 'gabrielelana/vim-markdown'
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'kien/ctrlp.vim'
 
 " Code-Completion Engine for Vim
 Plugin 'Valloric/YouCompleteMe'
 
 " Syntax checker
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 
 Plugin 'garbas/vim-snipmate'
 " vim-snipmate's dependency 
@@ -314,7 +316,7 @@ let g:AutoCloseExpandSpace = 0
 "@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-autoformat
 "@@@@@@@@@@@@@@@@@@@@@@@@
-let g:formatterpath = [$HOME."/.vim/etc/formatters/"]
+let g:formatterpath = [$HOME."/.vim/etc/formatters/", $HOME."/.vim/etc/node_modules/.bin"]
 noremap <c-m> :Autoformat<CR>
 " prevent fallback to vim's indent file
 let g:autoformat_autoindent = 0
@@ -333,29 +335,37 @@ smap <C-L> <Plug>snipMateNextOrTrigger
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 let g:ycm_auto_trigger = 1
 let g:ycm_python_binary_path = '/usr/local/bin/python3'
+let g:ycm_filetype_blacklist = {'ansible': 1, 'yaml': 1, 'json': 1, 'markdown': 1}
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Syntastic Syntax Checking
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_html_checkers = []
+" let g:syntastic_scss_checkers = []
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-markdown
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 let g:markdown_enable_spell_checking = 0
 let g:markdown_mapping_switch_status = '<leader>s'
-
-" List pattern are `1.` `*` `-` `+`
-" au FileType markdown setlocal formatoptions-=o formatoptions-=r 
-            " \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*[+-\\*]\\s\\+
-            " \ comments-=b:- comments-=b:* comments-=b:+
-
 " text formatting to BOLD in vim italic mode
 set t_ZH=[1m
 set t_ZR=
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" RAML
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+autocmd BufNewFile,BufRead *.raml set filetype=ansible
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" JSON-LD
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+autocmd BufNewFile,BufRead *.jsonld set filetype=json
+

@@ -3,3 +3,4 @@ bundle/vcscommand/doc/tags
 *.swp
 *.swo
 *.DS_Store
+node_modules/

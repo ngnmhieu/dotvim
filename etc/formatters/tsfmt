@@ -1,1 +1,3 @@
-../node_modules/.bin/tsfmt
+#!/usr/bin/env node
+
+require("../lib/cli");
