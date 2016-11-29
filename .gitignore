@@ -1,5 +1,6 @@
 doc/tags
 bundle/vcscommand/doc/tags
+bundle/**/*
 *.swp
 *.swo
 *.DS_Store

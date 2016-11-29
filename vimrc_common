@@ -30,16 +30,20 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-rails'
 Plugin 'gabrielelana/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tmhedberg/matchit'
 
 " Code-Completion Engine for Vim
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " Syntax checker
 " Plugin 'scrooloose/syntastic'
 
 Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
 " vim-snipmate's dependency 
 Plugin 'tomtom/tlib_vim'             
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -182,9 +186,9 @@ cmap w!! w !sudo tee > /dev/null %
 "##############
 " vim-instant-markdown
 "##############
-let g:vim_markdown_folding_disabled=1 " disable folding in markdown files
+" let g:vim_markdown_folding_disabled=1 " disable folding in markdown files
 let g:instant_markdown_autostart=0 " to trigger use :InstantMarkdownPreview
-au BufRead,BufNewFile *.md set filetype=markdown
+" au BufRead,BufNewFile *.md set filetype=markdown
 
 
 " remove delay in exiting visual mode
@@ -330,12 +334,13 @@ let g:autoformat_remove_trailing_spaces = 0
 imap <C-L> <Plug>snipMateNextOrTrigger
 smap <C-L> <Plug>snipMateNextOrTrigger
 
+
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " YouCompleteMe Code-Completion
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-let g:ycm_auto_trigger = 1
-let g:ycm_python_binary_path = '/usr/local/bin/python3'
-let g:ycm_filetype_blacklist = {'ansible': 1, 'yaml': 1, 'json': 1, 'markdown': 1}
+" let g:ycm_auto_trigger = 1
+" let g:ycm_python_binary_path = '/usr/local/bin/python3'
+" let g:ycm_filetype_blacklist = {'ansible': 1, 'yaml': 1, 'json': 1, 'markdown': 1}
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Syntastic Syntax Checking
@@ -369,3 +374,7 @@ autocmd BufNewFile,BufRead *.raml set filetype=ansible
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 autocmd BufNewFile,BufRead *.jsonld set filetype=json
 
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" EJS
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+autocmd BufNewFile,BufRead *.ejs set filetype=html
