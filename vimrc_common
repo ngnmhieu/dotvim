@@ -20,20 +20,20 @@ Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'ngnmhieu/nerdtree'
 Plugin 'godlygeek/tabular'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'joonty/vdebug'
 Plugin 'bling/vim-airline'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
-Plugin 'pangloss/vim-javascript'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-rails'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'chase/vim-ansible-yaml'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/matchit'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'leafgarland/typescript-vim'
 
 " Code-Completion Engine for Vim
 " Plugin 'Valloric/YouCompleteMe'
@@ -66,6 +66,8 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
 
+set autochdir
+
 " appearance
 colorscheme jellybeans
 
@@ -84,6 +86,10 @@ set softtabstop=4
 set cursorline " underline current line
 set incsearch " highlight as you search
 set backspace=indent,eol,start " fix backspace key for vim 7.4
+
+" Ignore uninterresting files and directory
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 " change window spliting behavior
 set splitbelow
@@ -378,3 +384,16 @@ autocmd BufNewFile,BufRead *.jsonld set filetype=json
 " EJS
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 autocmd BufNewFile,BufRead *.ejs set filetype=html
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" JSON
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+autocmd BufNewFile,BufRead *.json set tabstop=2
+autocmd BufNewFile,BufRead *.json set shiftwidth=2
+autocmd BufNewFile,BufRead *.json set softtabstop=2
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" CTRL-P
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components'
+let g:ctrlp_working_path_mode = 'ra'
