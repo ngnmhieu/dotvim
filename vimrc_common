@@ -337,8 +337,8 @@ let g:autoformat_remove_trailing_spaces = 0
 " SnipMate
 "@@@@@@@@@@@@@@@@@@@@@@@
 " different keymap to trigger snipMate as YCM used tab
-imap <C-L> <Plug>snipMateNextOrTrigger
-smap <C-L> <Plug>snipMateNextOrTrigger
+imap <tab> <Plug>snipMateNextOrTrigger
+smap <tab> <Plug>snipMateNextOrTrigger
 
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
