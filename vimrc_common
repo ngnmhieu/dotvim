@@ -32,6 +32,7 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/matchit'
+
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'leafgarland/typescript-vim'
 
@@ -40,6 +41,10 @@ Plugin 'tmhedberg/matchit'
 
 " Syntax checker
 " Plugin 'scrooloose/syntastic'
+
+" Plugin 'lervag/vimtex'
+" Plugin 'vim-latex/vim-latex'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
@@ -151,10 +156,24 @@ vnoremap > >gv
 " Pasting text without overriding yanked text
 xnoremap p "_dP
 
+" Paste to new line
+nnoremap <leader>p o<ESC>p
+nnoremap <leader>P O<ESC>p
+
 " Next/Prev tab
 nnoremap <S-TAB> :tabp<CR>
 nnoremap <S-q> :tabn<CR>
 map <C-n> :tabnew<CR>
+
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
 
 " scrolling up down
 nnoremap { <C-E>
@@ -282,9 +301,9 @@ vnoremap <C-l> "ky:Ack '<C-R>k'
 " Quickfix
 "@@@@@@@@@@@@@@@@
 "Jump to next file in Quickfix
-nnoremap <leader>n :cnf<CR>
+" nnoremap <leader>n :cnf<CR>
 "Jump to previous file in Quickfix
-nnoremap <leader>p :cpf<CR>
+" nnoremap <leader>p :cpf<CR>
 
 "@@@@@@@@@@@@@@@@@
 " Folding
@@ -397,3 +416,11 @@ autocmd BufNewFile,BufRead *.json set softtabstop=2
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components'
 let g:ctrlp_working_path_mode = 'ra'
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" VIM-LATEX
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+autocmd BufNewFile,BufRead *.tex nnoremap <leader>ll :Latexmk<CR>
+autocmd BufNewFile,BufRead *.tex nnoremap <leader>le :LatexErrors<CR>
+autocmd BufNewFile,BufRead *.tex nnoremap <leader>lc :LatexClean<CR>
+autocmd BufNewFile,BufRead *.tex nnoremap <leader>lv :LatexView<CR>
