@@ -14,50 +14,48 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 " Plugin 'VundleVim/Vundle.vim'
 
+"@@@@@@@@@@ COMMON @@@@@@@@@@
 Plugin 'mileszs/ack.vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'mattn/emmet-vim'
-Plugin 'othree/html5.vim'
-Plugin 'ngnmhieu/nerdtree'
 Plugin 'godlygeek/tabular'
-Plugin 'joonty/vdebug'
+Plugin 'ngnmhieu/nerdtree'
 Plugin 'bling/vim-airline'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'tpope/vim-rails'
-Plugin 'gabrielelana/vim-markdown'
-Plugin 'suan/vim-instant-markdown'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/matchit'
+Plugin 'tpope/vim-surround'
+Plugin 'tomtom/tcomment_vim'
+" Plugin 'Chiel92/vim-autoformat'
 
+"@@@@@@@@@@ HTML @@@@@@@@@@
+Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5.vim'
+
+"@@@@@@@@@@ PHP @@@@@@@@@@
+" Plugin 'joonty/vdebug'
+
+"@@@@@@@@@@ RAILS @@@@@@@@@@
+" Plugin 'tpope/vim-bundler'
+" Plugin 'tpope/vim-rails'
+
+"@@@@@@@@@@ MARKDOWN @@@@@@@@@@
+Plugin 'gabrielelana/vim-markdown'
+" Plugin 'suan/vim-instant-markdown'
+
+"@@@@@@@@@@ JAVASCRIPT @@@@@@@@@@
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'leafgarland/typescript-vim'
 
-" Code-Completion Engine for Vim
-" Plugin 'Valloric/YouCompleteMe'
-
-" Syntax checker
-" Plugin 'scrooloose/syntastic'
-
-" Plugin 'lervag/vimtex'
-" Plugin 'vim-latex/vim-latex'
+"@@@@@@@@@@ LATEX @@@@@@@@@@
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
+"@@@@@@@@@@ SNIPPETS @@@@@@@@@@
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
-
-" vim-snipmate's dependency 
 Plugin 'tomtom/tlib_vim'             
 Plugin 'MarcWeber/vim-addon-mw-utils'
-" end vim-snipmate's dependency 
-
-Plugin 'tpope/vim-surround'
-
-" Shortcut for toggling comments
-Plugin 'tomtom/tcomment_vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -71,7 +69,8 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
 
-set autochdir
+" Auto change directory to that of the opened file
+" set autochdir
 
 " appearance
 colorscheme jellybeans
@@ -165,16 +164,6 @@ nnoremap <S-TAB> :tabp<CR>
 nnoremap <S-q> :tabn<CR>
 map <C-n> :tabnew<CR>
 
-nnoremap <leader>1 1gt
-nnoremap <leader>2 2gt
-nnoremap <leader>3 3gt
-nnoremap <leader>4 4gt
-nnoremap <leader>5 5gt
-nnoremap <leader>6 6gt
-nnoremap <leader>7 7gt
-nnoremap <leader>8 8gt
-nnoremap <leader>9 9gt
-
 " scrolling up down
 nnoremap { <C-E>
 nnoremap } <C-Y>
@@ -192,14 +181,18 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 nnoremap <expr> <leader>w tabpagenr('$') > 1 ? ':tabclose<CR>' : ':q<CR>' 
 " close current buffer
 nnoremap <expr> <leader>c v:count > 0 ? ':<C-U>exe "tabclose " . v:count<CR>' : ':q<CR>' 
-" open tab | 1,. 2,. 3,.
+" open tab: `1,.` to open tab #1,  `2,.` to open tab #2 and so on
 nnoremap <leader>. :<C-U>exe "tabnext " . v:count1<CR>
-
-" Command-T
-let g:CommandTCancelMap=['<C-[>', '<ESC>']
-
-" VCSCommand
-let g:VCSCommandMapPrefix='<Leader>v'
+" alternative to open tab
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
 
 " Keyword AutoComplete (:help ins-completion)
 " Accept the current autocomplete and exit INSERT mode
@@ -208,9 +201,9 @@ inoremap <C-z> <C-y><ESC>
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
-"##############
+"#######################
 " vim-instant-markdown
-"##############
+"#######################
 " let g:vim_markdown_folding_disabled=1 " disable folding in markdown files
 let g:instant_markdown_autostart=0 " to trigger use :InstantMarkdownPreview
 " au BufRead,BufNewFile *.md set filetype=markdown
@@ -341,7 +334,6 @@ inoremap <c-s> <Esc>:Update<CR>
 " not doubling the whitespace
 let g:AutoCloseExpandSpace = 0
 
-
 "@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-autoformat
 "@@@@@@@@@@@@@@@@@@@@@@@@
@@ -358,7 +350,6 @@ let g:autoformat_remove_trailing_spaces = 0
 " different keymap to trigger snipMate as YCM used tab
 imap <tab> <Plug>snipMateNextOrTrigger
 smap <tab> <Plug>snipMateNextOrTrigger
-
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " YouCompleteMe Code-Completion
@@ -388,6 +379,12 @@ let g:markdown_mapping_switch_status = '<leader>s'
 " text formatting to BOLD in vim italic mode
 set t_ZH=[1m
 set t_ZR=
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" HTML
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" Go into tag 
+nnoremap <leader>gt vit<ESC>
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " RAML
@@ -424,3 +421,11 @@ autocmd BufNewFile,BufRead *.tex nnoremap <leader>ll :Latexmk<CR>
 autocmd BufNewFile,BufRead *.tex nnoremap <leader>le :LatexErrors<CR>
 autocmd BufNewFile,BufRead *.tex nnoremap <leader>lc :LatexClean<CR>
 autocmd BufNewFile,BufRead *.tex nnoremap <leader>lv :LatexView<CR>
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" FUGITIVE
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nnoremap <leader>gd :Gvdiff<CR>
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gp :Gpull<CR>
