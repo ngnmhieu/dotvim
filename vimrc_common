@@ -45,6 +45,8 @@ Plugin 'gabrielelana/vim-markdown'
 " Plugin 'suan/vim-instant-markdown'
 
 "@@@@@@@@@@ JAVASCRIPT @@@@@@@@@@
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'isRuslan/vim-es6'
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'leafgarland/typescript-vim'
 
@@ -53,7 +55,7 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 "@@@@@@@@@@ SNIPPETS @@@@@@@@@@
 Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+Plugin 'ngnmhieu/vim-snippets'
 Plugin 'tomtom/tlib_vim'             
 Plugin 'MarcWeber/vim-addon-mw-utils'
 
@@ -294,9 +296,9 @@ vnoremap <C-l> "ky:Ack '<C-R>k'
 " Quickfix
 "@@@@@@@@@@@@@@@@
 "Jump to next file in Quickfix
-" nnoremap <leader>n :cnf<CR>
-"Jump to previous file in Quickfix
-" nnoremap <leader>p :cpf<CR>
+nnoremap <leader>n :cnf<CR>
+" Jump to previous file in Quickfix
+nnoremap <leader>p :cpf<CR>
 
 "@@@@@@@@@@@@@@@@@
 " Folding
