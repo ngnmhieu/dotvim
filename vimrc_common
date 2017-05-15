@@ -47,6 +47,7 @@ Plugin 'gabrielelana/vim-markdown'
 "@@@@@@@@@@ JAVASCRIPT @@@@@@@@@@
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'isRuslan/vim-es6'
+Plugin 'posva/vim-vue'
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'leafgarland/typescript-vim'
 
@@ -421,7 +422,7 @@ let g:ctrlp_working_path_mode = 'ra'
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 autocmd BufNewFile,BufRead *.tex nnoremap <leader>ll :Latexmk<CR>
 autocmd BufNewFile,BufRead *.tex nnoremap <leader>le :LatexErrors<CR>
-autocmd BufNewFile,BufRead *.tex nnoremap <leader>lc :LatexClean<CR>
+autocmd BufNewFile,BufRead *.tex nnoremap <leader>lc :LatexmkClean<CR>
 autocmd BufNewFile,BufRead *.tex nnoremap <leader>lv :LatexView<CR>
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
