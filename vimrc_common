@@ -21,7 +21,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'ngnmhieu/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
-Plugin 'jistr/vim-nerdtree-tabs'
+" Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/matchit'
@@ -300,6 +300,11 @@ vnoremap <C-l> "ky:Ack '<C-R>k'
 nnoremap <leader>n :cnf<CR>
 " Jump to previous file in Quickfix
 nnoremap <leader>p :cpf<CR>
+" Adjust Quickfix window height
+au FileType qf call AdjustWindowHeight(3, 10)
+function! AdjustWindowHeight(minheight, maxheight)
+  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
 
 "@@@@@@@@@@@@@@@@@
 " Folding
