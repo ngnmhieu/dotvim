@@ -27,7 +27,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/matchit'
 Plugin 'tpope/vim-surround'
 Plugin 'tomtom/tcomment_vim'
-" Plugin 'Chiel92/vim-autoformat'
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plugin 'mattn/emmet-vim'
@@ -42,12 +41,13 @@ Plugin 'othree/html5.vim'
 
 "@@@@@@@@@@ MARKDOWN @@@@@@@@@@
 Plugin 'gabrielelana/vim-markdown'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 " Plugin 'suan/vim-instant-markdown'
 
 "@@@@@@@@@@ JAVASCRIPT @@@@@@@@@@
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'isRuslan/vim-es6'
-Plugin 'posva/vim-vue'
+" Plugin 'posva/vim-vue'
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'leafgarland/typescript-vim'
 
