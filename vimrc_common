@@ -19,9 +19,9 @@ Plugin 'mileszs/ack.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'godlygeek/tabular'
 Plugin 'ngnmhieu/nerdtree'
+" Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
-" Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/matchit'
@@ -41,7 +41,6 @@ Plugin 'othree/html5.vim'
 
 "@@@@@@@@@@ MARKDOWN @@@@@@@@@@
 Plugin 'gabrielelana/vim-markdown'
-Plugin 'JamshedVesuna/vim-markdown-preview'
 " Plugin 'suan/vim-instant-markdown'
 
 "@@@@@@@@@@ JAVASCRIPT @@@@@@@@@@
