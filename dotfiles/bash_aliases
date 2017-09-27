@@ -1,20 +1,22 @@
+# common aliases
 alias ls='ls -G' # ls with color
 alias l='ls -G' 
 alias ll='ls -lGh'
 alias la='ls -laGh'
 alias x='exit'
-alias v='vim'
 alias ..='cd ..'
 
+# bash & cli
+alias so='source'
+alias tmux="TERM=screen-256color-bce tmux"
+alias v='vim'
+
+# directory shortcuts
 alias pj='cd ~/Projects'
 alias dropbox='cd ~/Dropbox'
 alias dotvim='cd ~/.vim/'
 
+# git
 alias gs='git status'
 alias gc='git commit'
 alias ga='git add'
-alias gb='git branch'
-
-alias bashrc='vim ~/.bashrc'
-alias so='source'
-alias tmux="TERM=screen-256color-bce tmux"
