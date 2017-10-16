@@ -86,9 +86,9 @@ set smartindent
 set cindent
 set cinkeys=0{,0},0#,!^F
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set cursorline " underline current line
 set incsearch " highlight as you search
 set backspace=indent,eol,start " fix backspace key for vim 7.4
