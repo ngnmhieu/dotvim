@@ -21,7 +21,14 @@ Check 'Make Caps Lock an additional ESC'
 ## macOS
 
 ### Key mapping
-Use [Karabiner-Element](https://github.com/tekezo/Karabiner-Elements) \mm/.
+[Karabiner-Element](https://github.com/tekezo/Karabiner-Elements) 🤘🏻🤘🏻🤘🏻
+
+Use saved configuration: 
+
+```
+$ rm ~/.config/karabiner/karabiner.json
+$ ln -s ~/.vim/dotfiles/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+```
 
 ### Key repeat 
 ```
