@@ -1,5 +1,7 @@
 source $HOME/.vim/vimrc_common
 
+set guifont=Monaco:h14
+
 "@@@@@@@@@@@@@@@@@
 " RUBY
 "@@@@@@@@@@@@@@@@@

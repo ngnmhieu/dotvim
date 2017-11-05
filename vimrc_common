@@ -46,6 +46,7 @@ Plugin 'gabrielelana/vim-markdown'
 "@@@@@@@@@@ JAVASCRIPT @@@@@@@@@@
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'isRuslan/vim-es6'
+Plugin 'mxw/vim-jsx'
 " Plugin 'posva/vim-vue'
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'leafgarland/typescript-vim'
