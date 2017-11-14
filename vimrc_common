@@ -346,12 +346,12 @@ let g:AutoCloseExpandSpace = 0
 "@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-autoformat
 "@@@@@@@@@@@@@@@@@@@@@@@@
-let g:formatterpath = [$HOME."/.vim/etc/formatters/", $HOME."/.vim/etc/node_modules/.bin"]
-noremap <c-m> :Autoformat<CR>
+" let g:formatterpath = [$HOME."/.vim/etc/formatters/", $HOME."/.vim/etc/node_modules/.bin"]
+" noremap <c-m> :Autoformat<CR>
 " prevent fallback to vim's indent file
-let g:autoformat_autoindent = 0
-let g:autoformat_retab = 0
-let g:autoformat_remove_trailing_spaces = 0
+" let g:autoformat_autoindent = 0
+" let g:autoformat_retab = 0
+" let g:autoformat_remove_trailing_spaces = 0
 
 "@@@@@@@@@@@@@@@@@@@@@@@
 " SnipMate
