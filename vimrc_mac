@@ -12,6 +12,8 @@ autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType eruby let b:surround_45 = "<%= \r %>"
 autocmd FileType ruby set foldmethod=syntax
 
+autocmd BufNewFile,BufRead *.pl set ft=prolog<CR>
+
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Javascript
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@

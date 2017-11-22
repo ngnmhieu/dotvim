@@ -10,9 +10,11 @@ alias ..='cd ..'
 alias so='source'
 alias tmux="TERM=screen-256color-bce tmux"
 alias v='vim'
+alias dotvim='cd ~/.vim'
 
 # git
 alias gs='git status'
 alias gc='git commit'
 alias ga='git add'
+
 
