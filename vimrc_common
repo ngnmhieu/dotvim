@@ -51,6 +51,9 @@ Plugin 'mxw/vim-jsx'
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'leafgarland/typescript-vim'
 
+"@@@@@@@@@@ Racket @@@@@@@@@@
+Plugin 'wlangstroth/vim-racket'
+
 "@@@@@@@@@@ LATEX @@@@@@@@@@
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
