@@ -1,4 +1,24 @@
 
+@font-face {
+    font-family: 'Lora';
+    src: url('./minimalism/Lora-Regular.ttf');
+    letter-spacing: 0.7px;
+}
+@font-face {
+    font-family: 'Lora-BoldItalic';
+    src: url('./minimalism/Lora-BoldItalic.ttf');
+    letter-spacing: 0.7px;
+}
+@font-face {
+    font-family: 'Lora-Italic';
+    src: url('./minimalism/Lora-Italic.ttf');
+    letter-spacing: 0.7px;
+}
+@font-face {
+    font-family: 'Lora-Bold';
+    src: url('./minimalism/Lora-Bold.ttf');
+    letter-spacing: 0.7px;
+}
 
 /* Webfont: HKGrotesk-Light */@font-face {
     font-family: 'HKGrotesk';
@@ -177,7 +197,7 @@ html {
 }
 
 body {
-    font-family: 'HKGrotesk', sans-serif;
+    font-family: 'Lora', sans-serif;
     font-weight: 300;
     font-size: 1.275em;
     letter-spacing: 0px; 
@@ -194,14 +214,20 @@ body {
 }
 
 strong {
-    font-family: 'HKGrotesk', serif; 
+    font-family: 'Lora-Bold', serif; 
     font-weight: 500;
     color: #303336;
 } 
 
 em {
-    font-family: 'HKGrotesk', serif; 
+    font-family: 'Lora-Italic', serif; 
     font-weight: normal; 
+    font-style: italic;
+} 
+em strong,
+strong em {
+    font-family: 'Lora-BoldItalic', serif; 
+    font-weight: 500; 
     font-style: italic;
 } 
 
@@ -212,7 +238,7 @@ mark {
 }
 
 div.md-toc {
-    font-family: 'HKGrotesk', serif;
+    font-family: 'Lora', serif;
     font-size: 18px; 
 }
 
@@ -257,7 +283,7 @@ h6,
 [mdlike='h4'],
 [mdlike='h5'],
 [mdlike='h6'] {
-    font-family: "HKGrotesk",sans-serif;
+    font-family: "Lora", sans-serif;
     font-weight: bold;
     letter-spacing: -0.45px; 
     word-spacing: 0.5px;
