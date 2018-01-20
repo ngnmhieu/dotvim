@@ -16,7 +16,7 @@ call vundle#begin()
 
 "@@@@@@@@@@ COMMON @@@@@@@@@@
 Plugin 'mileszs/ack.vim'
-Plugin 'jiangmiao/auto-pairs'
+" Plugin 'jiangmiao/auto-pairs'
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
