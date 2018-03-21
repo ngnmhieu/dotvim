@@ -15,8 +15,8 @@
 }
 
 :root {
-  --side-bar-bg-color: #263238;
-  --active-file-bg-color: rgba(7, 145, 253, 0.57);
+  --side-bar-bg-color: #333;
+  --active-file-bg-color: #222;
   --active-file-text-color: white;
   --control-text-color: #ddd;
 }
@@ -34,7 +34,7 @@ body {
 }
 
 #write {
-  max-width: 1280px;
+  max-width: 1000px;
 	text-align: justify;
   padding-left: 10ch;
   padding-right: 10ch;

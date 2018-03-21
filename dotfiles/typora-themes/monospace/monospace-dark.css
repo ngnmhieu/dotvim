@@ -2,11 +2,11 @@
 
 :root {
   --bg-color: #222;
-  --side-bar-bg-color: #5F5F5F;
+  --side-bar-bg-color: #333;
   --active-file-text-color: #222;
   --text-color: #ebebeb;
   --window-border: 1px solid #606060;
-  --active-file-bg-color: rgba(219, 219, 253, 0.4);
+  --active-file-bg-color: #222;
   --active-file-text-color: white;
   --control-text-color: #ccc;
 }
@@ -40,7 +40,7 @@ html.mac-supports-vibrant,
 }
 
 #write {
-  max-width: 1280px;
+  max-width: 1000px;
 	text-align: justify;
   padding-left: 10ch;
   padding-right: 10ch;
@@ -785,7 +785,7 @@ footer {
 }
 
 #typora-sidebar {
-  background: transparent;
+  /* background: transparent; */
 }
 
 .html-for-mac #typora-sidebar {
