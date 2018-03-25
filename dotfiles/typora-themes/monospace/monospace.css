@@ -409,7 +409,7 @@ hr:after {
   border: none;
 }
 .cm-s-inner {
-  background-color: #263238;
+  background-color: #263238 !important;
   color: #e9eded;
 }
 .CodeMirror.cm-s-inner .CodeMirror-guttermarker,
