@@ -16,5 +16,10 @@ alias dotvim='cd ~/.vim'
 alias gs='git status'
 alias gc='git commit'
 alias ga='git add'
-
-
+alias gd='git diff'
+alias gco='git checkout --'
+alias gps='git push'
+alias gpl='git pull'
+alias gf='git fetch'
+alias grh='git reset HEAD'
+alias grb='git rebase'
