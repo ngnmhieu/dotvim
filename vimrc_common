@@ -18,7 +18,7 @@ call vundle#begin()
 Plugin 'mileszs/ack.vim'
 " Plugin 'jiangmiao/auto-pairs'
 Plugin 'godlygeek/tabular'
-Plugin 'scrooloose/nerdtree'
+Plugin 'ngnmhieu/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chase/vim-ansible-yaml'
