@@ -71,7 +71,9 @@ Compare two different revision:
 ```
 Ctrl-w = tells Vim to resize viewports to be of equal size.
 
-Ctrl-w r will rotate windows to the r_ght.
+Ctrl-[HJKL] will move the current viewport to the edges.
+
+Ctrl-w r will rotate windows to the right.
 
 Ctrl-w R will rotate windows to the left.
 ```
