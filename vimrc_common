@@ -448,3 +448,4 @@ nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gl :Glog<CR>
+nnoremap <leader>ge :Gedit<CR>
