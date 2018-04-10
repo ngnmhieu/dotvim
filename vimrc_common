@@ -130,23 +130,25 @@ set pastetoggle=<F2>
 " Toggle cursorline when switching between normal and insert mode
 :autocmd InsertEnter,InsertLeave * set cul!
 
-"################
-"### MAPPINGS ###
-"################
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" MAPPINGS
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 " moving between lines
 nnoremap j gj
 nnoremap k gk
 
-" remap switching split windows
+" navigating between viewports
 nnoremap <silent> <C-l> <c-w>l
 nnoremap <silent> <C-h> <c-w>h
 nnoremap <silent> <C-k> <c-w>k
 nnoremap <silent> <C-j> <c-w>j
-nnoremap <silent> <leader>l <c-w>L
-nnoremap <silent> <leader>h <c-w>H
-nnoremap <silent> <leader>k <c-w>K
-nnoremap <silent> <leader>j <c-w>J
+
+" moving the current viewport to the edges
+" nnoremap <silent> <leader>l <c-w>L
+" nnoremap <silent> <leader>h <c-w>H
+" nnoremap <silent> <leader>k <c-w>K
+" nnoremap <silent> <leader>j <c-w>J
 
 " remap go to first character of line
 nnoremap ! ^
@@ -212,9 +214,9 @@ inoremap <C-z> <C-y><ESC>
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
-"#######################
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-instant-markdown
-"#######################
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " let g:vim_markdown_folding_disabled=1 " disable folding in markdown files
 let g:instant_markdown_autostart=0 " to trigger use :InstantMarkdownPreview
 " au BufRead,BufNewFile *.md set filetype=markdown
@@ -223,29 +225,29 @@ let g:instant_markdown_autostart=0 " to trigger use :InstantMarkdownPreview
 " remove delay in exiting visual mode
 set timeoutlen=1000 ttimeoutlen=0
 
-"@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Tcomment 
-"@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 map <C-c> :TComment<CR>
 vmap <C-b> :TCommentBlock<CR>
 
-"###########
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Emmet
-"###########
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 let g:user_emmet_expandabbr_key = '<c-b>'
 
-"@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " NERDTree
-"@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 map <C-]> :NERDTreeToggle<CR>
 map <C-f> :NERDTreeFind<CR>
 let g:nerdtree_tabs_autoclose = 1  
 let NERDTreeIgnore = ['^CVS$']
 let NERDTreeChDirMode = 2  
 
-"#############
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Tabular
-"#############
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 vmap <leader>t= :Tabularize /=<CR>
 nmap <leader>t= :Tabularize /=<CR>
 vmap <leader>t: :Tabularize /:<CR>
@@ -253,9 +255,9 @@ nmap <leader>t: :Tabularize /:<CR>
 vmap <leader>tt :Tabularize /
 nmap <leader>tt :Tabularize /
 
-"@@@@@@@@@@@@@@@@   
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " VIM Airline
-"@@@@@@@@@@@@@@@@   
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Show tab number
 " let g:airline#extensions#tabline#enabled = 1 " enable vim-airline tabline
 let g:airline#extensions#tabline#tab_nr_type = 1
@@ -292,9 +294,9 @@ function! Tabline()
 endfunction
 set tabline=%!Tabline()
 
-"@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Searching with Ack
-"@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " search the for files containing selected text with Ack (ignore hidden files)
 " -o is to output only the matched pattern
 " -Q match literal string
@@ -302,9 +304,9 @@ let g:ack_default_options = " -s -H --nocolor --nogroup --ignore-file=match:'^\\
 vnoremap <C-k> "ky:Ack '<C-R>k' <CR>/<C-R>k<CR>
 vnoremap <C-l> "ky:Ack '<C-R>k'
 
-"@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Quickfix
-"@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 "Jump to next file in Quickfix
 nnoremap <leader>m :cnf<CR>
 " Jump to previous file in Quickfix
@@ -315,9 +317,9 @@ function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
 
-"@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Folding
-"@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 nnoremap <tab> za
 " collapse / expand all folds
 nnoremap _ zM 
@@ -326,15 +328,15 @@ nnoremap + zR
 " all folds are open when a file is opened
 set foldlevelstart=99
 
-"@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " PHP
-"@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 let php_folding = 1
 let php_htmlInStrings = 1
 
-"@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " map Ctrl-S to save file
-"@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 command -nargs=0 -bar Update if &modified 
                            \|    if empty(bufname('%'))
                            \|        browse confirm write
@@ -345,15 +347,15 @@ command -nargs=0 -bar Update if &modified
 nnoremap <silent> <C-S> :<C-u>Update<CR>
 inoremap <c-s> <Esc>:Update<CR>
 
-"@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-autoclose
-"@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " not doubling the whitespace
 let g:AutoCloseExpandSpace = 0
 
-"@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-autoformat
-"@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " let g:formatterpath = [$HOME."/.vim/etc/formatters/", $HOME."/.vim/etc/node_modules/.bin"]
 " noremap <c-m> :Autoformat<CR>
 " prevent fallback to vim's indent file
@@ -361,23 +363,23 @@ let g:AutoCloseExpandSpace = 0
 " let g:autoformat_retab = 0
 " let g:autoformat_remove_trailing_spaces = 0
 
-"@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " SnipMate
-"@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " different keymap to trigger snipMate as YCM used tab
 imap <tab> <Plug>snipMateNextOrTrigger
 smap <tab> <Plug>snipMateNextOrTrigger
 
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " YouCompleteMe Code-Completion
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " let g:ycm_auto_trigger = 1
 " let g:ycm_python_binary_path = '/usr/local/bin/python3'
 " let g:ycm_filetype_blacklist = {'ansible': 1, 'yaml': 1, 'json': 1, 'markdown': 1}
 
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Syntastic Syntax Checking
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
@@ -388,24 +390,24 @@ smap <tab> <Plug>snipMateNextOrTrigger
 " let g:syntastic_html_checkers = []
 " let g:syntastic_scss_checkers = []
 
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-markdown
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 let g:markdown_enable_spell_checking = 0
 let g:markdown_mapping_switch_status = '<leader>s'
 " text formatting to BOLD in vim italic mode
 set t_ZH=[1m
 set t_ZR=
 
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " HTML
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Go into tag 
 nnoremap <leader>gt vit<ESC>
 
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " RAML
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 autocmd BufNewFile,BufRead *.raml set filetype=ansible
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
