@@ -234,7 +234,7 @@ vmap <C-b> :TCommentBlock<CR>
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Emmet
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-let g:user_emmet_expandabbr_key = '<c-b>'
+imap <C-b> <plug>(emmet-expand-abbr)
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " NERDTree
