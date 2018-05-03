@@ -1,10 +1,18 @@
-## Linux KDE
+## Linux
 
 ### Caplock -> ESC
+
+**KDE**
 ```
 Settings -> Keyboard -> Advanced
 Check 'Configure keyboard options'
 Check 'Make Caps Lock an additional ESC'
+```
+
+**Others**
+```
+sudo apt install xcape
+System Preferences > Keyboard Layout > Options... > CapsLock as additional ESC
 ```
 
 ### Umlaut
