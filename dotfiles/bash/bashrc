@@ -5,4 +5,24 @@ stty -ixon
 export EDITOR=vim
 
 # fancy bash start line
-export PS1="[\u@\h] \W\[\033[32m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\[\033[00m\] $ "
+fancy_custom_prompt() {
+  SHORT_PWD=""
+  DIRS=$(dirs +0 | sed "s/\//;/g")
+  DEPTH=$(dirs +0 | grep -o "/" | wc -l)
+  COUNT=0
+  OLDIFS=$IFS
+  IFS=';'
+  for DIR in $DIRS ; do
+    if [ $COUNT -eq 0 ]; then
+      SHORT_PWD=$DIR
+    elif [ $COUNT -eq $DEPTH ]; then
+      SHORT_PWD=$SHORT_PWD/$DIR
+    else
+      SHORT_PWD=$SHORT_PWD/${DIR:0:1}
+    fi
+    let COUNT+=1
+  done
+  echo -e $SHORT_PWD
+}
+# PS1="[\u@\h] \W\[\033[32m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\[\033[00m\] >> "
+PS1="[\u@\h] \$(fancy_custom_prompt)\[\033[32m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\[\033[00m\] $ "
