@@ -1,8 +1,15 @@
+PLATFORM=$(uname)
+
+if [[ "$PLATFORM" == 'Linux' ]]; then
+  alias ls='ls --color=auto'
+elif [[ "$PLATFORM" == 'Darwin' ]]; then
+  alias ls='ls -G'
+fi
+
 # common aliases
-alias ls='ls -G --color=auto' # ls with color
-alias l='ls -G --color=auto' 
-alias ll='l -lGh'
-alias la='l -laGh'
+alias l='ls' 
+alias ll='l -lh'
+alias la='l -lah'
 alias x='exit'
 alias ..='cd ..'
 
