@@ -1,8 +1,8 @@
 # common aliases
-alias ls='ls -G' # ls with color
-alias l='ls -G' 
-alias ll='ls -lGh'
-alias la='ls -laGh'
+alias ls='ls -G --color=auto' # ls with color
+alias l='ls -G --color=auto' 
+alias ll='l -lGh'
+alias la='l -laGh'
 alias x='exit'
 alias ..='cd ..'
 
