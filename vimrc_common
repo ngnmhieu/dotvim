@@ -7,6 +7,7 @@ filetype off     " required for Vundle, will be reactivated later
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -16,13 +17,14 @@ call vundle#begin()
 
 "@@@@@@@@@@ COMMON @@@@@@@@@@
 Plugin 'mileszs/ack.vim'
+Plugin 'junegunn/fzf.vim'
 " Plugin 'jiangmiao/auto-pairs'
 Plugin 'godlygeek/tabular'
 Plugin 'ngnmhieu/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chase/vim-ansible-yaml'
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/matchit'
 Plugin 'tpope/vim-surround'
 Plugin 'tomtom/tcomment_vim'
@@ -431,8 +433,13 @@ autocmd BufNewFile,BufRead *.json set softtabstop=2
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " CTRL-P
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components'
-let g:ctrlp_working_path_mode = 'ra'
+" let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components'
+" let g:ctrlp_working_path_mode = 'ra'
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" FZF
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nnoremap <silent> <C-p> :FZF<CR>
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " VIM-LATEX

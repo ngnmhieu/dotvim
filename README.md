@@ -23,3 +23,8 @@ Run the setup script, which executes the followings:
 $ cd .vim
 $ sh setup.sh
 ```
+
+plugin requirements
+-------------------
+
+`fzf` must be installed before fzf.vim plugin can be used  - [Github](https://github.com/junegunn/fzf)
