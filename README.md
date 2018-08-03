@@ -27,4 +27,4 @@ $ sh setup.sh
 plugin requirements
 -------------------
 
-`fzf` must be installed before fzf.vim plugin can be used  - [Github](https://github.com/junegunn/fzf)
+`fzf` and `ag` must be installed before fzf.vim plugin can be used  - [Github](https://github.com/junegunn/fzf)

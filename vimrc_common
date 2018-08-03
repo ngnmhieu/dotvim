@@ -440,6 +440,7 @@ autocmd BufNewFile,BufRead *.json set softtabstop=2
 " FZF
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 nnoremap <silent> <C-p> :FZF<CR>
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " VIM-LATEX
