@@ -1,10 +1,9 @@
-dotvim
-======
+# dotvim
+
 Git and Github enables easy configuration files synchronisation and management across machines and OSes.
 This repository contains configuration files for my Vim Editor.
 
-installation
-------------
+## installation
 
 Clone this project
 ```
@@ -24,7 +23,6 @@ $ cd .vim
 $ sh setup.sh
 ```
 
-plugin requirements
--------------------
+## plugin requirements
 
-`fzf` and `ag` must be installed before fzf.vim plugin can be used  - [Github](https://github.com/junegunn/fzf)
+[`fzf`](https://github.com/junegunn/fzf) and [`ag`](https://github.com/ggreer/the_silver_searcher) must be installed before fzf.vim plugin can be used.
