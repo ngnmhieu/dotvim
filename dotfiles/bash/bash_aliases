@@ -31,3 +31,7 @@ alias gps='git push'
 alias gpl='git pull'
 alias grh='git reset HEAD'
 alias grb='git rebase'
+
+# configurations
+alias doti3='cd ~/.config/i3'
+alias dotpolybar='cd ~/.config/polybar'
