@@ -292,7 +292,7 @@ format-muted = <label-muted>
 
 ; Available tokens:
 ;   %percentage% (default)
-;label-volume = %percentage%%
+label-volume = %percentage:2%% 
 
 ; Available tokens:
 ;   %percentage% (default)
