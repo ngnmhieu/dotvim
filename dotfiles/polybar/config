@@ -36,7 +36,7 @@ font-2 = "Font Awesome 5 Brands:size=10;1"
 
 modules-left = i3
 modules-center = 
-modules-right = cpu memory battery temperature pulseaudio xkeyboard  network eth date powermenu
+modules-right = cpu memory battery temperature pulseaudio xkeyboard wlan eth date powermenu
 
 ;tray-position = right
 ;tray-padding =
@@ -97,7 +97,7 @@ label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
-[module/network]
+[module/wlan]
 
 type = internal/network
 interface = wlp1s0 
@@ -122,7 +122,7 @@ interval = 3.0
 format-connected-padding = 2
 format-connected-foreground = #e6a57a
 format-connected-background = #1e1e20
-format-connected-prefix = "<=> "
+format-connected-prefix = " "
 format-connected-prefix-foreground = #e6a57a
 label-connected = %local_ip%
 
@@ -133,10 +133,10 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = " %e. %b %Y"
 
 time = %H:%M
-time-alt = %H:%M:%S
+time-alt = %H:%M
 
 format-prefix = 
 format-foreground = #1e1e20
