@@ -194,6 +194,10 @@ mode "$mode_move_workspace" {
     bindsym j exec --no-startup-id i3-msg move workspace to output down, mode "default"
     bindsym k exec --no-startup-id i3-msg move workspace to output up, mode "default"
     bindsym l exec --no-startup-id i3-msg move workspace to output right, mode "default"
+    bindsym Left exec --no-startup-id i3-msg move workspace to output left, mode "default"
+    bindsym Down exec --no-startup-id i3-msg move workspace to output down, mode "default"
+    bindsym Up exec --no-startup-id i3-msg move workspace to output up, mode "default"
+    bindsym Right exec --no-startup-id i3-msg move workspace to output right, mode "default"
 
     # exit system mode: "enter" or "escape"
     bindsym Return mode "default"
