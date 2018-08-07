@@ -439,8 +439,17 @@ autocmd BufNewFile,BufRead *.json set softtabstop=2
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " FZF
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" Search for files 
 nnoremap <silent> <C-p> :FZF<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+" Search file contents
+command! -bang -nargs=* SearchAg
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+nnoremap <silent> <C-t> :SearchAg<CR>
+
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " VIM-LATEX
