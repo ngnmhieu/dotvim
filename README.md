@@ -25,4 +25,4 @@ $ sh setup.sh
 
 ## plugin requirements
 
-[`fzf`](https://github.com/junegunn/fzf) and [`ag`](https://github.com/ggreer/the_silver_searcher) must be installed before fzf.vim plugin can be used.
+[`fzf`](https://github.com/junegunn/fzf), [`ag`](https://github.com/ggreer/the_silver_searcher) must be installed before fzf.vim plugin can be used.

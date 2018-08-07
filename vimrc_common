@@ -441,15 +441,24 @@ autocmd BufNewFile,BufRead *.json set softtabstop=2
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Search for files 
 nnoremap <silent> <C-p> :FZF<CR>
+
+" FZF with Silver search
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
-" Search file contents
 command! -bang -nargs=* SearchAg
   \ call fzf#vim#ag(<q-args>,
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
 nnoremap <silent> <C-k> :SearchAg<CR>
-" vnoremap <silent> <C-k> "ky:SearchAg<CR>
+
+" FZF with Ripgrep
+" let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+" command! -bang -nargs=* SearchRg
+"   \ call fzf#vim#grep(
+"   \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+"   \   <bang>0 ? fzf#vim#with_preview('up:60%')
+"   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+"   \   <bang>0)
 
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
