@@ -16,7 +16,7 @@ call vundle#begin()
 " Plugin 'VundleVim/Vundle.vim'
 
 "@@@@@@@@@@ COMMON @@@@@@@@@@
-Plugin 'mileszs/ack.vim'
+" Plugin 'mileszs/ack.vim'
 Plugin 'junegunn/fzf.vim'
 " Plugin 'jiangmiao/auto-pairs'
 Plugin 'godlygeek/tabular'
@@ -28,7 +28,6 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'tmhedberg/matchit'
 Plugin 'tpope/vim-surround'
 Plugin 'tomtom/tcomment_vim'
-" Plugin 'jistr/vim-nerdtree-tabs'
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plugin 'mattn/emmet-vim'
