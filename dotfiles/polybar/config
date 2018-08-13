@@ -133,13 +133,13 @@ format-disconnected = %{A1:termite -e 'nmtui':}%{A}
 type = internal/date
 interval = 5
 
-date =
+date = " %e. %b %Y"
 date-alt = " %e. %b %Y"
 
 time = %H:%M
 time-alt = %H:%M
 
-format-prefix = 
+;format-prefix = 
 format-foreground = #1e1e20
 format-background = #c6723a
 format-padding = 2
