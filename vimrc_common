@@ -16,15 +16,12 @@ call vundle#begin()
 " Plugin 'VundleVim/Vundle.vim'
 
 "@@@@@@@@@@ COMMON @@@@@@@@@@
-" Plugin 'mileszs/ack.vim'
 Plugin 'junegunn/fzf.vim'
-" Plugin 'jiangmiao/auto-pairs'
 Plugin 'godlygeek/tabular'
 Plugin 'ngnmhieu/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chase/vim-ansible-yaml'
-" Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/matchit'
 Plugin 'tpope/vim-surround'
 Plugin 'tomtom/tcomment_vim'
@@ -48,14 +45,14 @@ Plugin 'tpope/vim-markdown'
 "@@@@@@@@@@ JAVASCRIPT @@@@@@@@@@
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'isRuslan/vim-es6'
-" Plugin 'mxw/vim-jsx'
 Plugin 'neoclide/vim-jsx-improve'
 Plugin 'posva/vim-vue'
+" Plugin 'mxw/vim-jsx'
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'leafgarland/typescript-vim'
 
 "@@@@@@@@@@ Racket @@@@@@@@@@
-Plugin 'wlangstroth/vim-racket'
+" Plugin 'wlangstroth/vim-racket'
 
 "@@@@@@@@@@ LATEX @@@@@@@@@@
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
