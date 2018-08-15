@@ -1,74 +1,67 @@
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" VUNDLE
+" vim-plug
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-set nocompatible " less compatible wiht Vi, Vim behaves better
-filetype off     " required for Vundle, will be reactivated later
+" Automatic installation of vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.fzf
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/bundle')
 
 "@@@@@@@@@@ COMMON @@@@@@@@@@
-Plugin 'junegunn/fzf.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'ngnmhieu/nerdtree'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'tmhedberg/matchit'
-Plugin 'tpope/vim-surround'
-Plugin 'tomtom/tcomment_vim'
+Plug 'junegunn/fzf.vim'
+Plug 'godlygeek/tabular'
+Plug 'ngnmhieu/nerdtree'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'chase/vim-ansible-yaml'
+Plug 'tmhedberg/matchit'
+Plug 'tpope/vim-surround'
+Plug 'tomtom/tcomment_vim'
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
-Plugin 'mattn/emmet-vim'
-Plugin 'othree/html5.vim'
+Plug 'mattn/emmet-vim'
+Plug 'othree/html5.vim'
 
 "@@@@@@@@@@ PHP @@@@@@@@@@
-" Plugin 'joonty/vdebug'
+" Plug 'joonty/vdebug'
 
 "@@@@@@@@@@ RAILS @@@@@@@@@@
-" Plugin 'tpope/vim-bundler'
-" Plugin 'tpope/vim-rails'
+" Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-rails'
 
 "@@@@@@@@@@ MARKDOWN @@@@@@@@@@
-Plugin 'tpope/vim-markdown'
-" Plugin 'gabrielelana/vim-markdown'
-" Plugin 'suan/vim-instant-markdown'
+Plug 'tpope/vim-markdown'
+" Plug 'gabrielelana/vim-markdown'
+" Plug 'suan/vim-instant-markdown'
 
 "@@@@@@@@@@ JAVASCRIPT @@@@@@@@@@
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'isRuslan/vim-es6'
-Plugin 'neoclide/vim-jsx-improve'
-Plugin 'posva/vim-vue'
-" Plugin 'mxw/vim-jsx'
-" Plugin 'pangloss/vim-javascript'
-" Plugin 'leafgarland/typescript-vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'isRuslan/vim-es6'
+Plug 'neoclide/vim-jsx-improve'
+Plug 'posva/vim-vue'
+" Plug 'mxw/vim-jsx'
+" Plug 'pangloss/vim-javascript'
+" Plug 'leafgarland/typescript-vim'
 
 "@@@@@@@@@@ Racket @@@@@@@@@@
-" Plugin 'wlangstroth/vim-racket'
+" Plug 'wlangstroth/vim-racket'
 
 "@@@@@@@@@@ LATEX @@@@@@@@@@
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
 
 "@@@@@@@@@@ SNIPPETS @@@@@@@@@@
-Plugin 'garbas/vim-snipmate'
-Plugin 'ngnmhieu/vim-snippets'
-Plugin 'tomtom/tlib_vim'             
-Plugin 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+Plug 'ngnmhieu/vim-snippets'
+Plug 'tomtom/tlib_vim'             
+Plug 'MarcWeber/vim-addon-mw-utils'
 
-" All of your Plugins must be added before the following line
-call vundle#end()
-
-filetype plugin indent on 
+call plug#end()
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" END VUNDLE
+" END vim-plug
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 if $COLORTERM == 'gnome-terminal'
@@ -118,10 +111,6 @@ let mapleader=','
 
 " turn off preview window in omni auto complete
 set completeopt-=preview
-
-" pathogen - plugin manager
-execute pathogen#infect()
-Helptags
 
 " Paste mode toggle, aid in pasting text with Ctrl-Shift-v
 set pastetoggle=<F2>
@@ -435,6 +424,10 @@ autocmd BufNewFile,BufRead *.json set softtabstop=2
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " FZF
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+" Installation path
+set rtp+=~/.fzf
+
 " Search for files 
 nnoremap <silent> <C-p> :FZF<CR>
 

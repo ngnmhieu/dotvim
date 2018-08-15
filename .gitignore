@@ -1,5 +1,5 @@
 doc/tags
-bundle/vcscommand/doc/tags
+bundle
 bundle/**/*
 *.swp
 *.swo
