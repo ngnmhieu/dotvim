@@ -5,6 +5,4 @@
 #                                    #
 ######################################
 
-# won't work if Vundle is installed in bundle
-# it must be installed in .vim directory
-vim +PlugInstall +qall
+vim +PlugInstall
