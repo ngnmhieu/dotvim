@@ -22,6 +22,7 @@ Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
+Plug 'tpope/vim-repeat'
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plug 'mattn/emmet-vim'
