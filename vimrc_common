@@ -17,6 +17,7 @@ Plug 'godlygeek/tabular'
 Plug 'ngnmhieu/nerdtree'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'chase/vim-ansible-yaml'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-surround'
@@ -469,6 +470,11 @@ nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>ge :Gedit<CR>
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" GITGUTTER
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+autocmd BufWritePost * GitGutter
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " VUE
