@@ -21,6 +21,7 @@ Plug 'chase/vim-ansible-yaml'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
+Plug 'w0rp/ale'
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plug 'mattn/emmet-vim'
@@ -467,3 +468,21 @@ nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>ge :Gedit<CR>
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" VUE
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+autocmd FileType vue syntax sync fromstart
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" ALE (Async Lint Engine)
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+let g:ale_linters = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint']
+\}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'vue': ['eslint']
+\}
