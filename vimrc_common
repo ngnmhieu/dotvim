@@ -25,6 +25,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'christoomey/vim-tmux-navigator'
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plug 'mattn/emmet-vim'
@@ -62,6 +63,9 @@ Plug 'garbas/vim-snipmate'
 Plug 'ngnmhieu/vim-snippets'
 Plug 'tomtom/tlib_vim'             
 Plug 'MarcWeber/vim-addon-mw-utils'
+
+"@@@@@@@@@@ NGINX @@@@@@@@@@
+Plug 'chr4/nginx.vim'
 
 call plug#end()
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
