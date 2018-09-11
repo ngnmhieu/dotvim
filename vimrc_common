@@ -24,6 +24,7 @@ Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-repeat'
+Plug 'terryma/vim-multiple-cursors'
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plug 'mattn/emmet-vim'
@@ -493,3 +494,10 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'vue': ['eslint']
 \}
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" vim-multiple-cursors
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+let g:multi_cursor_start_word_key = '<C-m>'
+let g:multi_cursor_next_key       = '<C-m>'
+let g:multi_cursor_prev_key       = '<C-p>'
