@@ -25,7 +25,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plug 'mattn/emmet-vim'
