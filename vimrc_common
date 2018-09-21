@@ -63,6 +63,9 @@ Plug 'ngnmhieu/vim-snippets'
 Plug 'tomtom/tlib_vim'             
 Plug 'MarcWeber/vim-addon-mw-utils'
 
+"@@@@@@@@@@ NGINX @@@@@@@@@@ 
+Plug 'chr4/nginx.vim'
+
 call plug#end()
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " END vim-plug
