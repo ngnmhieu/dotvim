@@ -25,6 +25,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
+" Plug 'christoomey/vim-tmux-navigator'
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plug 'mattn/emmet-vim'
@@ -63,7 +64,7 @@ Plug 'ngnmhieu/vim-snippets'
 Plug 'tomtom/tlib_vim'             
 Plug 'MarcWeber/vim-addon-mw-utils'
 
-"@@@@@@@@@@ NGINX @@@@@@@@@@ 
+"@@@@@@@@@@ NGINX @@@@@@@@@@
 Plug 'chr4/nginx.vim'
 
 call plug#end()
@@ -431,6 +432,9 @@ autocmd BufNewFile,BufRead *.json set softtabstop=2
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " FZF
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+if !executable("fzf")
+    echo "'FZF' is required for fzf.vim plugin (https://github.com/junegunn/fzf)."
+endif
 
 " Installation path
 set rtp+=~/.fzf
@@ -439,6 +443,9 @@ set rtp+=~/.fzf
 nnoremap <silent> <C-p> :FZF<CR>
 
 " FZF with Silver search
+if !executable("ag")
+    echo "'Silversearcher' is required fzf.vim plugin (https://github.com/ggreer/the_silver_searcher)."
+endif
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 command! -bang -nargs=* SearchAg
   \ call fzf#vim#ag(<q-args>,
