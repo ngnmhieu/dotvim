@@ -432,6 +432,9 @@ autocmd BufNewFile,BufRead *.json set softtabstop=2
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " FZF
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+if !executable("fzf")
+    echo "'FZF' is required for fzf.vim plugin (https://github.com/junegunn/fzf)."
+endif
 
 " Installation path
 set rtp+=~/.fzf
@@ -440,6 +443,9 @@ set rtp+=~/.fzf
 nnoremap <silent> <C-p> :FZF<CR>
 
 " FZF with Silver search
+if !executable("ag")
+    echo "'Silversearcher' is required fzf.vim plugin (https://github.com/ggreer/the_silver_searcher)."
+endif
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 command! -bang -nargs=* SearchAg
   \ call fzf#vim#ag(<q-args>,
