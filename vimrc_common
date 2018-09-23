@@ -12,6 +12,7 @@ endif
 call plug#begin('~/.vim/bundle')
 
 "@@@@@@@@@@ COMMON @@@@@@@@@@
+Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
 Plug 'ngnmhieu/nerdtree'
@@ -511,3 +512,12 @@ let g:ale_fixers = {
 let g:multi_cursor_start_word_key = '<C-m>'
 let g:multi_cursor_next_key       = '<C-m>'
 let g:multi_cursor_prev_key       = '<C-p>'
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" editorconfig-vim
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+if !has('python') && !has('python')
+    echo "This vim distribution isn't compiled with +python or +python3. EditorConfig-Core is required to use editorconfig-vim plugin."
+endif
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
