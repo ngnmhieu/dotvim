@@ -212,3 +212,4 @@ bindsym $mod+Shift+m mode "$mode_move_workspace"
 exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
 exec --no-startup-id dropbox start
 exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
