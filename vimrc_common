@@ -517,7 +517,7 @@ let g:multi_cursor_prev_key       = '<C-p>'
 " editorconfig-vim
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-if !has('python') && !has('python')
+if !has('python') && !has('python3')
     echo "This vim distribution isn't compiled with +python or +python3. EditorConfig-Core is required to use editorconfig-vim plugin."
 endif
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
