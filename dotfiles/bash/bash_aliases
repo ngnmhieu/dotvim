@@ -39,5 +39,6 @@ fi
 # configurations
 alias doti3='cd ~/.config/i3'
 alias dotpolybar='cd ~/.config/polybar'
+alias dottermite='cd ~/.config/termite'
 
 # vim: ft=sh
