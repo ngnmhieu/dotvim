@@ -5,6 +5,7 @@ revert() {
   xset dpms 0 0 0
 }
 
+# TODO: random overlay images
 lock() {
   trap revert HUP INT TERM
   xset +dpms dpms 0 0 5
