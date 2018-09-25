@@ -1,0 +1,45 @@
+##!/bin/sh
+
+revert() {
+  rm /tmp/*screen*.png
+  xset dpms 0 0 0
+}
+
+lock() {
+  trap revert HUP INT TERM
+  xset +dpms dpms 0 0 5
+  scrot -d 1 /tmp/locking_screen.png
+  convert -blur 0x8 /tmp/locking_screen.png /tmp/screen_blur.png
+  convert -composite /tmp/screen_blur.png ~/.vim/dotfiles/i3/images/deadpool-sexy.png -gravity South -geometry -20x1200 /tmp/screen.png
+  i3lock -i /tmp/screen.png
+  revert
+}
+
+case "$1" in
+	lock)
+		lock
+		;;
+	logout)
+		i3-msg exit
+		;;
+	hibernate)
+		lock && systemctl hibernate
+		;;
+	suspend)
+		lock && systemctl suspend
+		;;
+	reboot)
+		systemctl reboot
+		;;
+	shutdown)
+		systemctl poweroff
+		;;
+	switch_user)
+		lock
+		;;
+	*)
+		echo "Usage $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
+		exit 2
+esac
+
+exit 0!/bin/bash
