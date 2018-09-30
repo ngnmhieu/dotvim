@@ -19,6 +19,7 @@
   --active-file-bg-color: #222;
   --active-file-text-color: white;
   --control-text-color: #ddd;
+  --heading-text-color: #6363ac;
 }
 
 html {
@@ -66,7 +67,7 @@ h6,
 [mdlike='h6'] {
   font-weight: bold;
   font-family: "PT Mono", monospace;
-  color: #6363ac;
+  color: var(--heading-text-color);
 }
 [mdlike='h1'] > .md-blockmeta,
 [mdlike='h2'] > .md-blockmeta,
