@@ -1,17 +1,36 @@
 @include-when-export url(https://fonts.googleapis.com/css?family=Inconsolata:400,700&subset=latin-ext);
-/* latin-ext */
 @font-face {
   font-family: 'Inconsolata';
   font-style: normal;
-  font-weight: 400;
+  font-weight: normal;
   src: local('Inconsolata Regular'), url(monospace/Inconsolata-Regular.ttf) format('truetype');
 }
-/* latin */
 @font-face {
   font-family: 'Inconsolata';
   font-style: normal;
-  font-weight: 700;
+  font-weight: bold;
   src: local('Inconsolata Bold'), url(monospace/Inconsolata-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'FiraMono';
+  font-style: normal;
+  font-weight: normal;
+  src: url(monospace/FiraMono-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'FiraMono';
+  font-style: normal;
+  font-weight: 600;
+  src: url(monospace/FiraMono-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'FiraMono';
+  font-style: normal;
+  font-weight: bold;
+  src: url(monospace/FiraMono-Bold.ttf) format('truetype');
 }
 
 :root {
@@ -20,6 +39,11 @@
   --active-file-text-color: white;
   --control-text-color: #ddd;
   --heading-text-color: #444;
+  --red-dark: #b5302e;
+  --black-dark: #444;
+
+  --text-font: FiraMono, Inconsolata, monospace;
+  --heading-font: "PT Mono", monospace;
 }
 
 html {
@@ -29,7 +53,7 @@ html {
 
 html,
 body {
-  font-family: 'Inconsolata', monospace;
+  font-family: var(--text-font);
   background: white;
   font-size: 1.1rem;
 }
@@ -66,8 +90,8 @@ h6,
 [mdlike='h5'],
 [mdlike='h6'] {
   font-weight: bold;
-  font-family: "PT Mono", monospace;
-  color: var(--heading-text-color);
+  font-family: var(--heading-font);
+  color: var(--red-dark);
 }
 [mdlike='h1'] > .md-blockmeta,
 [mdlike='h2'] > .md-blockmeta,
@@ -248,12 +272,12 @@ a.md-toc-inner {
 #write h4,
 #write h5,
 #write h6,
-#write p > .md-line[mdlike='h1'],
-#write p > .md-line[mdlike='h2'],
-#write p > .md-line[mdlike='h3'],
-#write p > .md-line[mdlike='h4'],
-#write p > .md-line[mdlike='h5'],
-#write p > .md-line[mdlike='h6'] {
+#write p[mdlike='h1'],
+#write p[mdlike='h2'],
+#write p[mdlike='h3'],
+#write p[mdlike='h4'],
+#write p[mdlike='h5'],
+#write p[mdlike='h6'] {
   margin-top: 0.83em;
   margin-bottom: 0.83em;
 }
@@ -550,7 +574,7 @@ mark {
   background: bisque;
 }
 strong {
-  color: #b5302e;
+  color: var(--black-dark);
 }
 em {
   color: #400469;
@@ -565,7 +589,7 @@ a {
 }
 #typora-source .cm-header {
   font-weight: bold;
-  font-family: "PT Mono", monospace;
+  font-family: var(--heading-font);
   color: #6363ac;
   font-size: 1rem;
   line-height: 1rem;
