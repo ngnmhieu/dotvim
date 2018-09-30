@@ -187,6 +187,16 @@ h6.md-focus:before {
   line-height: inherit;
 }
 
+.md-image {
+  margin: 10px 0;
+}
+.md-image > img {
+  margin: 10px 0;
+}
+.md-image > .md-meta {
+  color: var(--black-light);
+}
+
 table {
   line-height: 1.6rem;
   border-collapse: collapse;
