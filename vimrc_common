@@ -453,8 +453,8 @@ command! -bang -nargs=* SearchAg
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
-nnoremap <silent> <C-k> :SearchAg<CR>
-vnoremap <C-k> "ky:SearchAg <C-R>k<CR>
+nnoremap <silent> <C-y> :SearchAg<CR>
+vnoremap <C-y> "ky:SearchAg <C-R>k<CR>
 
 " FZF with Ripgrep
 " let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
