@@ -22,7 +22,7 @@
 @font-face {
   font-family: 'FiraMono';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   src: url(monospace/FiraMono-Medium.ttf) format('truetype');
 }
 
@@ -38,17 +38,23 @@
   --active-file-bg-color: #222;
   --active-file-text-color: white;
   --control-text-color: #ddd;
-  --heading-text-color: #444;
-  --red-dark: #b5302e;
-  --black-dark: #444;
 
-  --text-font: FiraMono, Inconsolata, monospace;
-  --heading-font: "PT Mono", monospace;
+  --text-color: #555;
+  --code-color: #999;
+  --heading-color: #c0392b;
+
+  --grey: #ccc;
+  --red-dark: #c0392b;
+  --black-dark: #555;
+
+  --text-font: Inconsolata, monospace;
+  --code-font: FiraMono;
+  --heading-font: Inconsolata, monospace;
 }
 
 html {
   font-size: 1.1rem;
-  color: #333333;
+  color: var(--text-color);
 }
 
 html,
@@ -91,17 +97,17 @@ h6,
 [mdlike='h6'] {
   font-weight: bold;
   font-family: var(--heading-font);
-  color: var(--red-dark);
+  color: var(--heading-color);
 }
-[mdlike='h1'] > .md-blockmeta,
-[mdlike='h2'] > .md-blockmeta,
-[mdlike='h3'] > .md-blockmeta,
-[mdlike='h4'] > .md-blockmeta,
-[mdlike='h5'] > .md-blockmeta,
-[mdlike='h6'] > .md-blockmeta {
-  color: inherit;
+[mdlike='h1'] .md-blockmeta,
+[mdlike='h2'] .md-blockmeta,
+[mdlike='h3'] .md-blockmeta,
+[mdlike='h4'] .md-blockmeta,
+[mdlike='h5'] .md-blockmeta,
+[mdlike='h6'] .md-blockmeta {
+  color: var(--grey);
   font-weight: inherit;
-  font-style: inherit;
+  font-style: normal;
 }
 h1,
 [mdlike='h1'] {
@@ -198,6 +204,9 @@ th {
   overflow: visible;
   padding: .5em 1em;
 }
+.md-toc {
+  font-size: 1rem;
+}
 .md-toc-item {
   position: relative;
 }
@@ -205,8 +214,8 @@ th {
   width: 100%;
   display: inline-block;
 }
-a.md-toc-inner {
-  color: grey;
+.md-toc-inner {
+  color: var(--black-dark)
 }
 .md-toc-h2 .md-toc-inner {
   padding-left: 2em;
@@ -567,7 +576,8 @@ hr:after {
  * Inline Elements
  */
 code {
-  color: #949415;
+  color: var(--code-color);
+  font-family: var(--code-font);
   font-size: 0.9em;
 }
 mark {
@@ -580,12 +590,11 @@ em {
   color: #400469;
 }
 a {
-  color: #005dad;
+  color: #3498db;
+  text-decoration: none;
 }
 #write a:hover {
-  background-color: #2a6496;
-  color: white;
-  text-decoration: none;
+  text-decoration: underline;
 }
 #typora-source .cm-header {
   font-weight: bold;
