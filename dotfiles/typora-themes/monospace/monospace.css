@@ -399,11 +399,10 @@ ol[cid] > li:before {
   margin-left: -2ch;
   width: 4ch;
   position: absolute;
-  top: -1px;
+  top: -6px;
   vertical-align: middle;
   text-align: center;
   background-color: white;
-  color: #438600;
 }
 .task-list-item input:checked:before {
   content: '[x]';
