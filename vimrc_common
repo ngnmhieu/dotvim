@@ -60,7 +60,7 @@ Plug 'posva/vim-vue'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 
 "@@@@@@@@@@ SNIPPETS @@@@@@@@@@
-Plug 'garbas/vim-snipmate'
+Plug 'SirVer/ultisnips'
 Plug 'ngnmhieu/vim-snippets'
 Plug 'tomtom/tlib_vim'             
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -126,7 +126,7 @@ set completeopt-=preview
 set pastetoggle=<F2>
 
 " Toggle cursorline when switching between normal and insert mode
-:autocmd InsertEnter,InsertLeave * set cul!
+autocmd InsertEnter,InsertLeave * set cul!
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " MAPPINGS
@@ -149,7 +149,7 @@ nnoremap <silent> <C-j> <c-w>j
 " nnoremap <silent> <leader>j <c-w>J
 
 " move line up or down
-function MoveLine(direction)
+function! MoveLine(direction)
 
   if a:direction == 'up'
     if line('.') == 1
@@ -200,7 +200,7 @@ nnoremap <leader>P O<ESC>p
 " Next/Prev tab
 nnoremap <S-TAB> :tabp<CR>
 nnoremap <S-q> :tabn<CR>
-map <C-n> :tabnew<CR>
+noremap <C-n> :tabnew<CR>
 
 " scrolling up down
 nnoremap { <C-E>
@@ -314,16 +314,6 @@ endfunction
 set tabline=%!Tabline()
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" Searching with Ack
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" search the for files containing selected text with Ack (ignore hidden files)
-" -o is to output only the matched pattern
-" -Q match literal string
-" let g:ack_default_options = " -s -H --nocolor --nogroup --ignore-file=match:'^\\.' -o -Q"
-" vnoremap <C-k> "ky:Ack '<C-R>k' <CR>/<C-R>k<CR>
-" vnoremap <C-l> "ky:Ack '<C-R>k'
-
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Quickfix
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 "Jump to next file in Quickfix
@@ -358,7 +348,7 @@ let php_htmlInStrings = 1
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " map Ctrl-S to save file
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-command -nargs=0 -bar Update if &modified 
+command! -nargs=0 -bar Update if &modified 
                            \|    if empty(bufname('%'))
                            \|        browse confirm write
                            \|    else
@@ -385,11 +375,10 @@ let g:AutoCloseExpandSpace = 0
 " let g:autoformat_remove_trailing_spaces = 0
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" SnipMate
+" ultisnips
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " different keymap to trigger snipMate as YCM used tab
-imap <tab> <Plug>snipMateNextOrTrigger
-smap <tab> <Plug>snipMateNextOrTrigger
+let g:UltiSnipsExpandTrigger="<tab>"
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " YouCompleteMe Code-Completion
