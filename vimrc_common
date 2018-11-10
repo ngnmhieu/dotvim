@@ -26,7 +26,11 @@ Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
-" Plug 'christoomey/vim-tmux-navigator'
+if !executable("cmake")
+  echo "CMake is required to compile YouCompleteMe. Please install it before instaling YCM."
+else
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+endif
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plug 'mattn/emmet-vim'
@@ -51,7 +55,7 @@ Plug 'neoclide/vim-jsx-improve'
 Plug 'posva/vim-vue'
 " Plug 'mxw/vim-jsx'
 " Plug 'pangloss/vim-javascript'
-" Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 
 "@@@@@@@@@@ Racket @@@@@@@@@@
 " Plug 'wlangstroth/vim-racket'
@@ -131,6 +135,7 @@ autocmd InsertEnter,InsertLeave * set cul!
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " MAPPINGS
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nnoremap <leader>r :source ~/.vimrc<CR>
 
 " moving between lines
 nnoremap j gj
@@ -378,7 +383,7 @@ let g:AutoCloseExpandSpace = 0
 " ultisnips
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " different keymap to trigger snipMate as YCM used tab
-let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsExpandTrigger="<tab>"
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " YouCompleteMe Code-Completion
@@ -490,9 +495,25 @@ autocmd BufNewFile,BufRead *.tex nnoremap <leader>lv :LatexView<CR>
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " FUGITIVE
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+function! Trim(str)
+  return substitute(a:str, '\n\+$','', '')
+endfunction
+
+function! ToggleGitStatus()
+  " close git status buffer if opened
+  for bufno in tabpagebuflist()
+    if Trim(bufname(bufno)) ==# '.git/index'
+      execute 'bdelete ' . bufno
+      return
+    endif
+  endfor
+  " open git status buffer and move to bottom
+  execute 'bo Gstatus'
+endfunction 
+
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gs :call ToggleGitStatus()<CR>
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>ge :Gedit<CR>
 
