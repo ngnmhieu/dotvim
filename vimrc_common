@@ -92,6 +92,7 @@ set smartindent
 set cindent
 set cinkeys=0{,0},0#,!^F
 
+set shiftround
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -147,6 +148,33 @@ nnoremap <silent> <C-j> <c-w>j
 " nnoremap <silent> <leader>k <c-w>K
 " nnoremap <silent> <leader>j <c-w>J
 
+" move line up or down
+function MoveLine(direction)
+
+  if a:direction == 'up'
+    if line('.') == 1
+      return
+    elseif line('.') == line('$')
+      execute 'normal! "add"aP'
+    else
+      execute 'normal! "addk"aP'
+    endif
+  elseif a:direction == 'down'
+    if line('.') != line('$')
+      execute 'normal! "add"ap'
+    endif
+  endif
+endfunction
+
+if has('mac')
+  map ˚ :call MoveLine('up')<CR>
+  map ∆ :call MoveLine('down')<CR>
+else
+  map <A-k> :call MoveLine('up')<CR>
+  map <A-j> :call MoveLine('down')<CR>
+endif
+
+
 " remap go to first character of line
 nnoremap ! ^
 nnoremap ^ !
@@ -188,21 +216,15 @@ vnoremap <space> "zyq/"zp<CR><C-o>:set hlsearch<CR>
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " close current tab
-nnoremap <expr> <leader>w tabpagenr('$') > 1 ? ':tabclose<CR>' : ':q<CR>' 
+nnoremap <expr> <leader>w tabpagenr('$') > 1 ? ':<C-U>exe ":tabclose " . (v:count > 0 ? v:count : "")<CR>' : ':qa<CR>' 
 " close current buffer
-nnoremap <expr> <leader>c v:count > 0 ? ':<C-U>exe "tabclose " . v:count<CR>' : ':q<CR>' 
-" open tab: `1,.` to open tab #1,  `2,.` to open tab #2 and so on
-nnoremap <leader>. :<C-U>exe "tabnext " . v:count1<CR>
-" alternative to open tab
-nnoremap <leader>1 1gt
-nnoremap <leader>2 2gt
-nnoremap <leader>3 3gt
-nnoremap <leader>4 4gt
-nnoremap <leader>5 5gt
-nnoremap <leader>6 6gt
-nnoremap <leader>7 7gt
-nnoremap <leader>8 8gt
-nnoremap <leader>9 9gt
+nnoremap <leader>c :q<CR>
+" switch to tab: `1,.` to open tab #1,  `2,.` to open tab #2 and so on
+nnoremap <leader>. :<C-U>exe 'tabnext ' . (v:count > 0 ? v:count : '')<CR>
+" alternative to switch tab
+" for i in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+"   exe 'nnoremap <leader>'.i.' '.i.'gt'
+" endfor
 
 " Keyword AutoComplete (:help ins-completion)
 " Accept the current autocomplete and exit INSERT mode
@@ -455,8 +477,8 @@ command! -bang -nargs=* SearchAg
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
-nnoremap <silent> <C-e> :SearchAg<CR>
-vnoremap <C-e> "ky:SearchAg <C-R>k<CR>
+nnoremap <silent> <C-d> :SearchAg<CR>
+vnoremap <C-d> "ky:SearchAg <C-R>k<CR>
 
 " FZF with Ripgrep
 " let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
@@ -514,6 +536,8 @@ let g:ale_fixers = {
 let g:multi_cursor_start_word_key = '<C-m>'
 let g:multi_cursor_next_key       = '<C-m>'
 let g:multi_cursor_prev_key       = '<C-p>'
+let g:mults_cursor_prev_key       = '<C-p>'
+let g:multi_cursor_select_all_key = 'g<C-m>'
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " editorconfig-vim
