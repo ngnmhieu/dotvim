@@ -64,7 +64,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 
 "@@@@@@@@@@ SNIPPETS @@@@@@@@@@
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'ngnmhieu/vim-snippets'
 Plug 'tomtom/tlib_vim'             
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -388,9 +388,7 @@ let g:AutoCloseExpandSpace = 0
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " YouCompleteMe Code-Completion
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" let g:ycm_auto_trigger = 1
-" let g:ycm_python_binary_path = '/usr/local/bin/python3'
-" let g:ycm_filetype_blacklist = {'ansible': 1, 'yaml': 1, 'json': 1, 'markdown': 1}
+let g:ycm_key_list_select_completion = ['<Down>']
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Syntastic Syntax Checking
