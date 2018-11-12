@@ -537,6 +537,8 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'vue': ['eslint']
 \}
+" fix cursor disappear on warning line
+let g:ale_echo_cursor = 0
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-multiple-cursors
