@@ -389,6 +389,11 @@ let g:AutoCloseExpandSpace = 0
 " YouCompleteMe Code-Completion
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 let g:ycm_key_list_select_completion = ['<Down>']
+nnoremap <leader>d :YcmCompleter GoTo<CR>
+vnoremap <leader>d :YcmCompleter GoTo<CR>
+nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+vnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <leader>f :YcmCompleter Fixit<CR>
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Syntastic Syntax Checking
@@ -537,6 +542,8 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'vue': ['eslint']
 \}
+" fix cursor disappear on warning line
+let g:ale_echo_cursor = 0
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-multiple-cursors
