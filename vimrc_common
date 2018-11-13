@@ -51,11 +51,11 @@ Plug 'tpope/vim-markdown'
 "@@@@@@@@@@ JAVASCRIPT @@@@@@@@@@
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'isRuslan/vim-es6'
-Plug 'neoclide/vim-jsx-improve'
 Plug 'posva/vim-vue'
-" Plug 'mxw/vim-jsx'
-" Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript' "
+" Plug 'mxw/vim-jsx'
+Plug 'neoclide/vim-jsx-improve'
 
 "@@@@@@@@@@ Racket @@@@@@@@@@
 " Plug 'wlangstroth/vim-racket'
@@ -500,7 +500,7 @@ endfunction
 function! ToggleGitStatus()
   " close git status buffer if opened
   for bufno in tabpagebuflist()
-    if Trim(bufname(bufno)) ==# '.git/index'
+    if Trim(bufname(bufno)) =~ ".git/index$"
       execute 'bdelete ' . bufno
       return
     endif

@@ -18,14 +18,6 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
-au BufNewFile,BufRead *.js :set softtabstop=4
-au BufNewFile,BufRead *.js :set tabstop=4
-au BufNewFile,BufRead *.js :set shiftwidth=4
-
-au BufNewFile,BufRead *.vue :set softtabstop=4
-au BufNewFile,BufRead *.vue :set tabstop=4
-au BufNewFile,BufRead *.vue :set shiftwidth=4
-
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Racket
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
