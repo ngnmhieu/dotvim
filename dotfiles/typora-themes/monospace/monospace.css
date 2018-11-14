@@ -386,6 +386,9 @@ ol[cid] {
   counter-reset: item;
   list-style-type: none;
 }
+ol[cid] p {
+  margin-left: 0.5ch;
+}
 ol[cid] > li:before {
   content: counter(item) ". ";
   counter-increment: item;
