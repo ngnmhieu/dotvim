@@ -127,7 +127,7 @@ let mapleader=','
 set completeopt-=preview
 
 " Paste mode toggle, aid in pasting text with Ctrl-Shift-v
-set pastetoggle=<F2>
+set pastetoggle=<leader>p
 
 " Toggle cursorline when switching between normal and insert mode
 autocmd InsertEnter,InsertLeave * set cul!
@@ -198,8 +198,8 @@ vnoremap > >gv
 xnoremap p "_dP
 
 " Paste to new line
-nnoremap <leader>p o<ESC>p
-nnoremap <leader>P O<ESC>p
+" nnoremap <leader>p o<ESC>p
+" nnoremap <leader>P O<ESC>p
 
 " Next/Prev tab
 nnoremap <S-TAB> :tabp<CR>
