@@ -9,8 +9,6 @@ PLATFORM=$(uname)
 [[ "$1" == "-y" || "$1" == "-Y" ]] && CONFIRM_ALL=1 || CONFIRM_ALL=0
 CONF_PATH=$HOME/.vim/dotfiles/tmux/tmux.conf
 LINK_PATH=$HOME/.tmux.conf
-BACKUP_FILEPATH=$HOME/.tmux.conf.bak
-SUCCESS=1
 
 # Program installation helper
 install_program () {
@@ -48,7 +46,7 @@ if [[ -L "$LINK_PATH" ]]; then
   if [[ $CONFIRM_ALL == 1 ]]; then
     OVERWRITE=Y
   else
-    read -p "A configuration file already existed at $LINK_PATH. Overwrite? (Y/N): " OVERWRITE
+    read -p "A configuration file already existed at $LINK_PATH - Overwrite? (Y/N): " OVERWRITE
   fi
 
   if [[ $OVERWRITE == [yY] || $OVERWRITE == [yY][eE][sS] ]]; then
@@ -59,8 +57,10 @@ if [[ -L "$LINK_PATH" ]]; then
   fi
 fi
 
-echo "Creating soft link ..."
-ln -s $CONF_PATH $LINK_PATH
+if [[ ! -L "$LINK_PATH" ]]; then
+  echo "Creating soft link for tmux.conf ..."
+  ln -s $CONF_PATH $LINK_PATH
+fi
 
 echo "Checking dependencies ..."
 
