@@ -2,4 +2,12 @@
 
 BASEDIR=$(dirname $0)
 
-. $BASEDIR/scripts/vim.sh
+read -p "Setup vim? (Y/N)" VIM
+if [[ $VIM == [yY] || $VIM == [yY][eE][sS] ]]; then
+  . $BASEDIR/scripts/vim.sh
+fi
+
+read -p "Setup tmux? (Y/N)" TMUX
+if [[ $TMUX == [yY] || $TMUX == [yY][eE][sS] ]]; then
+  . $BASEDIR/scripts/tmux.sh
+fi

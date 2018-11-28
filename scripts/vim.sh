@@ -1,7 +1,6 @@
 #!/bin/bash
 
-BASEDIR=$(dirname $0)
-source $BASEDIR/helpers.sh
+source $HOME/.vim/scripts/helpers.sh
 
 PLATFORM=$(uname)
 [[ "$1" == "-y" || "$1" == "-Y" ]] && CONFIRM_ALL=1 || CONFIRM_ALL=0
