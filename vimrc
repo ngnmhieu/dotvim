@@ -135,7 +135,6 @@ autocmd InsertEnter,InsertLeave * set cul!
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " MAPPINGS
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-nnoremap <leader>r :source ~/.vimrc<CR>
 
 " moving between lines
 nnoremap j gj
