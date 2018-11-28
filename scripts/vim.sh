@@ -1,15 +1,11 @@
 #!/bin/bash
 
-######################################
-#                                    #
-# Setup script for vim configuration #
-# @author ngnmhieu                   #
-#                                    #
-######################################
+BASEDIR=$(dirname $0)
+source $BASEDIR/helpers.sh
 
 PLATFORM=$(uname)
 [[ "$1" == "-y" || "$1" == "-Y" ]] && CONFIRM_ALL=1 || CONFIRM_ALL=0
-CONF_PATH=$HOME/.vim/vimrc_common
+CONF_PATH=$HOME/.vim/vimrc
 LINK_PATH=$HOME/.vimrc
 
 if [[ -L "$LINK_PATH" ]]; then
@@ -31,5 +27,21 @@ fi
 
 echo "Installing vim plugins ..."
 vim +PlugInstall +qa
+
+echo "Checking dependencies ..."
+
+should_i_install fzf
+if [[ $? == 0 ]]; then
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+fi
+
+should_i_install ag
+if [[ $? == 0 ]]; then
+  if [[ $PLATFORM == "Darwin" ]]; then 
+    brew install the_silver_searcher
+  else
+    sudo apt-get install silversearcher-ag
+  fi
+fi
 
 echo "Setup completed!"
