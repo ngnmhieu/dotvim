@@ -457,28 +457,17 @@ autocmd BufNewFile,BufRead *.json set softtabstop=2
 " Installation path
 set rtp+=~/.fzf
 
-" Search for files 
+" search for files
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 nnoremap <silent> <C-p> :FZF<CR>
 
-" FZF with Silver search
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
-command! -bang -nargs=* SearchAg
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
+" autocomplete file path
+imap <c-f> <plug>(fzf-complete-file-ag)
+
+" search file content
+command! -bang -nargs=* SearchAg call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 nnoremap <silent> <C-d> :SearchAg<CR>
 vnoremap <C-d> "ky:SearchAg <C-R>k<CR>
-
-" FZF with Ripgrep
-" let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-" command! -bang -nargs=* SearchRg
-"   \ call fzf#vim#grep(
-"   \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
-"   \   <bang>0 ? fzf#vim#with_preview('up:60%')
-"   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-"   \   <bang>0)
-
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " VIM-LATEX
