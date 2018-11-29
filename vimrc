@@ -87,6 +87,7 @@ endif
 " appearance
 colorscheme jellybeans
 
+set modeline
 set nu " line numbers
 set expandtab " turn tabs into spaces
 syntax on
