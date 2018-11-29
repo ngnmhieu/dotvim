@@ -14,12 +14,7 @@ LINK_PATH=$HOME/.tmux.conf
 echo "Configuring TMUX ..."
 
 if [[ -L "$LINK_PATH" ]]; then
-  if [[ $CONFIRM_ALL == 1 ]]; then
-    OVERWRITE=Y
-  else
-    read -p "A configuration file already existed at $LINK_PATH - Overwrite? (Y/N): " OVERWRITE
-  fi
-
+  read -p "A configuration file already existed at $LINK_PATH - Overwrite? (Y/N): " OVERWRITE
   if [[ $OVERWRITE == [yY] || $OVERWRITE == [yY][eE][sS] ]]; then
     rm $LINK_PATH
   fi
