@@ -652,6 +652,10 @@ a {
   border-color: #333;
 }
 
+.outline-expander {
+  top: 5px;
+}
+
 #typora-sidebar {
   color: #ddd;
 }
