@@ -56,6 +56,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript' "
 " Plug 'mxw/vim-jsx'
 Plug 'neoclide/vim-jsx-improve'
+Plug 'kchmck/vim-coffee-script'
 
 "@@@@@@@@@@ Racket @@@@@@@@@@
 " Plug 'wlangstroth/vim-racket'
@@ -241,10 +242,11 @@ cmap w!! w !sudo tee > /dev/null %
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-instant-markdown
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" let g:vim_markdown_folding_disabled=1 " disable folding in markdown files
-let g:instant_markdown_autostart=0 " to trigger use :InstantMarkdownPreview
+" disable folding in markdown files
+" let g:vim_markdown_folding_disabled=1 
+" Trigger markdown preview with :InstantMarkdownPreview
+" let g:instant_markdown_autostart=0
 " au BufRead,BufNewFile *.md set filetype=markdown
-
 
 " remove delay in exiting visual mode
 set timeoutlen=1000 ttimeoutlen=0
@@ -477,6 +479,8 @@ autocmd BufNewFile,BufRead *.tex nnoremap <leader>ll :Latexmk<CR>
 autocmd BufNewFile,BufRead *.tex nnoremap <leader>le :LatexErrors<CR>
 autocmd BufNewFile,BufRead *.tex nnoremap <leader>lc :LatexmkClean<CR>
 autocmd BufNewFile,BufRead *.tex nnoremap <leader>lv :LatexView<CR>
+autocmd BufNewFile,BufRead *.tex nnoremap <leader>lt :LatexTOCToggle<CR>
+autocmd BufNewFile,BufRead *.tex set tw=80
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " FUGITIVE
