@@ -63,7 +63,7 @@ Plug 'kchmck/vim-coffee-script'
 
 "@@@@@@@@@@ LATEX @@@@@@@@@@
 Plug 'LaTeX-Box-Team/LaTeX-Box'
-Plug 'rhysd/vim-grammarous'
+Plug 'rhysd/vim-grammarous' 
 
 "@@@@@@@@@@ SNIPPETS @@@@@@@@@@
 " Plug 'SirVer/ultisnips'
