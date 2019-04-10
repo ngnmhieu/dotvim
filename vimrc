@@ -26,6 +26,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'ervandew/supertab'
 if !executable("cmake")
   echo "CMake is required to compile YouCompleteMe. Please install it before instaling YCM."
 else
@@ -66,7 +67,7 @@ Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'rhysd/vim-grammarous' 
 
 "@@@@@@@@@@ SNIPPETS @@@@@@@@@@
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 Plug 'ngnmhieu/vim-snippets'
 Plug 'tomtom/tlib_vim'             
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -385,8 +386,10 @@ let g:AutoCloseExpandSpace = 0
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " ultisnips
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" different keymap to trigger snipMate as YCM used tab
-" let g:UltiSnipsExpandTrigger="<tab>"
+" make UtilSnips compatible with YCM using SuperTab
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " YouCompleteMe Code-Completion
@@ -397,6 +400,10 @@ vnoremap <leader>d :YcmCompleter GoTo<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 vnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <leader>f :YcmCompleter Fixit<CR>
+" make UtilSnips compatible with YCM using SuperTab
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Syntastic Syntax Checking
