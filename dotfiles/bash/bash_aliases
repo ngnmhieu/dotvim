@@ -32,6 +32,10 @@ alias gpl='git pull'
 alias grh='git reset HEAD'
 alias grb='git rebase'
 
+# docker
+alias dc='docker-compose'
+alias d='docker'
+
 if [[ "$PLATFORM" == 'Darwin' ]]; then
   alias stree='/Applications/SourceTree.app/Contents/Resources/stree'
 fi
