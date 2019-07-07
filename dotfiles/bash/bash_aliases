@@ -14,7 +14,6 @@ alias x='exit'
 alias ..='cd ..'
 
 # bash & cli
-alias so='source'
 alias tmux="TERM=screen-256color-bce tmux"
 alias v='vim'
 alias dotvim='cd ~/.vim'

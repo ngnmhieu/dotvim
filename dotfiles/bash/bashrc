@@ -4,6 +4,9 @@ stty -ixon
 # use vim as standard command-line editor
 export EDITOR=vim
 
+# source aliases file
+[[ -r ~/.bash_aliases ]] && . ~/.bash_aliases
+
 # fancy bash start line
 fancy_custom_prompt() {
   SHORT_PWD=""
@@ -25,3 +28,16 @@ fancy_custom_prompt() {
   echo -e $SHORT_PWD
 }
 PS1="[\u@\h] \$(fancy_custom_prompt)\[\033[32m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\[\033[00m\] $ "
+
+# bash completion
+PLATFORM=$(uname)
+if [[ $PLATFORM == "Darwin" ]]; then
+  export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+  BASH_COMPLETION_SCRIPT=/usr/local/etc/profile.d/bash_completion.sh
+  [[ -r $BASH_COMPLETION_SCRIPT ]] && . $BASH_COMPLETION_SCRIPT 
+fi 
+
+if [[ $PLATFORM == "Linux" ]]; then
+  BASH_COMPLETION_SCRIPT=/usr/share/bash-completion/bash_completion 
+  [[ -r $BASH_COMPLETION_SCRIPT ]] && . $BASH_COMPLETION_SCRIPT 
+fi
