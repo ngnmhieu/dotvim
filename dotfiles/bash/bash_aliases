@@ -35,6 +35,7 @@ alias grb='git rebase'
 # docker
 alias dc='docker-compose'
 alias d='docker'
+alias kb='kubectl'
 
 if [[ "$PLATFORM" == 'Darwin' ]]; then
   alias stree='/Applications/SourceTree.app/Contents/Resources/stree'

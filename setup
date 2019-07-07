@@ -11,3 +11,8 @@ read -p "Setup tmux? (Y/N)" TMUX
 if [[ $TMUX == [yY] || $TMUX == [yY][eE][sS] ]]; then
   . $BASEDIR/scripts/tmux.sh -y
 fi
+
+read -p "Setup bash completion? (Y/N)" BASH_COMPLETION
+if [[ $BASH_COMPLETION == [yY] || $BASH_COMPLETION == [yY][eE][sS] ]]; then
+  . $BASEDIR/scripts/bash-completion.sh -y
+fi
