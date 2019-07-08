@@ -10,4 +10,6 @@ map <C-p>  <A-p>
 map <C-x>  <A-x>
 map g<C-n> g<A-n>
 
+" IntelliJ shortcuts
+map <C-h> :action TypeHierarchy<CR>
 
