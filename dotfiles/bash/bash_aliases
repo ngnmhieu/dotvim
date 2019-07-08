@@ -14,7 +14,6 @@ alias x='exit'
 alias ..='cd ..'
 
 # bash & cli
-alias so='source'
 alias tmux="TERM=screen-256color-bce tmux"
 alias v='vim'
 alias dotvim='cd ~/.vim'
@@ -35,6 +34,7 @@ alias grb='git rebase'
 # docker
 alias dc='docker-compose'
 alias d='docker'
+alias kb='kubectl'
 
 if [[ "$PLATFORM" == 'Darwin' ]]; then
   alias stree='/Applications/SourceTree.app/Contents/Resources/stree'

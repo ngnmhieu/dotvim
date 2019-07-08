@@ -21,3 +21,26 @@ function should_i_install () {
   return 1
 }
 
+function isMac () {
+  if [[ $(uname) == "Darwin" ]]; then 
+    return 0
+  fi
+  return 1
+}
+
+function isLinux () {
+  if [[ $(uname) == "Linux" ]]; then 
+    return 0
+  fi
+  return 1
+}
+
+function hasBREW () {
+  command -v brew > /dev/null
+  return $?
+}
+
+function hasAPT () {
+  command -v apt-get > /dev/null
+  return $?
+}
