@@ -16,3 +16,8 @@ read -p "Setup bash completion? (Y/N)" BASH_COMPLETION
 if [[ $BASH_COMPLETION == [yY] || $BASH_COMPLETION == [yY][eE][sS] ]]; then
   . $BASEDIR/scripts/bash-completion.sh -y
 fi
+
+read -p "Setup other tools (language servers, prettifier, ...)? (Y/N)" BASH_COMPLETION
+if [[ $BASH_COMPLETION == [yY] || $BASH_COMPLETION == [yY][eE][sS] ]]; then
+  . $BASEDIR/scripts/tools.sh -y
+fi

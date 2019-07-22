@@ -35,6 +35,11 @@ function isLinux () {
   return 1
 }
 
+function hasNPM () {
+  command -v brew > /dev/null
+  return $?
+}
+
 function hasBREW () {
   command -v brew > /dev/null
   return $?

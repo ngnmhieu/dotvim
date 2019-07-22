@@ -27,11 +27,20 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ervandew/supertab'
-if !executable("cmake")
-  echo "CMake is required to compile YouCompleteMe. Please install it before instaling YCM."
-else
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
-endif
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'branch': 'release/1.x',
+  \ 'for': [ 'javascript', 'typescript', 'css', 'less', 'scss', 'json',
+  \          'graphql', 'markdown', 'vue', 'lua', 'php', 'python', 'ruby',
+  \          'html', 'swift' ] }
+
+"@@@@@@@@@@ YouCompleteMe @@@@@@@@@@
+" if !executable("cmake")
+"   echo 'CMake is required to compile YouCompleteMe. Please install it before instaling YCM.'
+" else
+"   Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
+" endif
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plug 'mattn/emmet-vim'
@@ -57,6 +66,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 " Plug 'mxw/vim-jsx'
 Plug 'neoclide/vim-jsx-improve'
+
 
 "@@@@@@@@@@ Racket @@@@@@@@@@
 " Plug 'wlangstroth/vim-racket'
@@ -405,6 +415,12 @@ nnoremap <leader>f :YcmCompleter Fixit<CR>
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+" Language Server
+let g:ycm_language_server = [ {
+    \ 'name': 'vue',
+    \ 'filetypes': [ 'vue' ],
+    \ 'cmdline': [ expand('$HOME/.vim/tools/node_modules/vue-language-server/bin/vls') ]
+    \ } ]
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Syntastic Syntax Checking

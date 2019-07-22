@@ -1,0 +1,8 @@
+{
+  "name": "helper-programs",
+  "version": "1.0.0",
+  "description": "collection of helper programs installed with npm",
+  "author": "ngnmhieu@gmail.com",
+  "dependencies": {
+  }
+}
