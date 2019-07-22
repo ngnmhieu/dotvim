@@ -30,7 +30,7 @@ Plug 'ervandew/supertab'
 if !executable("cmake")
   echo "CMake is required to compile YouCompleteMe. Please install it before instaling YCM."
 else
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
 endif
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
@@ -54,10 +54,9 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'isRuslan/vim-es6'
 Plug 'posva/vim-vue'
 Plug 'leafgarland/typescript-vim'
-Plug 'pangloss/vim-javascript' "
+Plug 'pangloss/vim-javascript'
 " Plug 'mxw/vim-jsx'
 Plug 'neoclide/vim-jsx-improve'
-Plug 'kchmck/vim-coffee-script'
 
 "@@@@@@@@@@ Racket @@@@@@@@@@
 " Plug 'wlangstroth/vim-racket'
@@ -334,6 +333,8 @@ au FileType qf call AdjustWindowHeight(3, 10)
 function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
+" Use enter to switch to location without leaving quickfix window
+au BufWinEnter quickfix nnoremap <buffer> <Enter> :.cc<CR>
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Folding
