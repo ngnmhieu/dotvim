@@ -16,6 +16,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
 Plug 'ngnmhieu/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'mortonfox/nerdtree-term'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -83,6 +85,9 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 
 "@@@@@@@@@@ NGINX @@@@@@@@@@
 Plug 'chr4/nginx.vim'
+
+"@@@@@@@@@@ Terraform @@@@@@@@@@
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
