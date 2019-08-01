@@ -286,6 +286,33 @@ let g:nerdtree_tabs_autoclose = 1
 let NERDTreeIgnore = ['^CVS$']
 let NERDTreeChDirMode = 2  
 
+function! GetVisualSelection()
+    " Why is this not a built-in Vim script function?!
+    let [line_start, column_start] = getpos("'<")[1:2]
+    let [line_end, column_end] = getpos("'>")[1:2]
+    let lines = getline(line_start, line_end)
+    if len(lines) == 0
+        return ''
+    endif
+    let lines[-1] = lines[-1][: column_end - (&selection == 'inclusive' ? 1 : 2)]
+    let lines[0] = lines[0][column_start - 1:]
+    return join(lines, "\n")
+endfunction
+
+function! NERDTreeFindPath()
+  let path = simplify(trim(GetVisualSelection()))
+  let abs_path = simplify(expand('%:p:h')."/".path)
+  if path[0] == '/'
+    execute 'NERDTreeFind '.path
+    echo path
+  else
+    execute 'NERDTreeFind '.abs_path
+    echo abs_path
+  endif
+endfunction
+
+vmap <C-f> <ESC>:exec "call NERDTreeFindPath()"<CR>
+
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Tabular
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
