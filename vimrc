@@ -15,7 +15,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
-Plug 'ngnmhieu/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mortonfox/nerdtree-term'
 Plug 'bling/vim-airline'
