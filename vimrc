@@ -442,9 +442,9 @@ let g:AutoCloseExpandSpace = 0
 " ultisnips
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " make UtilSnips compatible with YCM using SuperTab
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" let g:UltiSnipsExpandTrigger = "<tab>"
+" let g:UltiSnipsJumpForwardTrigger = "<tab>"
+" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " " YouCompleteMe Code-Completion
@@ -635,9 +635,13 @@ nmap <Leader>f <Plug>(Prettier)
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-terraform-completion
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+if !executable('neovim-ruby-host')
+    echo "'neovim-ruby-host' is not found. Make sure Ruby and neovim Gem is installed and 'neovim-ruby-host' binary is in the PATH."
+    echo "Install neovim Gem with `gem install neovim`."
+endif
+
 let g:deoplete#omni_patterns = {}
 let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
-let g:deoplete#enable_at_startup = 1
 call deoplete#initialize()
 
 " Include OS-specific configuration
