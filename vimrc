@@ -148,8 +148,8 @@ set mouse=a
 " change leader key to ,
 let mapleader=','
 
-" turn off preview window in omni auto complete
-set completeopt-=preview
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Paste mode toggle, aid in pasting text with Ctrl-Shift-v
 set pastetoggle=<leader>p
