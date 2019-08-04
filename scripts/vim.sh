@@ -29,7 +29,7 @@ fi
 # Silversearcher
 if should_i_install ag; then
   (isMac && PACKAGE=the_silver_searcher) || (isLinux && PACKAGE=silversearcher-ag)
-  ishould_i_install agnstall_package $PACKAGE
+  install_package $PACKAGE
 fi
 
 echo "Setup completed!"
