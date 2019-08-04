@@ -21,7 +21,6 @@ Plug 'mortonfox/nerdtree-term'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'chase/vim-ansible-yaml'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
@@ -37,12 +36,20 @@ Plug 'prettier/vim-prettier', {
   \          'graphql', 'markdown', 'vue', 'lua', 'php', 'python', 'ruby',
   \          'html', 'swift' ] }
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
+
 "@@@@@@@@@@ YouCompleteMe @@@@@@@@@@
 " if !executable("cmake")
 "   echo 'CMake is required to compile YouCompleteMe. Please install it before instaling YCM.'
 " else
 "   Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
 " endif
+"
+"
+"@@@@@@@@@@ ANSIBLE @@@@@@@@@@
+Plug 'chase/vim-ansible-yaml'
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plug 'mattn/emmet-vim'
@@ -69,7 +76,6 @@ Plug 'pangloss/vim-javascript'
 " Plug 'mxw/vim-jsx'
 Plug 'neoclide/vim-jsx-improve'
 
-
 "@@@@@@@@@@ Racket @@@@@@@@@@
 " Plug 'wlangstroth/vim-racket'
 
@@ -88,6 +94,7 @@ Plug 'chr4/nginx.vim'
 
 "@@@@@@@@@@ Terraform @@@@@@@@@@
 Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
 
 call plug#end()
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -254,6 +261,11 @@ inoremap <C-z> <C-y><ESC>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" deoplete
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+let g:deoplete#enable_at_startup = 1
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-instant-markdown
@@ -619,6 +631,14 @@ nmap <leader>[ <Plug>GitGutterPrevHunk
 " vim-prettier 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 nmap <Leader>f <Plug>(Prettier)
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" vim-terraform-completion
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
+let g:deoplete#enable_at_startup = 1
+call deoplete#initialize()
 
 " Include OS-specific configuration
 let is_mac = has("gui_mac") || has("gui_macvim") || has("mac")
