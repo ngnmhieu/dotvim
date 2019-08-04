@@ -7,6 +7,16 @@ if [[ $VIM == [yY] || $VIM == [yY][eE][sS] ]]; then
   . $BASEDIR/scripts/vim.sh -y
 fi
 
+read -p "Setup neovim? (Y/N)" NVIM
+if [[ $NVIM == [yY] || $NVIM == [yY][eE][sS] ]]; then
+  . $BASEDIR/scripts/nvim.sh -y
+fi
+
+read -p "Setup vim plugins? (Y/N)" PLUGINS
+if [[ $PLUGINS == [yY] || $PLUGINS == [yY][eE][sS] ]]; then
+  . $BASEDIR/scripts/plugins.sh -y
+fi
+
 read -p "Setup tmux? (Y/N)" TMUX
 if [[ $TMUX == [yY] || $TMUX == [yY][eE][sS] ]]; then
   . $BASEDIR/scripts/tmux.sh -y

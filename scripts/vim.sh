@@ -43,7 +43,4 @@ if [[ $? == 0 ]]; then
   fi
 fi
 
-echo "Installing vim plugins ..."
-vim +PlugInstall +qa
-
 echo "Setup completed!"

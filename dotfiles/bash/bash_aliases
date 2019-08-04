@@ -15,7 +15,9 @@ alias ..='cd ..'
 
 # bash & cli
 alias tmux="TERM=screen-256color-bce tmux"
-alias v='vim'
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
 alias dotvim='cd ~/.vim'
 
 # git

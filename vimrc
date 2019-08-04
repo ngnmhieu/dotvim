@@ -434,25 +434,25 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" YouCompleteMe Code-Completion
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-let g:ycm_key_list_select_completion = ['<Down>']
-nnoremap <leader>d :YcmCompleter GoTo<CR>
-vnoremap <leader>d :YcmCompleter GoTo<CR>
-nnoremap <leader>r :YcmCompleter GoToReferences<CR>
-vnoremap <leader>r :YcmCompleter GoToReferences<CR>
-nnoremap <leader>f :YcmCompleter Fixit<CR>
-" make UtilSnips compatible with YCM using SuperTab
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-" Language Server
-let g:ycm_language_server = [ {
-    \ 'name': 'vue',
-    \ 'filetypes': [ 'vue' ],
-    \ 'cmdline': [ expand('$HOME/.vim/tools/node_modules/vue-language-server/bin/vls') ]
-    \ } ]
+" "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" " YouCompleteMe Code-Completion
+" "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" let g:ycm_key_list_select_completion = ['<Down>']
+" nnoremap <leader>d :YcmCompleter GoTo<CR>
+" vnoremap <leader>d :YcmCompleter GoTo<CR>
+" nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+" vnoremap <leader>r :YcmCompleter GoToReferences<CR>
+" nnoremap <leader>f :YcmCompleter Fixit<CR>
+" " make UtilSnips compatible with YCM using SuperTab
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:SuperTabDefaultCompletionType = '<C-n>'
+" " Language Server
+" let g:ycm_language_server = [ {
+"     \ 'name': 'vue',
+"     \ 'filetypes': [ 'vue' ],
+"     \ 'cmdline': [ expand('$HOME/.vim/tools/node_modules/vue-language-server/bin/vls') ]
+"     \ } ]
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " Syntastic Syntax Checking
@@ -604,6 +604,8 @@ let g:multi_cursor_select_all_key = 'g<C-m>'
 
 if !has('python') && !has('python3')
     echo "This vim distribution isn't compiled with +python or +python3. EditorConfig-Core is required to use editorconfig-vim plugin."
+    echo "If you're using neovim. pynvim also needs to be installed."
+    echo "python3 -m pip install --user --upgrade pynvim"
 endif
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
@@ -612,6 +614,11 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 nmap <leader>] <Plug>GitGutterNextHunk
 nmap <leader>[ <Plug>GitGutterPrevHunk
+
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+" vim-prettier 
+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nmap <Leader>f <Plug>(Prettier)
 
 " Include OS-specific configuration
 let is_mac = has("gui_mac") || has("gui_macvim") || has("mac")

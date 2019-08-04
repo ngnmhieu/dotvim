@@ -1,5 +1,8 @@
 #!/bin/bash
 
+TRUE=0
+FALSE=1
+
 function should_i_install () {
   PROGRAM=$1
   command -v $PROGRAM > /dev/null
@@ -47,5 +50,20 @@ function hasBREW () {
 
 function hasAPT () {
   command -v apt-get > /dev/null
+  return $?
+}
+
+function hasVIM() {
+  command -v apt-get > /dev/null
+  return $?
+}
+
+function hasVIM() {
+  command -v vim > /dev/null
+  return $?
+}
+
+function hasNeoVIM() {
+  command -v nvim > /dev/null
   return $?
 }
