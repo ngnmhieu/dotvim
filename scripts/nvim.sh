@@ -2,8 +2,6 @@
 
 source $HOME/.vim/scripts/helpers.sh
 
-PLATFORM=$(uname)
-[[ "$1" == "-y" || "$1" == "-Y" ]] && CONFIRM_ALL=1 || CONFIRM_ALL=0
 INITVIM_PATH=$HOME/.vim/init.vim
 CONF_PATH=$HOME/.config
 LINK_PATH=$CONF_PATH/init.vim

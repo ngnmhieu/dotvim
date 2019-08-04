@@ -1,13 +1,7 @@
 #!/bin/bash
 
-## USAGE:
-##   setup.sh [-y] 
-## PARAMETERS:
-##   -y   confirm all promts
 source $HOME/.vim/scripts/helpers.sh
 
-PLATFORM=$(uname)
-[[ "$1" == "-y" || "$1" == "-Y" ]] && CONFIRM_ALL=1 || CONFIRM_ALL=0
 CONF_PATH=$HOME/.vim/dotfiles/tmux/tmux.conf
 LINK_PATH=$HOME/.tmux.conf
 
@@ -27,17 +21,15 @@ fi
 
 echo "Checking dependencies ..."
 
-if [[ $PLATFORM == "Darwin" ]]; then 
-  should_i_install reattach-to-user-namespace 
-  if [[ $? == 0 ]]; then
-    brew install reattach-to-user-namespace
+if isMac; then 
+  if should_i_install reattach-to-user-namespace; then
+    install_package reattach-to-user-namespace
   fi
 fi
 
-if [[ $PLATFORM == "Linux" ]]; then 
-  should_i_install xclip
-  if [[ $? == 0 ]]; then
-    sudo apt install xclip
+if isLinux; then 
+  if should_i_install xclip; then
+    install_package xclip
   fi
 fi
 

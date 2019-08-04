@@ -1,8 +1,5 @@
 #!/bin/bash
 
-TRUE=0
-FALSE=1
-
 function should_i_install () {
   PROGRAM=$1
   command -v $PROGRAM > /dev/null
@@ -22,6 +19,24 @@ function should_i_install () {
     fi
   fi
   return 1
+}
+
+function install_package() {
+  PROGRAM=$1
+  if isMac; then 
+    if hasBREW; then
+      brew install $PROGRAM
+    else
+      echo "Brew is required for the installation. Please install brew first (https://brew.sh)."
+    fi
+  elif isLinux; then 
+    (hasAPT && PACKAGE_MANAGER=apt-get) || (hasYUM && PACKAGE_MANAGER=yum) || PACKAGE_MANAGER=""
+    if [[ $PACKAGE_MANAGER != "" ]]; then 
+      $PACKAGE_MANAGER install bash-completion
+    else
+      echo "APT or YUM package manager is required for the installation. Please install one of them first."
+    fi
+  fi
 }
 
 function isMac () {
@@ -49,11 +64,6 @@ function hasBREW () {
 }
 
 function hasAPT () {
-  command -v apt-get > /dev/null
-  return $?
-}
-
-function hasVIM() {
   command -v apt-get > /dev/null
   return $?
 }

@@ -20,27 +20,16 @@ if [[ ! -L "$LINK_PATH" ]]; then
 fi
 
 echo "Checking dependencies ..."
-should_i_install fzf
-if [[ $? == 0 ]]; then
+
+# FZF - Command-line fuzzy finder
+if should_i_install fzf; then
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 fi
 
-should_i_install ag
-if [[ $? == 0 ]]; then
-  if [[ $PLATFORM == "Darwin" ]]; then 
-    brew install the_silver_searcher
-  else
-    sudo apt install silversearcher-ag
-  fi
-fi
-
-should_i_install cmake
-if [[ $? == 0 ]]; then
-  if [[ $PLATFORM == "Darwin" ]]; then 
-    brew install cmake
-  else
-    sudo apt install cmake
-  fi
+# Silversearcher
+if should_i_install ag; then
+  (isMac && PACKAGE=the_silver_searcher) || (isLinux && PACKAGE=silversearcher-ag)
+  ishould_i_install agnstall_package $PACKAGE
 fi
 
 echo "Setup completed!"

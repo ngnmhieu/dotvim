@@ -4,27 +4,22 @@ source $HOME/.vim/scripts/helpers.sh
 
 echo "Installing bash completion"
 
-isMac
-if [[ $? == 0 ]]; then 
-  hasBREW
-  if [[ $? == 0 ]]; then
+if isMac; then 
+  if hasBREW; then
     brew install bash-completion@2
   else
     echo "Brew is required for the installation. Please install brew first (https://brew.sh)."
   fi
 fi
 
-isLinux
-if [[ $? == 0 ]]; then 
+
+if isLinux; then 
   PACKAGE_MANAGER=""
-  hasAPT
-  if [[ $? == 0 ]]; then
+  
+  if hasAPT; then
     PACKAGE_MANAGER=apt-get
-  else
-    hasYUM
-    if [[ $? == 0 ]]; then
-      PACKAGE_MANAGER=YUM
-    fi
+  elif hasYUM; then
+    PACKAGE_MANAGER=yum
   fi
 
   if [[ $PACKAGE_MANAGER != "" ]]; then 
