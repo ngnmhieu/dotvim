@@ -2,8 +2,8 @@ source $HOME/.vim/scripts/helpers.sh
 
 echo "Installing vim plugins ..."
 
-if hasNeoVIM; then
+if has_program nvim; then
   nvim +PlugInstall +qa
-elif hasVIM; then
+elif has_program vim; then
   vim +PlugInstall +qa
 fi

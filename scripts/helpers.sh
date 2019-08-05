@@ -24,13 +24,13 @@ function should_i_install () {
 function install_package() {
   PROGRAM=$1
   if isMac; then 
-    if hasBREW; then
+    if has_program brew; then
       brew install $PROGRAM
     else
       echo "Brew is required for the installation. Please install brew first (https://brew.sh)."
     fi
   elif isLinux; then 
-    (hasAPT && PACKAGE_MANAGER=apt-get) || (hasYUM && PACKAGE_MANAGER=yum) || PACKAGE_MANAGER=""
+    (has_program apt-get && PACKAGE_MANAGER=apt-get) || (has_program yum && PACKAGE_MANAGER=yum) || PACKAGE_MANAGER=""
     if [[ $PACKAGE_MANAGER != "" ]]; then 
       $PACKAGE_MANAGER install bash-completion
     else
@@ -53,27 +53,7 @@ function isLinux () {
   return 1
 }
 
-function hasNPM () {
-  command -v brew > /dev/null
-  return $?
-}
-
-function hasBREW () {
-  command -v brew > /dev/null
-  return $?
-}
-
-function hasAPT () {
-  command -v apt-get > /dev/null
-  return $?
-}
-
-function hasVIM() {
-  command -v vim > /dev/null
-  return $?
-}
-
-function hasNeoVIM() {
-  command -v nvim > /dev/null
+function has_program () {
+  command -v $1 > /dev/null
   return $?
 }

@@ -21,4 +21,34 @@ if [[ ! -L "$LINK_PATH" ]]; then
   ln -s $INITVIM_PATH $LINK_PATH
 fi
 
+echo "Installing providers for neovim (python, ruby, nodejs) ...\n"
+
+echo "Installing node provider..."
+if has_program npm; then 
+  npm install -g neovim
+fi
+
+echo "Installing python provider..."
+PIP_VERSIONS=(
+  pip3
+  pip2
+  pip
+)
+for PIP in ${PIP_VERSIONS[@]}; do
+  if has_program $PIP; then 
+    $PIP install --upgrade pynvim
+  fi
+done
+
+echo "Installing ruby provider..."
+if has_program gem; then 
+  gem install neovim
+  if ! $?; then
+    read -p "Ruby provider for neovim installation unsuccessful, do you want to re-try with sudo? (Y/N): " WITH_SUDO
+    if [[ $WITH_SUDO == [yY] || $WITH_SUDO == [yY][eE][sS] ]]; then
+      sudo gem install neovim
+  fi
+  fi
+fi
+
 echo "Setup completed!"
