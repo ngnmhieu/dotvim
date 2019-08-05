@@ -94,7 +94,9 @@ Plug 'chr4/nginx.vim'
 
 "@@@@@@@@@@ Terraform @@@@@@@@@@
 Plug 'hashivim/vim-terraform'
-Plug 'juliosueiras/vim-terraform-completion'
+if has('nvim')
+  Plug 'juliosueiras/vim-terraform-completion'
+endif
 
 call plug#end()
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -635,14 +637,15 @@ nmap <Leader>f <Plug>(Prettier)
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-terraform-completion
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-if !executable('neovim-ruby-host')
-    echo "'neovim-ruby-host' is not found. Make sure Ruby and neovim Gem is installed and 'neovim-ruby-host' binary is in the PATH."
-    echo "Install neovim Gem with `gem install neovim`."
+if has('nvim')
+  if !executable('neovim-ruby-host')
+      echo "'neovim-ruby-host' is not found. Make sure Ruby and neovim Gem is installed and 'neovim-ruby-host' binary is in the PATH."
+      echo "Install neovim Gem with `gem install neovim`."
+  endif
+  let g:deoplete#omni_patterns = {}
+  let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
+  call deoplete#initialize()
 endif
-
-let g:deoplete#omni_patterns = {}
-let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
-call deoplete#initialize()
 
 " Include OS-specific configuration
 let is_mac = has("gui_mac") || has("gui_macvim") || has("mac")

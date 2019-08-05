@@ -3,7 +3,7 @@
 source $HOME/.vim/scripts/helpers.sh
 
 INITVIM_PATH=$HOME/.vim/init.vim
-CONF_PATH=$HOME/.config
+CONF_PATH=$HOME/.config/nvim
 LINK_PATH=$CONF_PATH/init.vim
 
 # create config directory
