@@ -48,4 +48,7 @@ alias doti3='cd ~/.config/i3'
 alias dotpolybar='cd ~/.config/polybar'
 alias dottermite='cd ~/.config/termite'
 
+# terraform
+alias tf='terraform'
+
 # vim: ft=sh
