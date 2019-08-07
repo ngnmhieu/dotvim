@@ -41,3 +41,10 @@ if [[ $PLATFORM == "Linux" ]]; then
   BASH_COMPLETION_SCRIPT=/usr/share/bash-completion/bash_completion 
   [[ -r $BASH_COMPLETION_SCRIPT ]] && . $BASH_COMPLETION_SCRIPT 
 fi
+
+# auto complete for git
+
+GIT_COMPLETION=~/.vim/dotfiles/bash/autocomplete/git-completion.bash
+if [ -f $GIT_COMPLETION ]; then
+  . $GIT_COMPLETION 
+fi
