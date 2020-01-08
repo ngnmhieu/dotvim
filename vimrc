@@ -577,6 +577,7 @@ nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gs :call ToggleGitStatus()<CR>
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>ge :Gedit<CR>
+nnoremap <leader>gp :Gpull<CR>
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " GITGUTTER

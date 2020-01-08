@@ -4,9 +4,6 @@ stty -ixon
 # use vim as standard command-line editor
 export EDITOR=vim
 
-# source aliases file
-[[ -r ~/.bash_aliases ]] && . ~/.bash_aliases
-
 # fancy bash start line
 fancy_custom_prompt() {
   SHORT_PWD=""
@@ -42,11 +39,32 @@ if [[ $PLATFORM == "Linux" ]]; then
   [[ -r $BASH_COMPLETION_SCRIPT ]] && . $BASH_COMPLETION_SCRIPT 
 fi
 
+# enable auto completion for aliases
+function make-completion-wrapper () {
+  local function_name="$2"
+  local arg_count=$(($#-3))
+  local comp_function_name="$1"
+  shift 2
+  local function="
+    function $function_name {
+      ((COMP_CWORD+=$arg_count))
+      COMP_WORDS=( "$@" \${COMP_WORDS[@]:1} )
+      "$comp_function_name"
+      return 0
+    }"
+  eval "$function"
+  echo $function_name
+  echo "$function"
+}
+
 # auto complete for git
 GIT_COMPLETION=~/.vim/dotfiles/bash/autocomplete/git-completion.bash
 if [ -f $GIT_COMPLETION ]; then
   . $GIT_COMPLETION 
 fi
+
+# source aliases file
+[[ -r ~/.bash_aliases ]] && . ~/.bash_aliases
 
 #   extract:  Extract most know archives with one command
 #   ---------------------------------------------------------
