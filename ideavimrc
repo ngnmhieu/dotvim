@@ -13,3 +13,5 @@ map g<C-n> g<A-n>
 " IntelliJ shortcuts
 map <C-h> :action TypeHierarchy<CR>
 map <leader>gb :action Annotate<CR>
+map <leader>] :action VcsShowNextChangeMarker<CR>
+map <leader>[ :action VcsShowPrevChangeMarker<CR>
