@@ -16,3 +16,4 @@ map <leader>gb :action Annotate<CR>
 map <leader>] :action VcsShowNextChangeMarker<CR>
 map <leader>[ :action VcsShowPrevChangeMarker<CR>
 map <leader>f :action ReformatWithPrettierAction<CR>
+map <leader>r :action RenameElement<CR>
