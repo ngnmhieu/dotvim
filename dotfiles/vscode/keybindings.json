@@ -14,5 +14,32 @@
     "key": "enter",
     "command": "list.select",
     "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "-workbench.view.explorer"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "escape escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "s",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "hasSearchResult || inSearchEditor"
+  },
+  {
+    "key": "enter",
+    "command": "search.action.focusSearchList"
   }
 ]
