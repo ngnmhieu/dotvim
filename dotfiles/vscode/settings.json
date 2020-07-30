@@ -16,12 +16,23 @@
     "statusBar.background": "#005f5f",
     "statusBar.noFolderBackground": "#005f5f",
     "statusBar.debuggingBackground": "#005f5f"
-},
+  },
   "vim.useSystemClipboard": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "f"],
       "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "g", "b"],
+      "commands": ["gitlens.toggleFileBlame"]
+    },
+    {
+      "before": ["<leader>", "g", "d"],
+      "commands": ["gitlens.diffWithPrevious"]
     }
-  ]
+],
+"workbench.iconTheme": "material-icon-theme",
+"gitlens.blame.avatars": false,
+"gitlens.blame.format": "${author|20?} ${agoOrDate|14-}"
 }
