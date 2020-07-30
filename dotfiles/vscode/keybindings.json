@@ -32,14 +32,5 @@
     "key": "s",
     "command": "explorer.openToSide",
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  },
-  {
-    "key": "escape",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "hasSearchResult || inSearchEditor"
-  },
-  {
-    "key": "enter",
-    "command": "search.action.focusSearchList"
   }
 ]

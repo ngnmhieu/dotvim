@@ -1,24 +1,27 @@
 {
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "window.zoomLevel": 0,
-    "editor.fontSize": 14,
-    "vs-kubernetes": {
-        "vs-kubernetes.minikube-path.mac": "/Users/hng/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
-    },
-    "vim.vimrc.enable": true,
-    "vim.leader": ",",
-    "editor.cursorSmoothCaretAnimation": true,
-    "editor.fontFamily": "Fira Mono, Monaco, 'Courier New', monospace",
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 500,
-    "vim.statusBarColorControl": true,
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
-    },
-    "vim.useSystemClipboard": true,
-    "vim.normalModeKeyBindingsNonRecursive": [
-    ]
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.zoomLevel": 0,
+  "editor.fontSize": 14,
+  "vs-kubernetes": {
+    "vs-kubernetes.minikube-path.mac": "/Users/hng/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+  },
+  "vim.vimrc.enable": true,
+"vim.leader": ",",
+  "editor.fontFamily": "Fira Mono, Monaco, 'Courier New', monospace",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 500,
+  "vim.statusBarColorControl": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f"
+},
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatDocument"]
+    }
+  ]
 }
