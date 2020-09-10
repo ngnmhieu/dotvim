@@ -10,7 +10,7 @@
 "vim.leader": ",",
   "editor.fontFamily": "Fira Mono, Monaco, 'Courier New', monospace",
   "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 500,
+  "files.autoSaveDelay": 2000,
   "vim.statusBarColorControl": true,
   "workbench.colorCustomizations": {
     "statusBar.background": "#005f5f",
@@ -30,9 +30,15 @@
     {
       "before": ["<leader>", "g", "d"],
       "commands": ["gitlens.diffWithPrevious"]
+    },
+    {
+      "before": ["<leader>", "o"],
+      "commands": ["editor.action.organizeImports"]
     }
 ],
 "workbench.iconTheme": "material-icon-theme",
 "gitlens.blame.avatars": false,
-"gitlens.blame.format": "${author|20?} ${agoOrDate|14-}"
+"gitlens.blame.format": "${author|20?} ${agoOrDate|14-}",
+"jest.autoEnable": false,
+"workbench.colorTheme": "Default Light+"
 }
