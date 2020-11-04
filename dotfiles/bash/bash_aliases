@@ -43,6 +43,7 @@ alias gr='git restore'
 alias grh='git reset HEAD'
 alias grb='git rebase'
 alias gst='git stash'
+alias gsa='git stash apply'
 
 # docker
 alias dc='docker-compose'
