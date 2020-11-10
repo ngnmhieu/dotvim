@@ -29,6 +29,7 @@ Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ervandew/supertab'
 Plug 'gko/vim-coloresque'
+Plug 'hashivim/vim-terraform'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'branch': 'release/1.x',
