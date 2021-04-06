@@ -24,10 +24,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
-Plug 'w0rp/ale'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'ervandew/supertab'
 Plug 'gko/vim-coloresque'
 Plug 'hashivim/vim-terraform'
 Plug 'prettier/vim-prettier', {
@@ -37,14 +35,6 @@ Plug 'prettier/vim-prettier', {
   \          'graphql', 'markdown', 'vue', 'lua', 'php', 'python', 'ruby',
   \          'html', 'swift' ] }
 
-"@@@@@@@@@@ YouCompleteMe @@@@@@@@@@
-" if !executable("cmake")
-"   echo 'CMake is required to compile YouCompleteMe. Please install it before instaling YCM.'
-" else
-"   Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
-" endif
-"
-"
 "@@@@@@@@@@ ANSIBLE @@@@@@@@@@
 Plug 'chase/vim-ansible-yaml'
 
@@ -52,39 +42,19 @@ Plug 'chase/vim-ansible-yaml'
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
 
-"@@@@@@@@@@ PHP @@@@@@@@@@
-" Plug 'joonty/vdebug'
-
-"@@@@@@@@@@ RAILS @@@@@@@@@@
-" Plug 'tpope/vim-bundler'
-" Plug 'tpope/vim-rails'
 
 "@@@@@@@@@@ MARKDOWN @@@@@@@@@@
 Plug 'tpope/vim-markdown'
-" Plug 'gabrielelana/vim-markdown'
-" Plug 'suan/vim-instant-markdown'
 
 "@@@@@@@@@@ JAVASCRIPT @@@@@@@@@@
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'isRuslan/vim-es6'
-Plug 'posva/vim-vue'
-Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
-" Plug 'mxw/vim-jsx'
 Plug 'neoclide/vim-jsx-improve'
-
-"@@@@@@@@@@ Racket @@@@@@@@@@
-" Plug 'wlangstroth/vim-racket'
 
 "@@@@@@@@@@ LATEX @@@@@@@@@@
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'rhysd/vim-grammarous' 
-
-"@@@@@@@@@@ SNIPPETS @@@@@@@@@@
-Plug 'SirVer/ultisnips'
-Plug 'ngnmhieu/vim-snippets'
-Plug 'tomtom/tlib_vim'             
-Plug 'MarcWeber/vim-addon-mw-utils'
 
 "@@@@@@@@@@ NGINX @@@@@@@@@@
 Plug 'chr4/nginx.vim'
@@ -255,16 +225,6 @@ inoremap <C-z> <C-y><ESC>
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
-
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" vim-instant-markdown
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" disable folding in markdown files
-" let g:vim_markdown_folding_disabled=1 
-" Trigger markdown preview with :InstantMarkdownPreview
-" let g:instant_markdown_autostart=0
-" au BufRead,BufNewFile *.md set filetype=markdown
-
 " remove delay in exiting visual mode
 set timeoutlen=1000 ttimeoutlen=0
 
@@ -417,56 +377,6 @@ inoremap <c-s> <Esc>:Update<CR>
 " not doubling the whitespace
 let g:AutoCloseExpandSpace = 0
 
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" vim-autoformat
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" let g:formatterpath = [$HOME."/.vim/etc/formatters/", $HOME."/.vim/etc/node_modules/.bin"]
-" noremap <c-m> :Autoformat<CR>
-" prevent fallback to vim's indent file
-" let g:autoformat_autoindent = 0
-" let g:autoformat_retab = 0
-" let g:autoformat_remove_trailing_spaces = 0
-
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" ultisnips
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" make UtilSnips compatible with YCM using SuperTab
-" let g:UltiSnipsExpandTrigger = "<tab>"
-" let g:UltiSnipsJumpForwardTrigger = "<tab>"
-" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-" "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" " YouCompleteMe Code-Completion
-" "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" let g:ycm_key_list_select_completion = ['<Down>']
-" nnoremap <leader>d :YcmCompleter GoTo<CR>
-" vnoremap <leader>d :YcmCompleter GoTo<CR>
-" nnoremap <leader>r :YcmCompleter GoToReferences<CR>
-" vnoremap <leader>r :YcmCompleter GoToReferences<CR>
-" nnoremap <leader>f :YcmCompleter Fixit<CR>
-" " make UtilSnips compatible with YCM using SuperTab
-" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" let g:SuperTabDefaultCompletionType = '<C-n>'
-" " Language Server
-" let g:ycm_language_server = [ {
-"     \ 'name': 'vue',
-"     \ 'filetypes': [ 'vue' ],
-"     \ 'cmdline': [ expand('$HOME/.vim/tools/node_modules/vue-language-server/bin/vls') ]
-"     \ } ]
-
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" Syntastic Syntax Checking
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_html_checkers = []
-" let g:syntastic_scss_checkers = []
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-markdown
