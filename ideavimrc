@@ -17,3 +17,6 @@ map <leader>] :action VcsShowNextChangeMarker<CR>
 map <leader>[ :action VcsShowPrevChangeMarker<CR>
 map <leader>f :action ReformatWithPrettierAction<CR>
 map <leader>r :action RenameElement<CR>
+
+map <C-o> :action Back<CR>
+map <C-i> :action Forward<CR>

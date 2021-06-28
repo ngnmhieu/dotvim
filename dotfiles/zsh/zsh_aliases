@@ -20,7 +20,7 @@ alias ......='cd ../../../../../'       # Go back 5 directory levels
 alias .......='cd ../../../../../../'    # Go back 6 directory levels 
 
 # bash & cli
-# alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=screen-256color-bce tmux"
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
@@ -52,9 +52,9 @@ alias kb='kubectl'
 
 # enable auto-complete for aliases
 # note: to find out the completion function, use `complete -p <original-command>`
-complete -o default -F __start_kubectl kb
-complete -o default -F _docker d
-complete -o default -F _docker_compose dc
+# complete -o default -F __start_kubectl kb
+# complete -o default -F _docker d
+# complete -o default -F _docker_compose dc
 
 if [[ "$PLATFORM" == 'Darwin' ]]; then
   alias stree='/Applications/SourceTree.app/Contents/Resources/stree'

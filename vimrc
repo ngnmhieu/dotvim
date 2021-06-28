@@ -27,7 +27,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'gko/vim-coloresque'
-Plug 'hashivim/vim-terraform'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'branch': 'release/1.x',
@@ -35,19 +34,20 @@ Plug 'prettier/vim-prettier', {
   \          'graphql', 'markdown', 'vue', 'lua', 'php', 'python', 'ruby',
   \          'html', 'swift' ] }
 
+"@@@@@@@@@@ TERRAFORM @@@@@@@@@@
+Plug 'hashivim/vim-terraform'
+
 "@@@@@@@@@@ ANSIBLE @@@@@@@@@@
 Plug 'chase/vim-ansible-yaml'
-
+"
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
-
 
 "@@@@@@@@@@ MARKDOWN @@@@@@@@@@
 Plug 'tpope/vim-markdown'
 
 "@@@@@@@@@@ JAVASCRIPT @@@@@@@@@@
-Plug 'mustache/vim-mustache-handlebars'
 Plug 'isRuslan/vim-es6'
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/vim-jsx-improve'
@@ -75,7 +75,7 @@ endif
 colorscheme jellybeans
 
 set modeline
-set nu " line numbers
+set nu        " line numbers
 set expandtab " turn tabs into spaces
 syntax on
 
@@ -88,8 +88,8 @@ set shiftround
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set cursorline " underline current line
-set incsearch " highlight as you search
+set cursorline                 " underline current line
+set incsearch                  " highlight as you search
 set backspace=indent,eol,start " fix backspace key for vim 7.4
 
 " Ignore uninterresting files and directory
@@ -513,7 +513,6 @@ let g:multi_cursor_select_all_key = 'g<C-m>'
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " editorconfig-vim
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
 if !has('python') && !has('python3')
     echo "This vim distribution isn't compiled with +python or +python3. EditorConfig-Core is required to use editorconfig-vim plugin."
     echo "If you're using neovim. pynvim also needs to be installed."
