@@ -1,7 +1,50 @@
-source ~/.vim/vimrc
+" since version 1.7.2 sourcing vimrc make Intellij stuck at loading
+" source ~/.vim/vimrc
 
-" enable vim-surround
+" general configurations
+set clipboard^=unnamed,unnamedplus
+let mapleader=','
+
+" enable plugins
 set surround
+set NERDTree
+set multiple-cursors
+
+map <C-k> <Action>(MoveLineUp)
+map <C-j> <Action>(MoveLineDown)
+
+" remap go to first character of line
+nnoremap ! ^
+nnoremap ^ !
+vnoremap ! ^
+vnoremap ^ !
+onoremap ! ^
+onoremap ^ !
+
+" indenting
+nnoremap > >>
+nnoremap < <<
+vnoremap < <gv
+vnoremap > >gv
+
+" Pasting text without overriding yanked text
+xnoremap p "_dP
+
+" scrolling up down
+nnoremap { <C-E>
+nnoremap } <C-Y>
+
+" convinient key to toggle hlsearch
+nnoremap <silent> <space> :set hlsearch!<CR>
+
+" search selected text
+vnoremap <space> "zyq/"zp<CR><C-o>:set hlsearch<CR>
+
+" search and replace selected text
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" close current buffer
+nnoremap <leader>c :q<CR>
 
 " enable multi cursor
 set multiple-cursors
@@ -10,17 +53,24 @@ map <C-p>  <A-p>
 map <C-x>  <A-x>
 map g<C-n> g<A-n>
 
-" IntelliJ shortcuts (for all actions, execute :actionlist
-map <leader>gb :action Annotate<CR>
-map <leader>] :action VcsShowNextChangeMarker<CR>
-map <leader>[ :action VcsShowPrevChangeMarker<CR>
-map <leader>f :action ReformatWithPrettierAction<CR>
-map <leader>r :action RenameElement<CR>
+" collapse / expand all folds
+" TODO: collapse and expand block
+nnoremap _ zM 
+nnoremap + zR
 
-map <C-o> :action Back<CR>
-map <C-i> :action Forward<CR>
-nmap % :action EditorMatchBrace<CR>
-map <leader>gi :action GotoImplementation<CR>
-map <leader>gs :action EditSource<CR>
-map <leader>gu :action FindUsages<CR>
-map <leader>gh :action TypeHierarchy<CR>
+" IntelliJ shortcuts (for all actions, execute :actionlist
+map <C-f> <Action>(SelectInProjectView)
+map <leader>gb <Action>(Annotate)
+" TODO: other git shortcuts
+map <leader>] <Action>(VcsShowNextChangeMarker)
+map <leader>[ <Action>(VcsShowPrevChangeMarker)
+map <leader>f <Action>(ReformatWithPrettierAction)
+map <leader>r <Action>(RenameElement)
+
+map <C-o> <Action>(Back)
+map <C-i> <Action>(Forward)
+nmap % <Action>(EditorMatchBrace)
+map <leader>i <Action>(GotoImplementation)
+map <leader>s <Action>(EditSource)
+map <leader>u <Action>(FindUsages)
+map <leader>h <Action>(TypeHierarchy)
