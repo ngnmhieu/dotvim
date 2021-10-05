@@ -54,14 +54,14 @@ map <C-x>  <A-x>
 map g<C-n> g<A-n>
 
 " collapse / expand all folds
-" TODO: collapse and expand block
+map <C--> <Action>(CollapseRegion)
+map <C-=> <Action>(ExpandRegion)
 nnoremap _ zM 
 nnoremap + zR
 
 " IntelliJ shortcuts (for all actions, execute :actionlist
 map <C-f> <Action>(SelectInProjectView)
 map <leader>gb <Action>(Annotate)
-" TODO: other git shortcuts
 map <leader>] <Action>(VcsShowNextChangeMarker)
 map <leader>[ <Action>(VcsShowPrevChangeMarker)
 map <leader>f <Action>(ReformatWithPrettierAction)
@@ -74,3 +74,5 @@ map <leader>i <Action>(GotoImplementation)
 map <leader>s <Action>(EditSource)
 map <leader>u <Action>(FindUsages)
 map <leader>h <Action>(TypeHierarchy)
+
+" TODO: other git shortcuts
