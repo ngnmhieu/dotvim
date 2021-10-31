@@ -69,7 +69,6 @@ map <leader>r <Action>(RenameElement)
 
 map <C-o> <Action>(Back)
 map <C-i> <Action>(Forward)
-nmap % <Action>(EditorMatchBrace)
 map <leader>i <Action>(GotoImplementation)
 map <leader>s <Action>(EditSource)
 map <leader>u <Action>(FindUsages)
