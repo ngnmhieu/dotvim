@@ -12,7 +12,7 @@ endif
 call plug#begin('~/.vim/bundle')
 
 "@@@@@@@@@@ COMMON @@@@@@@@@@
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
 Plug 'scrooloose/nerdtree'
@@ -513,12 +513,12 @@ let g:multi_cursor_select_all_key = 'g<C-m>'
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " editorconfig-vim
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-if !has('python') && !has('python3')
-    echo "This vim distribution isn't compiled with +python or +python3. EditorConfig-Core is required to use editorconfig-vim plugin."
-    echo "If you're using neovim. pynvim also needs to be installed."
-    echo "python3 -m pip install --user --upgrade pynvim"
-endif
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+" if !has('python') && !has('python3')
+"     echo "This vim distribution isn't compiled with +python or +python3. EditorConfig-Core is required to use editorconfig-vim plugin."
+"     echo "If you're using neovim. pynvim also needs to be installed."
+"     echo "python3 -m pip install --user --upgrade pynvim"
+" endif
+" let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-gutter
