@@ -73,5 +73,6 @@ map <leader>i <Action>(GotoImplementation)
 map <leader>s <Action>(EditSource)
 map <leader>u <Action>(FindUsages)
 map <leader>h <Action>(TypeHierarchy)
+map <leader>t <Action>(GotoTest)
 
 " TODO: other git shortcuts
