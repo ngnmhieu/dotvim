@@ -9,6 +9,8 @@ let mapleader=','
 set surround
 set NERDTree
 set multiple-cursors
+set ideajoin
+set matchit
 
 map <C-k> <Action>(MoveLineUp)
 map <C-j> <Action>(MoveLineDown)
