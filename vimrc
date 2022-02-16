@@ -39,7 +39,10 @@ Plug 'hashivim/vim-terraform'
 
 "@@@@@@@@@@ ANSIBLE @@@@@@@@@@
 Plug 'chase/vim-ansible-yaml'
-"
+
+"@@@@@@@@@@ JENKINS @@@@@@@@@@
+Plug 'martinda/jenkinsfile-vim-syntax'
+
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
@@ -470,7 +473,7 @@ function! ToggleGitStatus()
 endfunction 
 
 nnoremap <leader>gd :Gvdiff<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gs :call ToggleGitStatus()<CR>
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>ge :Gedit<CR>
