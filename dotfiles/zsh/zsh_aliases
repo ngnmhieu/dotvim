@@ -21,9 +21,9 @@ alias .......='cd ../../../../../../'    # Go back 6 directory levels
 
 # bash & cli
 alias tmux="TERM=screen-256color-bce tmux"
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
+alias v='vim'
+alias vi='vim'
+alias vim='vim'
 alias dotvim='cd ~/.vim'
 
 # git
@@ -48,7 +48,7 @@ alias gsa='git stash apply'
 # docker
 alias dc='docker-compose'
 alias d='docker'
-alias kb='kubectl'
+alias k='kubectl'
 
 # enable auto-complete for aliases
 # note: to find out the completion function, use `complete -p <original-command>`

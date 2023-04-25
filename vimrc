@@ -12,36 +12,44 @@ endif
 call plug#begin('~/.vim/bundle')
 
 "@@@@@@@@@@ COMMON @@@@@@@@@@
-" Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
+" vim script for text filtering and alignment
 Plug 'godlygeek/tabular'
+" file explorer
 Plug 'scrooloose/nerdtree'
+" show git status in nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
+" open Folder in Finder
 Plug 'mortonfox/nerdtree-term'
+" status line in vim
 Plug 'bling/vim-airline'
+" git wrapper
 Plug 'tpope/vim-fugitive'
+" a vim plugin which shows git diff markers in the sign column
 Plug 'airblade/vim-gitgutter'
+" provides extended matching for % vim operator
 Plug 'tmhedberg/matchit'
+" delete/change/add parentheses/quotes/XML-tags/much more with ease
 Plug 'tpope/vim-surround'
+" handles commenting codes (alternative plugin tpope/vim-commentary)
 Plug 'tomtom/tcomment_vim'
+" enable repeating supported plugin maps with "."
 Plug 'tpope/vim-repeat'
+" enables multiple cursors
 Plug 'terryma/vim-multiple-cursors'
-Plug 'gko/vim-coloresque'
+" prettier for vim
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install',
-  \ 'branch': 'release/1.x',
-  \ 'for': [ 'javascript', 'typescript', 'css', 'less', 'scss', 'json',
-  \          'graphql', 'markdown', 'vue', 'lua', 'php', 'python', 'ruby',
-  \          'html', 'swift' ] }
+  \ 'do': 'npm install --frozen-lockfile --production',
+  \ 'for': [ 'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'vue', 'python', 'ruby', 'html', 'yaml' ] }
 
 "@@@@@@@@@@ TERRAFORM @@@@@@@@@@
-Plug 'hashivim/vim-terraform'
+" Plug 'hashivim/vim-terraform'
 
 "@@@@@@@@@@ ANSIBLE @@@@@@@@@@
-Plug 'chase/vim-ansible-yaml'
+" Plug 'chase/vim-ansible-yaml'
 
 "@@@@@@@@@@ JENKINS @@@@@@@@@@
-Plug 'martinda/jenkinsfile-vim-syntax'
+" Plug 'martinda/jenkinsfile-vim-syntax'
 
 "@@@@@@@@@@ HTML @@@@@@@@@@
 Plug 'mattn/emmet-vim'
@@ -49,18 +57,6 @@ Plug 'othree/html5.vim'
 
 "@@@@@@@@@@ MARKDOWN @@@@@@@@@@
 Plug 'tpope/vim-markdown'
-
-"@@@@@@@@@@ JAVASCRIPT @@@@@@@@@@
-Plug 'isRuslan/vim-es6'
-Plug 'pangloss/vim-javascript'
-Plug 'neoclide/vim-jsx-improve'
-
-"@@@@@@@@@@ LATEX @@@@@@@@@@
-Plug 'LaTeX-Box-Team/LaTeX-Box'
-Plug 'rhysd/vim-grammarous' 
-
-"@@@@@@@@@@ NGINX @@@@@@@@@@
-Plug 'chr4/nginx.vim'
 
 call plug#end()
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -356,12 +352,6 @@ nnoremap _ zM
 nnoremap + zR
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" PHP
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-let php_folding = 1
-let php_htmlInStrings = 1
-
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " map Ctrl-S to save file
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 command! -nargs=0 -bar Update if &modified 
@@ -373,13 +363,6 @@ command! -nargs=0 -bar Update if &modified
                            \|endif
 nnoremap <silent> <C-S> :<C-u>Update<CR>
 inoremap <c-s> <Esc>:Update<CR>
-
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" vim-autoclose
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" not doubling the whitespace
-let g:AutoCloseExpandSpace = 0
-
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-markdown
@@ -397,19 +380,9 @@ set t_ZR=
 nnoremap <leader>gt vit<ESC>
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" RAML
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-autocmd BufNewFile,BufRead *.raml set filetype=ansible
-
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " JSON-LD
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 autocmd BufNewFile,BufRead *.jsonld set filetype=json
-
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" EJS
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-autocmd BufNewFile,BufRead *.ejs set filetype=html
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " JSON
@@ -417,12 +390,6 @@ autocmd BufNewFile,BufRead *.ejs set filetype=html
 autocmd BufNewFile,BufRead *.json set tabstop=2
 autocmd BufNewFile,BufRead *.json set shiftwidth=2
 autocmd BufNewFile,BufRead *.json set softtabstop=2
-
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" CTRL-P
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components'
-" let g:ctrlp_working_path_mode = 'ra'
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " FZF
@@ -483,26 +450,6 @@ nnoremap <leader>gp :Gpull<CR>
 " GITGUTTER
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 autocmd BufWritePost * GitGutter
-
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" VUE
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-autocmd FileType vue syntax sync fromstart
-
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" ALE (Async Lint Engine)
-"@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-let g:ale_linters = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint']
-\}
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
-\   'vue': ['eslint']
-\}
-" fix cursor disappear on warning line
-let g:ale_echo_cursor = 0
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " vim-multiple-cursors
