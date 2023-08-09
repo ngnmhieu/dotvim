@@ -77,4 +77,7 @@ map <leader>u <Action>(FindUsages)
 map <leader>h <Action>(TypeHierarchy)
 map <leader>t <Action>(GotoTest)
 
+map <leader>gr <Action>(RunClass)
+map <leader>p <Action>(PasteMultiple)
+
 " TODO: other git shortcuts
