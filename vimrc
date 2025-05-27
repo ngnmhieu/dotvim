@@ -399,7 +399,7 @@ autocmd BufNewFile,BufRead *.json set softtabstop=2
 set rtp+=~/.fzf
 
 " search for files
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 nnoremap <silent> <C-p> :FZF<CR>
 
 " autocomplete file path
