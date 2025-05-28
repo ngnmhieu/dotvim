@@ -398,17 +398,23 @@ autocmd BufNewFile,BufRead *.json set softtabstop=2
 " Installation path
 set rtp+=~/.fzf
 
+" Initialize configuration dictionary
+let g:fzf_vim = {}
+
 " search for files
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
-nnoremap <silent> <C-p> :FZF<CR>
+nnoremap <silent> <C-p> :Files<CR>
 
 " autocomplete file path
 imap <c-f> <plug>(fzf-complete-file-ag)
 
 " search file content
-command! -bang -nargs=* SearchAg call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
-nnoremap <silent> <C-d> :SearchAg<CR>
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4.. --exact -i'}), <bang>0)
+nnoremap <silent> <C-d> :Ag<CR>
+nnoremap <silent> <C-d> :Ag<CR>
 vnoremap <C-d> "ky:SearchAg <C-R>k<CR>
+
+" let g:fzf_vim.preview_window = ['right,50%', 'ctrl-/']
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " VIM-LATEX
