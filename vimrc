@@ -37,10 +37,9 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-repeat'
 " enables multiple cursors
 Plug 'terryma/vim-multiple-cursors'
-" prettier for vim
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install --frozen-lockfile --production',
-  \ 'for': [ 'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'vue', 'python', 'ruby', 'html', 'yaml' ] }
+" linting and formatting
+Plug 'dense-analysis/ale'
+
 
 "@@@@@@@@@@ TERRAFORM @@@@@@@@@@
 " Plug 'hashivim/vim-terraform'
@@ -118,6 +117,14 @@ set pastetoggle=<leader>p
 
 " Toggle cursorline when switching between normal and insert mode
 autocmd InsertEnter,InsertLeave * set cul!
+
+" Set a custom directory for swap files
+let swap_dir = expand("~/.vimswap")
+if !isdirectory(swap_dir)
+  call mkdir(swap_dir)
+endif
+set directory^=~/.vimswap//
+
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 " MAPPINGS
@@ -483,9 +490,10 @@ nmap <leader>] <Plug>GitGutterNextHunk
 nmap <leader>[ <Plug>GitGutterPrevHunk
 
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" vim-prettier 
+" ALE
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-nmap <Leader>f <Plug>(Prettier)
+let g:ale_fixers = ['prettier']
+nmap <Leader>f <Plug>(ale_fix)
 
 " Include OS-specific configuration
 let is_mac = has("gui_mac") || has("gui_macvim") || has("mac")
